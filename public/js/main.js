@@ -152,8 +152,8 @@ var main = function () {
 	var loggedIn = localStorage.getItem("loggedIn");
 
 	if (localStorage.getItem("name")) {
-		$('#fb-name').text(localStorage.getItem("name"));
-		$('#profile-pic').attr("src", localStorage.getItem("profile-pic"));
+		$('#name').text(localStorage.getItem("name"));
+		//$('#profile-pic').attr("src", localStorage.getItem("profile-pic"));
 	}
 
 	/* Highlight active menu item */
