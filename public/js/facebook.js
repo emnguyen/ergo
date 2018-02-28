@@ -5,10 +5,8 @@ function checkLoginState() {
 }
 
 function changeUser(response) {  
-  $('.profile-pic-container').show();
-  $('#non-fb-name').hide();
   localStorage.setItem("name", response.name);
-  localStorage.setItem("profile-pic", response.picture.data.url);
+ // localStorage.setItem("profile-pic", response.picture.data.url);
   localStorage.setItem("id", response.id);
   localStorage.setItem("loggedIn", true);
   window.location.href = "/login/" + response.id;
@@ -17,7 +15,7 @@ function changeUser(response) {
 function logoutFacebook() {
   window.location.href = "/logout";
   localStorage.removeItem("name");
-  localStorage.removeItem("profile-pic");
+  //localStorage.removeItem("profile-pic");
   localStorage.removeItem("id");
   localStorage.setItem("loggedIn", false);
 

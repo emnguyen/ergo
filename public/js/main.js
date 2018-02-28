@@ -13,9 +13,7 @@ function goBack() {
 }
 
 function login() {
-	// Get name
-	$('.profile-pic-container').hide();
-	$('#non-fb-name').show();
+
 	//localStorage.setItem("name", "Placeholder");
   	localStorage.setItem("loggedIn", true);
 
