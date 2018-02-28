@@ -3,6 +3,12 @@
  * Description: Javascript for the Go page.
  */
 
+function pulse(object) {
+	$(object).fadeIn(500, function() {
+		$(this).effect( "bounce", {times: 2, distance: 25}, 300).fadeOut(400);
+  });
+}
+
 /* Name: savFav
  * Description: Uses POST to save a routine as a favorite.
  * Parameters: None
@@ -11,6 +17,7 @@
 function saveFav() {
 	// Get name and current url
 	var name = prompt("Name this routine:");
+	if (name) {
 	var queryString = location.href.split(location.host)[1];
 
 	$('.fav-name').val(name);
@@ -18,7 +25,11 @@ function saveFav() {
 
     $.post('/save-fav', $('#fav-form').serialize(), function(data) {
    	});  
+
+   	pulse('#heart');
+   }
 }
+
 
 /*
  * Main function

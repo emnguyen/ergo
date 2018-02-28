@@ -363,6 +363,20 @@ body {
   width: 100%;
   color: #007AFF; }
 
+#heart {
+  display: none;
+  z-index: 9999;
+  font-size: 7rem;
+  line-height: 0;
+  color: red;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center; }
+  #heart span {
+    margin-top: 30vh; }
+
 #fav-form {
   margin-right: 2rem; }
 
