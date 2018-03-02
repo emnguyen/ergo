@@ -5,6 +5,7 @@ function checkLoginState() {
 }
 
 function changeUser(response) {  
+  resetGo();
   localStorage.setItem("name", response.name);
  // localStorage.setItem("profile-pic", response.picture.data.url);
   localStorage.setItem("id", response.id);
