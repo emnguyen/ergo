@@ -1,5 +1,6 @@
 function verifyGuestPhone() {
 	// Reset warning
+	/*
 	$('.phoneInputWarning').text("");
 
 	// Verify phone number
@@ -21,7 +22,7 @@ function verifyGuestPhone() {
 
 	// Save guest phone
 	//sessionStorage.setItem('guestPhone', phoneInput);
-
+	*/
 	$('#stretch-form').submit(); 
 }
 
