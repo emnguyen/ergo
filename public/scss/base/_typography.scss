@@ -7,6 +7,12 @@
        url('../fonts/openiconic/open-iconic.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
+.text-primary {
+	background: $gradient;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 h2 {
 	margin: 1rem 0;
 }
@@ -21,10 +27,12 @@ a:hover {
 }
 
 a {
-	color: $primary;
+	&:not(.nav-link) {
+		@extend .text-primary;
+	}
 }
 .warning {
 	color: red;
-	//text-align: left;
 	font-size: 1rem;
 }
+

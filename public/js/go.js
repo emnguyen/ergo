@@ -30,6 +30,24 @@ function saveFav() {
    }
 }
 
+function start() {
+	$('#status-container').removeClass('pause');
+	$('#status-container').slideDown();
+	$('#start-button').hide();
+	$('#stop-button').show();
+	localStorage.setItem("status", "active");
+}
+
+function stop() {
+	$('#status-container').slideUp();
+	$('#start-button').show();
+	$('#stop-button').hide();
+	localStorage.removeItem("status");
+}
+
+
+
+
 
 /*
  * Main function
@@ -38,6 +56,39 @@ var main = function () {
 	$('#fav-form-submit').click(function() {
 		saveFav();
 	});
+
+	// Save go url
+	localStorage.setItem("go", location.href.split(location.host)[1]);
+
+	// Check status and show stop if active
+	var status;
+	if (status = localStorage.getItem("status")) {
+		$('#start-button').hide();
+		$('#stop-button').show();
+	}
+
+	$('#start-button').click(function() {
+		start();
+	});
+	$('#pause-button').click(function() {
+		togglePause();
+	});
+	$('#stop-button').click(function() {
+		stop();
+	});
+
+	// If loading a favorite, set the page title as the fav name
+	var favName;
+	if (favName = localStorage.getItem("fav")) {
+		$('#routine-name').text(favName);
+	}
+
+	// Reset favorite flag upon leaving page
+	window.onbeforeunload = function(){
+  		localStorage.removeItem("fav");
+	};
+
+
 /*
 	var isGuest = $.getJSON('user.json', function(user) {
 		console.log(user["guest"]);

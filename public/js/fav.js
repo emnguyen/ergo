@@ -15,6 +15,12 @@ function deleteFav(fav) {
    //	$(fav).slideUp();
 }
 
+function loadFav(fav) {
+
+	localStorage.setItem("fav", $(fav).text());
+	window.location.href = $(fav).attr("href");
+}
+
 /*
  * Main function
  */
@@ -33,6 +39,11 @@ var main = function () {
 		if (confirm('Are you sure you want to delete ' + name + "?"))
 			deleteFav(fav);
 	});
+
+	$('.fav-link').click(function(e) {
+		e.preventDefault();
+		loadFav($(this));
+	})
 };
 
 $(document).ready(main);

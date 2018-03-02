@@ -9,9 +9,6 @@
         <button id="hide-welcome" class="btn btn-lg btn-success" onclick="hideWelcome()" role="button">Hide</button>
     </div>
 
-
-
-
 <div class="progress-container">
   
 <ol class="progressBar">
@@ -21,7 +18,7 @@
   </li>
   <li class="progress-bar-step">
     <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-    <span class="progress-bar-stepLabel">Select Stretches</span>
+    <span class="progress-bar-stepLabel">Customize Stretches</span>
   </li>
   <li class="progress-bar-step">
     <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
@@ -52,8 +49,13 @@
 
 				<form class="setup-form" action="/setup" method="get">
 
-				<button type="submit"><h4>{{name}}</h4></button>
+				<button type="submit">
+          <h4>{{name}}</h4>
+          <p class="environment-description">{{{description}}}</p>
+        </button>
 				<input type="hidden" name="name" value="{{className}}">
+
+
 
 				</form>
 				

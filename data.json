@@ -3,21 +3,25 @@
 		{
 			"name" : "Office Space",
 			"className" : "office",
+			"description" : "E.g. cubicle or small, private space.<br>Stretch using desks, chairs, or similar-sized objects.",
 			"background" : ""
 		},
 		{
 			"name" : "Home",
 			"className" : "home",
+			"description" : "Wide variety of stretches using  furniture or similar-sized objects.",
 			"background" : ""
 		},
 		{
 			"name" : "Indoor",
 			"className" : "indoor",
+			"description" : "E.g. coffee shop or library.<br>Discreet, seated stretches.",
 			"background" : ""
 		},
 		{
 			"name" : "Outdoor",
 			"className" : "outdoor",
+			"description" : "Stretch using larger objects like trees or poles. Includes more extensive exercises.",
 			"background" : ""
 		}
 	],
@@ -137,6 +141,10 @@
 				{
 					"name" : "Living Room",
 					"url" : "/go?0=0&1=0&2=1&3=1"
+				},
+				{
+					"name" : "Geisel",
+					"url" : "/go?9=1&8=1&4=1&3=1&2=1&1=1&0=0&5=0&6=0&7=0"
 				}
 			]
 		}

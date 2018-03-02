@@ -1,37 +1,112 @@
 $footer-height: 5rem;
 
-.logo-container {
-	display: inline-block;
-	border-radius: 4rem;
-	overflow: hidden;
-	background-color: #fff;
-	height: 4rem;
-	width: 4rem;
+#status-container {
+	display: none;
+	cursor: pointer;
+	transition: .5s background;
+	background: -webkit-linear-gradient(left, rgba(76,168,255,1) 0%, rgba(0,123,255,1) 100%);
+	color: #fff;
+	height: 3.5rem;
+	text-align: center;
+	padding-top: 0.8rem;
+	font-weight: bold;
+	&.pause {
+		background: -webkit-linear-gradient(left, rgba(255,226,110,1) 0%, rgba(255,192,97,1) 100%);
+	}
 }
 
-.logo-container img {
+#stop-button {
 	display: none;
+}
+
+.logo {
+	img {
+		height: 4rem;
+	}
 }
 
 .login {
 	text-align: left;
 }
 
+#header-container {
+	box-shadow: 0px 2px 15px rgba(17, 50, 53, 0.1);
+}
+.header {
+	padding-top: 1.5rem;
+}
 
+#name {
+	color: #bbb;
+	font-size: 1rem;
+	font-weight: bold;
+}
 
-.navbar {
-	a {
-		font-size: 1.5rem;
+.dropdown-menu {
+
+}
+
+.dropdown-active {
+	span {
+		color: #02AAB0;
 	}
 }
 
+.nav-link {
+	.oi {
+		font-size: 1.8rem;
+	}
+	color: $gray !important;
+	padding: 0 1.3rem;
+	a {
+		color: $gray;
+	}
+	&.active {
+		background-color: transparent !important;
+		.oi {
+			color: #02AAB0;
+		}
+	}
+	&:hover {
+		color: #02AAB0;
+	}
+}
+
+.login-nav-link {
+	color: $light-gray;
+	&.active {
+		background-color: transparent !important;
+	@include gradient;
+		span {
+			color: #02AAB0;
+		}
+	}
+}
+
+.nav-link-md {
+	color: #aaa;
+	font-weight: bold;
+	//font-size: 0.5rem;
+	&.active {
+		@extend .text-primary;
+	}
+}
+
+.dropdown-menu-right {
+	right: 0;
+	left: auto;
+	text-align: right;
+}
+
+
+/*
 #fb-name {
 	padding-right: 0.4rem;
 }
+*/
 
 .user-info {
 	display: inline-block;
-	
 	margin-top: -2rem;
 }
 
@@ -56,7 +131,7 @@ html {
 }
 body {
 	/* Margin bottom by footer height */
-
+	padding-bottom: 1.5rem;
 	margin-bottom: $footer-height;
 }
 .footer {

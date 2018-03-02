@@ -3,18 +3,15 @@
 /**************/
 
 //Variables
-$gray: #eee;
+
 $blue: #00637C;
 $white: #DBF1FF;
-
-
-
 
 .progress-container {
   width: 100%;
   margin: 0 auto; 
   border-bottom: .05rem solid #e5e5e5;
-  padding-bottom: 2.5rem;
+  padding-bottom: 2.3rem;
 
 }
 
@@ -41,7 +38,7 @@ $white: #DBF1FF;
   &:after {
     content: "";
     height: 0.4em;
-    background-color: $gray;
+    background-color: $light-gray;
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -57,7 +54,7 @@ $white: #DBF1FF;
   }
 
   &:after {
-    background-color: $primary;
+    @include gradient;
     width: 0%;
   }
 
@@ -70,8 +67,8 @@ $white: #DBF1FF;
 .progress-bar-icon {
   width: 1.3em;
   height: 1.3em;
-  background-color: $gray;
-  fill: $gray;
+  background-color: $light-gray;
+  fill: $light-gray;
   border-radius: 50%;
   margin-bottom: -.25rem;
   padding: 0.4em;
@@ -81,20 +78,20 @@ $white: #DBF1FF;
   transition: all .25s ease-out;
   
   .is-current & {
-    fill: $primary;
-    background-color: $primary;
+    fill: transparent;
+    @include gradient;
   }
   
   .is-complete & {
     fill: $white;
-    background-color: $primary;
+    @include gradient;
   }
 }
 
 .progress-bar-stepLabel {
   display: block;
   text-transform: uppercase;
-  font-size: .7rem;
+  font-size: .6rem;
   color: #bbb;
   position: absolute;
   padding-top: 0.5em;

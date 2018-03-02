@@ -7,21 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>{{title}}</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<!-- Bootstrap CDN 
-  
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
--->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> 
 
-	<!-- Bootstrap 
-	<link href="css/bootstrap.min.css" rel="stylesheet"> 
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet"> -->
 	<!-- open iconic  -->
 	<link href="css/open-iconic-bootstrap.min.css" rel="stylesheet">
 	<!-- main.css -->
@@ -55,20 +44,29 @@
             html.js .hideWelcome { display: none; }
     </style>
     <script>
-        if(localStorage.getItem("hideWelcome")) {
+        if(sessionStorage.getItem("hideWelcome")) {
         	document.documentElement.className += ' js';
-		} 
+		    } 
     </script>
 
 </head>
 <body>	
 
+<div id="status-container">
+  <p id="status">Active</p>
+</div>
+
+<div id="header-container">
 <div class="container">
 
       <div class="header clearfix">
         <nav>
-          <ul class="nav nav-pills float-left">
-          	<li class="navbar-brand"><a class="text-muted" href="/">Ergo</a></li>
+          <ul class="nav float-left">
+            <!--
+          	<li class="navbar-brand logo">
+              <img src="images/logo.svg" alt="ERGO logo">
+            </li>
+          -->
             <li class="nav-item">
               <a class="nav-link" href="/"><span class="oi oi-home"></span><span class="sr-only">(current)</span></a>
             </li>
@@ -79,20 +77,22 @@
 
           <!-- If not logged in -->
           {{#unless data.loggedIn}}
-          <ul class="nav nav-pills float-right hidden-sm-down">
+
+          <!-- Wide nav -->
+          <ul class="nav float-right hidden-sm-down">
             <li class="nav-item">
-              <a class="nav-link" href="/login">Log In</a>
+              <a class="nav-link nav-link-md login-nav-link-md" href="/login">Log In</a>
             </li>
           	<li class="nav-item">
-              <a class="nav-link" href="/signup">Sign Up<span class="sr-only">(current)</span></a>
+              <a class="nav-link nav-link-md signup-nav-link-md" href="/signup">Sign Up<span class="sr-only">(current)</span></a>
             </li>
           </ul>
 
           <!-- Narrow nav -->
-          <ul class="nav nav-pills float-right hidden-md-up">
+          <ul class="nav float-right hidden-md-up">
           	<li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          <span class="oi oi-account-login"></span>
+		        <a class="nav-link login-nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          <span class="oi oi-person"></span>
 		        </a>
 		        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 
@@ -107,26 +107,19 @@
           <!-- If logged in -->
          {{#if data.loggedIn}} 
 
-          <ul class="nav nav-pills float-right">
+          <ul class="nav float-right">
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <!--
-              <span class="oi oi-wrench hidden-md-up"></span> -->
-              
-              
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">          
+              <!-- User's name -->
               <div class="user-info">
                 <span id="name">{{data.loggedIn.firstName}} {{data.loggedIn.lastName}}</span> 
-                <!--
-                <span class="profile-pic-container">
-                  <img id="profile-pic" src="">
-                </span> -->
               </div>
 
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
 
              <!-- <a class="dropdown-item" href="#">Settings</a>-->
-              <span class="dropdown-item" href="" onclick="logoutFacebook()">Log Out</span>
+              <span class="dropdown-item" onclick="logout()">Log Out</span>
             </div>
           </li>
           </ul>
@@ -134,8 +127,9 @@
 
         </nav>
         
-      </div>
- </div> <!-- /container -->
+      </div> <!-- /.header -->
+ </div> <!-- /.container -->
+</div> <!-- /#header-container -->
 
       {{{body}}}
 
@@ -152,11 +146,11 @@
 	<!-- Bootstrap -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <!-- main.js -->
-	<script src="js/main.js"></script>
 
   {{> facebook}}
   <script src="js/facebook.js"></script>
 
+  <!-- main.js -->
+  <script src="js/main.js"></script>
 </body>
 </html>

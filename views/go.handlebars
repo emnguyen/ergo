@@ -3,19 +3,24 @@
 {{#with data}}
 <div id="go-page">
 
-
-	
 	<div class="container">
 
 		<div class="progress-container">
 			<ol class="progressBar">
 				<li class="progress-bar-step is-complete">
 				<svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-				<span class="progress-bar-stepLabel">Choose Setting</span>
+				<span class="progress-bar-stepLabel">
+			    	{{#unless setting}}
+			    		Choose Setting
+			    	{{/unless}}
+			    	{{#if setting}}
+			    		Selected {{setting}}
+			    	{{/if}}
+				</span>
 				</li>
 				<li class="progress-bar-step is-complete">
 				<svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-				<span class="progress-bar-stepLabel">Select Stretches</span>
+				<span class="progress-bar-stepLabel">Customize Stretches</span>
 				</li>
 				<li class="progress-bar-step is-complete">
 				<svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
@@ -32,29 +37,22 @@
 
 		<div class="row">
 			<div class="col text-center">
-				<h2>Go</h2>
+				<h2 id="routine-name">Go</h2>
 				<!--
 				<h5>Sending alerts to <span class="active-phone"></span></h5> -->
 			
 				<p>Ergo will periodically notify you to stretch for as long as you are working. Press <span class="text-success">Start</span> when you are ready and <span class="text-danger">Stop</span> when you are done. </p><p class="text-muted">Note: Leaving this page will stop notifications.</p>
+
+				<h2 id="start-button">Start</h2>
+				<h2 id="stop-button">Stop</h2>
+				<h2 id="pause-button">Play/pause</h2>
+				
+
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col text-center">
-				
-				<div id="timer"><span id="min">00</span>:<span id="sec">00</span></div>
-
-				<button id="startButton" class="btn btn-success btn-lg" type="button" value="Start">Start</button> 
-
-				<div class="btn-group controls" role="group" aria-label="...">
-					<button id="resumeButton" class="btn btn-secondary btn-lg" type="button" value="Resume"><span class="oi oi-media-play"></span></button>
-					<button id="pauseButton" class="btn btn-secondary btn-lg" type="button" value="Pause"><span class="oi oi-media-pause"></span></button>
-					
-				
-				<button id="resetButton" class="btn btn-danger btn-lg" type="button" value="Reset"><span class="oi oi-media-stop"></span></button>
-				</div> <!-- .controls -->
-
 
 			</div>
 		</div>

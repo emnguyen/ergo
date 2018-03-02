@@ -8,7 +8,7 @@ var data = require('../data.json');
 exports.view = function(req, res){
   res.render('login', {
   	data,
-  	"title" : "Login | Ergo",
+  	"title" : "Log In | Ergo",
   	"hideTabs" : true,
   	"hideLogin" : true
   });
@@ -81,6 +81,8 @@ exports.fb = function(req, res){
 		"favorites" :[
 		]
 	};
+
+	data.setting = false;
 
 	data.loggedIn = newUser;
 	data.users.push(newUser);

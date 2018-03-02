@@ -3,24 +3,38 @@
 		margin-bottom: 3rem;
 	}
 }
-
+/*
 .login {
-	color: $primary;
+	color: red;
+	//color: transparent;
+	//@include gradient;
 	cursor: pointer;
 }
+*/
 
 #environments {
 	button {
-		background-color: $primary;
+		padding: 1rem 1rem 0;
+		margin-bottom: 0.2rem;
+		@include gradient;
 		border: none;
 		//height: 20vh;
 		height: 10rem;
-		width: 100%;
+		width: 99%;
 		color: #fff;
 		cursor: pointer;
 		&:hover {
 			opacity: 0.8;
 		}
 	}
+	h4 {
+		font-size: 1.4rem;
+	}
+}
+
+.environment-description {
+	font-size: 0.85rem;
+	line-height: 1.1rem;
+	opacity: 0.5;
 }
 

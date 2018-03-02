@@ -12,16 +12,6 @@ function changeUser(response) {
   window.location.href = "/login/" + response.id;
 }
 
-function logoutFacebook() {
-  window.location.href = "/logout";
-  localStorage.removeItem("name");
-  //localStorage.removeItem("profile-pic");
-  localStorage.removeItem("id");
-  localStorage.setItem("loggedIn", false);
-
-  FB.logout(); 
-}
-
 function statusChangeCallback(response) {
   console.log('Facebook login status changed.');
   console.log(response);

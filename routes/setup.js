@@ -24,6 +24,8 @@ exports.view = function(req, res){
 		}
 	}
 
+	data.setting = inputClass;
+
   res.render('setup', {
   	data,
   	"title" : "Setup | Ergo"

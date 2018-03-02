@@ -3,17 +3,22 @@
 
 <div class="container">
 
-
-
 <div class="progress-container">  
 <ol class="progressBar">
   <li class="progress-bar-step is-complete">
     <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-    <span class="progress-bar-stepLabel">Choose Setting</span>
+    <span class="progress-bar-stepLabel">
+    	{{#unless setting}}
+    		Choose Setting
+    	{{/unless}}
+    	{{#if setting}}
+    		Selected {{setting}}
+    	{{/if}}
+	</span>
   </li>
   <li class="progress-bar-step is-current">
     <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-    <span class="progress-bar-stepLabel">Select Stretches</span>
+    <span class="progress-bar-stepLabel">Customize Stretches</span>
   </li>
   <li class="progress-bar-step">
     <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
@@ -33,7 +38,7 @@
 	<div class="stretches-container">
 		<div class="row">
 			<div class="col text-center">
-				<h2>Select Stretches</h2>
+				<h2 style="text-transform: capitalize">Customize {{setting}} Stretches</h2>
 			</div>
 		</div>
 	
@@ -81,7 +86,6 @@
 			      	<p>
 			        Ergo sends alerts through SMS. Where can we reach you?</p>
 			        <p class="text-muted"><small>E.g. 5557779999</small></p>
-			        
 			        <form>
 
 			          <div class="form-group">
@@ -110,3 +114,5 @@
 
 </div>
 {{/with}}
+
+<script src="js/setup.js"></script>
