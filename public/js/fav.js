@@ -11,12 +11,12 @@ function deleteFav(fav) {
     $.post('/delete-fav', {"name" : name, "url" : favUrl}, function(data) {
    	});  
 
-    window.location.href= "/favorites";
+    window.location.href= "/bookmarks";
    //	$(fav).slideUp();
 }
 
 function loadFav(fav) {
-
+	stop();
 	localStorage.setItem("fav", $(fav).text());
 	window.location.href = $(fav).attr("href");
 }

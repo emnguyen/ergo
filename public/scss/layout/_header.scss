@@ -4,7 +4,7 @@ $footer-height: 5rem;
 	display: none;
 	cursor: pointer;
 	transition: .5s background;
-	background: -webkit-linear-gradient(left, rgba(76,168,255,1) 0%, rgba(0,123,255,1) 100%);
+	background: -webkit-linear-gradient(left, rgba(94,177,255,1) 0%, rgba(0,114,235,1) 100%);
 	color: #fff;
 	height: 3.5rem;
 	text-align: center;
@@ -55,6 +55,7 @@ $footer-height: 5rem;
 .nav-link {
 	.oi {
 		font-size: 1.8rem;
+		margin-bottom: 0.4rem;
 	}
 	color: $gray !important;
 	padding: 0 1.3rem;

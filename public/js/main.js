@@ -13,6 +13,8 @@ function goBack() {
 }
 
 function login() {
+	resetGo();
+
   	localStorage.setItem("loggedIn", true);
 	$('#login-form').submit();
 }
@@ -22,12 +24,21 @@ function logout() {
   localStorage.removeItem("name");
   localStorage.removeItem("id");
   localStorage.setItem("loggedIn", false);
-  localStorage.removeItem("status");
+
+  resetGo();  
 
   FB.logout(); 
 }
 
+function resetGo() {
+	stop();
+	localStorage.removeItem("status");
+ 	localStorage.removeItem("fav");
+}
+
 function signup() {
+	resetGo();
+	
 	// Clear warnings
 	$('.warning').text("");
 
@@ -58,8 +69,27 @@ function signup() {
  */
 
 
+function start() {
+	$('#status-container').removeClass('pause');
+	$('#status-container').slideDown();
+	$('#start-button').hide();
+	$('#stop-button').show();
+	$('.pause-panel').show();
+	localStorage.setItem("status", "active");
+}
+
+function stop() {
+	$('#status-container').slideUp();
+	$('#start-button').show();
+	$('#stop-button').hide();
+	$('.pause-panel').hide();
+	localStorage.removeItem("status");
+}
+
 function togglePause() {
 	$('#status-container').toggleClass('pause');
+	$('#pause-button').toggleClass('oi-media-pause');
+	$('#pause-button').toggleClass('oi-media-play');
 	$('#status').text(function(i, text) {
 		if (text === "Active")
 			localStorage.setItem("status", "paused");
@@ -77,6 +107,11 @@ var main = function () {
 	//localStorage.clear();
 
 	var loggedIn = localStorage.getItem("loggedIn");
+
+	// Reset fav if logged out
+	if (loggedIn == false) {
+		localStorage.removeItem("fav");
+	}
 
 	if (localStorage.getItem("name")) {
 		$('#name').text(localStorage.getItem("name"));

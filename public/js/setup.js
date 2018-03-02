@@ -37,7 +37,7 @@ function sortStretches() {
 function selectStretch(input) {
 	var stretch = $(input).closest('.stretch');
 	stretch.toggleClass('selected');
-		
+
 	// If stretch is selected, set value to 1 (true)
 	if (stretch.hasClass('selected')) {
 		stretch.find('.stretch-checkbox').val("1");
@@ -48,7 +48,27 @@ function selectStretch(input) {
 	}
 }
 
+/* For A/B testing */
+function selectStretchAlt(input) {
+	var stretch = $(input).closest('.stretch-alt');
+	stretch.toggleClass('selected');
+
+	// If stretch is selected, set value to 1 (true)
+	if (stretch.hasClass('selected')) {
+		stretch.find('.stretch-checkbox').val("1");
+	}
+	// Otherwise, set to 0 (false)
+	else {
+		stretch.find('.stretch-checkbox').val("0");
+	}
+}
+
+
 function confirmStretchesLoggedIn() {
+	// Reset fav and active flags
+	stop();
+	localStorage.removeItem("fav");
+
 	console.log("confirm stretches logged in");
 	var empty = true;
 
@@ -96,7 +116,7 @@ var main = function () {
 
 	// Toggle stretch description
 	$('.expand-stretch').click(function() {
-		$(this).closest('.stretch').find('.stretch-desc').slideToggle(250);
+		$(this).closest('.stretch').find('.stretch-drawer').slideToggle(250);
 		$(this).find('.chevron').toggleClass('oi-chevron-bottom');
 		$(this).find('.chevron').toggleClass('oi-chevron-top');
 	});
@@ -109,6 +129,29 @@ var main = function () {
 	$('#setup-page .stretch-image').click(function() {
 		selectStretch(this);
 	});
+
+	/***** A/B *****/
+	// Toggle select stretch
+	$('#setup-page .stretch-check').click(function() {
+		selectStretchAlt(this);
+	});
+
+	// Toggle stretch description
+	$('.expand-stretch').click(function() {
+		$(this).closest('.stretch-alt').find('.stretch-drawer').slideToggle(250);
+		$(this).find('.chevron').toggleClass('oi-chevron-bottom');
+		$(this).find('.chevron').toggleClass('oi-chevron-top');
+	});
+
+	// Toggle stretch desc with whole box
+	$('#setup-page .stretch-info').click(function() {
+		$(this).closest('.stretch-alt').find('.stretch-drawer').slideToggle(250);
+		$(this).find('.chevron').toggleClass('oi-chevron-bottom');
+		$(this).find('.chevron').toggleClass('oi-chevron-top');
+	});
+
+
+	/***************/
 
 	// Submitting a guest phone number with enter
 	$('#phoneInput').on('click keypress', function(e) {

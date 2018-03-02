@@ -1,4 +1,4 @@
-<div id="heart"><span class="oi oi-heart"></span></div>
+<div id="heart"><span class="oi oi-check text-success"></span></div>
 
 {{#with data}}
 <div id="go-page">
@@ -35,44 +35,9 @@
 			</symbol>
 		</svg>
 
-		<div class="row">
-			<div class="col text-center">
-				<h2 id="routine-name">Go</h2>
-				<!--
-				<h5>Sending alerts to <span class="active-phone"></span></h5> -->
-			
-				<p>Ergo will periodically notify you to stretch for as long as you are working. Press <span class="text-success">Start</span> when you are ready and <span class="text-danger">Stop</span> when you are done. </p><p class="text-muted">Note: Leaving this page will stop notifications.</p>
-
-				<h2 id="start-button">Start</h2>
-				<h2 id="stop-button">Stop</h2>
-				<h2 id="pause-button">Play/pause</h2>
-				
-
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col text-center">
-
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col text-center">
-				<div class="d-flex justify-content-center">
-				<div class="curr-stretch-img">
-					<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
-				</div>
-				</div>
-
-			</div>
-		</div>
-
-		<!-- Save to favorites -->
 		{{#if loggedIn}}
 		<div class="row">
-			<div class="col text-center">
-
+			<div class="col text-right">
 				<!-- Fav form -->
 				<form id="fav-form">
 
@@ -80,72 +45,59 @@
 					<input class="fav-url" type="hidden" name="url" value="">
 
 					<!-- Fav form submit button -->
-					<div id="fav-form-submit">
-						<h5>Save Routine to Favorites</h5>
-					</div>
-				
+						<span id="fav-form-submit" class="oi oi-bookmark"></span>				
 				</form> <!-- #fav-form -->
 			</div>
 		</div>
 		{{/if}}
 
 		<div class="row">
-			<div class="col text-center" style="padding-bottom: 1rem">
-				<p>Copy and paste this URL to stretch with friends!</p>
+			<div class="col text-center">
+				<h2 id="routine-name">Go</h2>
 			</div>
 		</div>
 
+		<div class="row">
+			<div class="col">
+				
+					<p id="instructions">Press <span style="padding: 0 0.3rem" class="oi oi-media-play"></span> when you are ready to start working and recieving alerts.</p>
+				
+			</div>
+		</div>
+		<div class="row no-utters">
+			<div class="col text-center pause-panel">
+				<div class="panel d-flex align-items-center justify-content-center">
+					<span id="pause-button" class="oi oi-media-pause"></span>
+				</div>
+			</div>
+			<div class="col text-center">
+				<div class="panel d-flex align-items-center justify-content-center">
+					<span id="start-button" class="oi oi-media-play"></span>
+					<span id="stop-button" class="oi oi-media-stop"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top: 1.5rem">
+			<div class="col text-center">
+				<div class="panel">
+					<div class="curr-stretch-img">
+						<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
 		<div class="pagination d-flex justify-content-between">
 
-			<button class="btn btn-primary back-button" type="button" data-toggle="modal" data-target="#resetWarning">
+			<button class="btn btn-primary back-button" type="button">
 				Back
 			</button> 
 
-			<button class="btn btn-primary forward-button confirm-stretches" type="submit">
-				Next
-			</button>
 
 		</div>  <!-- .pagination -->
-
-		<!-- Reset warning -->
-		<div id="resetWarning" class="modal fade">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title">Are you sure you want to leave?</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-		        <p>You will stop receiving notifications.</p>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-primary" onclick="goBack()">Ok</button>
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-		      </div>
-		    </div>
-		  </div>
-		</div> <!-- .resetWarning -->
-
-		<!-- Save favorites -->
-		<div id="saveFav" class="modal fade">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title">You must be logged in to save favorites.</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-footer">
-		      	<!--
-		        <button type="button" class="btn btn-primary" onclick="goBack()">Ok</button> -->
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
-		      </div>
-		    </div>
-		  </div>
-		</div> <!-- #loginToSave -->
 
 	</div> <!-- .container -->
 	

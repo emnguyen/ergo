@@ -29,7 +29,7 @@
 		{
 			"title" : "Seated Spinal Twist",
 			"target" : "Spine, chest, neck",
-			"time" : "15 sec",
+			"time" : "30 min",
 			"description" : "Sit up straight on your chair.<br>Place your feet on the ground and place your hands on the back of the chair. <br>Using your arms, twist, pulling yourself toward the chair. <br>Switch sides and repeat.",
 			"active" : false,
 			"tags" : [
@@ -39,7 +39,7 @@
 		{
 			"title" : "Neck Tilts",
 			"target" : "Neck",
-			"time" : "20 sec",
+			"time" : "30 min",
 			"description" : "Keep shoulders relaxed and arms hanging loosely. <br>Tilt head sideways, first on one side for 5 seconds, then the other for 5 seconds.",
 			"active" : false,
 			"tags" : [
@@ -49,7 +49,7 @@
 		{
 			"title" : "Cat/Cow Stretch",
 			"target" : "Back, shoulders, neck",
-			"time" : "20 sec",
+			"time" : "30 min",
 			"description" : "While sitting, inhale, arch your back and look up, pulling your shoulders back as you do so.<br>When you exhale, round your spine, pull the shoulders toward each other at the front of the body and drop your head toward your chest.",
 			"active" : false,
 			"tags" : [
@@ -59,7 +59,7 @@
 		{
 			"title" : "Hand/Finger Stretch",
 			"target" : "Fingers",
-			"time" : "20 sec",
+			"time" : "30 min",
 			"description" : "Separate and then straighten your fingers. Hold for 10 seconds.<br>Bend fingers at knuckle and hold for 10 seconds.<br>Separate and straighten again.",
 			"active" : false,
 			"tags" : [
@@ -69,7 +69,7 @@
 		{
 			"title" : "Eagle Arms",
 			"target" : "Upper back, shoulders",
-			"time" : "10 sec",
+			"time" : "25 min",
 			"description" : "Reach your arms straight out in front of you, keeping them parallel with your shoulders.<br>Bend the left arm upward, and wrap your right arm around the left until you are able to grab the outside edge of the left arm or until you are able to clasp your palms together. <br>Repeat on the other side.",
 			"active" : false,
 			"tags" : [
@@ -79,7 +79,7 @@
 		{
 			"title" : "Standing Pigeon Pose",
 			"target" : "Hips",
-			"time" : "10 sec",
+			"time" : "25 min",
 			"description" : "Stand with your feet hip-distance apart.<br>Facing the desk, place your knee and the bottom half of your leg on the desk. <br>Bend your knee and pull your foot toward your body. <br>With your left leg straight, bend toward your right leg.<br>Repeat on other side. ",
 			"active" : false,
 			"tags" : [
@@ -89,7 +89,7 @@
 		{
 			"title" : "Chest Opener",
 			"target" : "Chest, shoulders, neck",
-			"time" : "10 sec",
+			"time" : "25 min",
 			"description" : "Interlace your fingers behind you and place your arms on the top of your chair’s backrest.<br>Drop your chin to your chest.",
 			"active" : false,
 			"tags" : [
@@ -99,7 +99,7 @@
 		{
 			"title" : "Thread the Needle",
 			"target" : "Hips, lower back",
-			"time" : "10 sec",
+			"time" : "25 min",
 			"description" : "Sit up straight in your chair with your feet flat on the floor. <br>Cross your left leg over onto your right leg, placing the ankle of the left directly above the right knee. <br>Thread your left hand between your legs and hold onto the back of your right thigh. <br>Lift your legs up until you feel a stretch in your left hip. <br>Repeat on other side.",
 			"active" : false,
 			"tags" : [
@@ -109,7 +109,7 @@
 		{
 			"title" : "Wrist/Finger Stretch",
 			"target" : "Wrist, fingers",
-			"time" : "15 sec",
+			"time" : "40 min",
 			"description" : "Stand, place both hands on your desk, palms faced down, fingertips facing your body.",
 			"active" : false,
 			"tags" : [
@@ -119,11 +119,61 @@
 		{
 			"title" : "Neck Rolls",
 			"target" : "Neck, shoulders",
-			"time" : "10 sec",
+			"time" : "25 min",
 			"description" : "Sit up straight in your chair with your feet flat on the floor. <br>Bring your chin toward your chest and roll the right ear to the right shoulder. <br>Gently apply pressure with the hand on your head hand and breathe through the stretch. <br>Repeat on other side",
 			"active" : false,
 			"tags" : [
 				"office", "home", "indoor", "outdoor"
+			]
+		},
+		{
+			"title" : "Step Ups",
+			"target" : "Legs",
+			"time" : "30 min",
+			"description" : "Place your right foot on the elevated platform. <br>Step on the platform by extending your right hip and knee. <br>Use your heel to lift your body up, and place your left foot on the platform as well. <br>Step down. <br>Repeat each side 5 times.",
+			"active" : false,
+			"tags" : [
+				"home", "outdoor"
+			]
+		},
+		{
+			"title" : "Take a Walk",
+			"target" : "Full-body",
+			"time" : "1 hr",
+			"description" : "Get up and walk around your area. <br>Enjoy your surroundings!",
+			"active" : false,
+			"tags" : [
+				"outdoor"
+			]
+		},
+		{
+			"title" : "Hamstring Stretch",
+			"target" : "Back of legs",
+			"time" : "30 min",
+			"description" : "Stand five feet away from a stable object that is taller than you (wall or tree). <br>Step the sole of your right foot at hip level onto the object. <br>If your hamstring is tight, lower your foot, if you are flexible, raise your foot. <br>Keep both legs straight as you gently fold forward, resting your hands on your thigh, knee, or shin.",
+			"active" : false,
+			"tags" : [
+				"outdoor"
+			]
+		},
+		{
+			"title" : "Hip and Shoulder Stretch",
+			"target" : "Hips, chest, shoulders",
+			"time" : "30 min",
+			"description" : "Stand five feet away from the object. <br>Step the sole of your right foot slightly higher than hip level onto the tree. <br>Once you feel stable, interlace your hands behind you in a double fist. <br>Lean forward, lifting your arms as high as you can. <br>Switch legs.",
+			"active" : false,
+			"tags" : [
+				"outdoor"
+			]
+		},
+		{
+			"title" : "Spinal Twist",
+			"target" : "Spine, back",
+			"time" : "30 min",
+			"description" : "Stand a foot in front of the object. <br>Keep your right leg straight and bend your left knee, placing your outer knee against the bark. <br>Turn to the left, bend your right elbow, and place your right hand around the trunk. <br>Keep your spine long and rest your left hand on your hip.",
+			"active" : false,
+			"tags" : [
+				"outdoor", "home"
 			]
 		}
 	], 

@@ -16,7 +16,7 @@ var home = require('./routes/home');
 var setup = require('./routes/setup');
 var ready = require('./routes/ready');
 var go = require('./routes/go');
-var favorites = require('./routes/favorites');
+var bookmarks = require('./routes/bookmarks');
 //var saveFav = require('./routes/save-fav');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
@@ -54,12 +54,15 @@ app.get('/', home.view);
 // Example route
 // app.get('/users', user.list);
 app.get('/setup', setup.view);
+// For A/B testing
+app.get('/setupAlt', setup.viewAlt);
+
 app.get('/ready', ready.view);
 app.get('/go', go.view);
-app.get('/favorites', favorites.view);
+app.get('/bookmarks', bookmarks.view);
 
-app.post('/save-fav', favorites.save);
-app.post('/delete-fav', favorites.delete);
+app.post('/save-fav', bookmarks.save);
+app.post('/delete-fav', bookmarks.delete);
 
 
 app.get('/login', login.view);

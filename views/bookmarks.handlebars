@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<h2>Favorites</h2>
+					<h2>Bookmarks</h2>
 				</div>
 			</div>
 			{{#if loggedIn}}
@@ -19,7 +19,7 @@
 			<div class="row">
 				{{#unless loggedIn}}
 				<div class="col">
-					<h4><a href="/login">Log In</a> or <a href="/signup">Sign Up</a> to save your favorite stretch routines!</h4>
+					<h4><a href="/login">Log In</a> or <a href="/signup">Sign Up</a> to bookmark your favorite stretch routines!</h4>
 				</div>
 				{{/unless}}
 			</div>
@@ -34,11 +34,12 @@
 						<li class="favorite d-flex justify-content-between">
 							<h5><a class="fav-link" href="{{url}}">{{name}}</a></h5>
 							<span>
-								<span class="oi oi-chevron-bottom expand-fav"></span>
+								<!--
+								<span class="oi oi-chevron-bottom expand-fav"></span> -->
 
 								<span class="fav-options">
-									<span class="oi oi-pencil edit-fav"></span>
-									<span class="oi oi-trash delete-fav"></span>
+									<span class="oi oi-pencil text-primary edit-fav"></span>
+									<span class="oi oi-trash  text-primary delete-fav"></span>
 								</span>
 							</span>
 

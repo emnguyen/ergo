@@ -48,7 +48,6 @@ $stretch-height: 3.5rem;
 	margin-left: $stretch-height;
 	height: 100%;
 	padding: 0.5rem .8rem 0.1rem;
-	z-index: 9999;
 }
 
 .expand-stretch {
@@ -72,8 +71,16 @@ $stretch-height: 3.5rem;
 	
 }
 
-.stretch-desc {
+.stretch-drawer {
+	padding: 1rem 0;
 	display: none;
+	.container {
+		display: grid;
+		grid-template-columns: 30% 70%;
+	}
+}
+
+.stretch-desc {
 	padding: 1.6rem 1rem 1rem;
 }
 
@@ -88,5 +95,54 @@ $stretch-height: 3.5rem;
 	}
 }
 
-.stretch-checkbox {
+.stretch-check {
+	z-index: 9999;
+	@extend .stretch-image;
+}
+
+.stretch-desc-alt {
+	padding: 0 1rem 1rem;
+}
+
+
+.stretch-image-alt {
+	
+	img {
+		width: 100%;
+	}
+}
+
+.stretch-alt {
+	.stretch-info:after {
+		content: url('../images/icons/check-black.svg');
+		content: "";
+		background-image: url('../images/icons/check-black.svg');
+		background-repeat: no-repeat;
+		display: inline-block;
+		background-size: 2rem 2rem;
+		height: 2rem;
+		width: 2rem;
+		position: absolute;
+		left: .75rem;
+		top: .75rem;
+		z-index: 0;
+		opacity: 0.08;
+	}
+	&.selected {
+		.stretch-info:after {
+			content: url('../images/icons/check.svg');
+			content: "";
+			background-image: url('../images/icons/check.svg');
+			background-repeat: no-repeat;
+			display: inline-block;
+			background-size: 2rem 2rem;
+			height: 2rem;
+			width: 2rem;
+			position: absolute;
+			left: .75rem;
+			top: .75rem;
+			z-index: 0;
+			opacity: 1;
+		}
+	}
 }

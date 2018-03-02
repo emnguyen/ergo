@@ -1,9 +1,8 @@
-<li class="stretch {{#if active}}selected{{/if}}">
+<li class="stretch-alt {{#if active}}selected{{/if}}">
 	<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="{{#if active}}1{{/if}}{{#unless active}}0{{/unless}}">
-	<!-- Icon -->
-	<div class="stretch-image">
-		<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
-	</div> <!-- .stretch-image -->
+	
+	<div class="stretch-check">
+	</div>
 
 	<!-- Info -->
 	<div class="stretch-info">
@@ -13,13 +12,19 @@
 
 	<!-- Expand button -->
 	<div class="expand-stretch">
-		<span class="oi chevron oi-chevron-bottom text-primary"></span>
+		<span class="oi chevron-alt oi-chevron-bottom text-primary"></span>
 	</div> <!-- .expand-stretch -->
 
 	<!-- Description -->
 	<div class="stretch-drawer">
-		<p class="stretch-desc text-muted">
-			{{{description}}}
-		</p>
+		<div class="container">
+			<!-- Icon -->
+			<div class="stretch-image-alt">
+				<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
+			</div> <!-- .stretch-image -->
+			<p class="stretch-desc-alt text-muted">
+				{{{description}}}
+			</p>
+		</div>
 	</div>
 </li>

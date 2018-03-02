@@ -9,34 +9,36 @@
 	margin-bottom: 2rem;
 	max-width: 100%;
 	width: 20rem;
+	width: 100%;
 	img {
-		max-width: 100%;
+		max-width: 70%;
 	}
 }
 
-#pauseButton, #resumeButton, #resetButton {
-	display: none;
-}
-
-#startButton, #pauseButton, #resumeButton {
-	cursor: pointer;
-}
 
 #fav-form {
-	border-top: .05rem solid #e5e5e5;
-	border-bottom: .05rem solid #e5e5e5;
-	margin-bottom: 2rem;
+	margin-top: -2rem;
+	margin-bottom: -5rem;
 	padding: 1.5rem 0 1rem;
 	width: 100%;
-	color: $primary;
+	color: $gray;
+	font-size: 2.5rem;
+	&.bookmarked {
+		color: #ff6d6d;
+	}
+}
+#fav-form-submit {
+	z-index: 5000;
+	cursor: pointer;
+	display: inline-block;
 }
 
 #heart {
 	display: none;
 	z-index: 9999;
-	font-size: 7rem;
+	font-size: 9rem;
 	line-height: 0;
-	color: red;
+	padding: 3rem;
 	position: fixed;
 	top: 0;
 	width: 100vw;
@@ -44,6 +46,27 @@
 	text-align: center;
 	span {
 		margin-top: 30vh;
+		text-shadow: 0 .3rem 1rem rgba(14, 57, 61, 0.14);
 	}
 }
 
+.panel {
+	background: #FFFFFF;
+	box-shadow: 0 .3rem 1rem rgba(14, 57, 61, 0.12);
+	border-radius: .7rem;
+	height: 100%;
+	width: 100%;
+	padding: 1rem;
+	.oi {
+		font-size: 3rem;
+	}
+}
+
+.pause-panel {
+	display: none;
+}
+
+#pause-button, #start-button, #stop-button {
+	width: 100%;
+	cursor: pointer;
+}
