@@ -1595,17 +1595,20 @@ body {
     background-image: url("../images/icons/check-inactive.svg");
     background-repeat: no-repeat;
     display: inline-block;
-    background-size: 1.5rem 1.5rem;
-    height: 1.5rem;
-    width: 1.5rem;
+    background-size: 1.4rem 1.4rem;
+    height: 1.4rem;
+    width: 1.4rem;
     position: absolute;
     left: 1rem;
-    top: 1rem;
+    top: 1.1rem;
     z-index: 0; }
   .stretch-alt.selected .stretch-info:after, .stretch.selected .stretch-info:after {
     content: url("../images/icons/check-active.svg");
     content: "";
-    background-image: url("../images/icons/check-active.svg"); }
+    background-image: url("../images/icons/check-active.svg");
+    background-size: 1.4rem 1.4rem;
+    height: 1.4rem;
+    width: 1.4rem; }
 
 .stretch-info {
   margin-left: 3.5rem;
@@ -1690,36 +1693,6 @@ body {
   .stretch-image-alt img {
     width: 100%;
     max-width: 100px; }
-
-.stretch-alt .stretch-info:after {
-  content: url("../images/icons/check-inactive.svg");
-  content: "";
-  background-image: url("../images/icons/check-inactive.svg");
-  background-repeat: no-repeat;
-  display: inline-block;
-  background-size: 1.5rem 1.5rem;
-  height: 1.5rem;
-  width: 1.5rem;
-  position: absolute;
-  left: 0.8rem;
-  top: 1rem;
-  z-index: 0;
-  opacity: 0.9; }
-.stretch-alt.selected .stretch-info:after {
-  content: url("../images/icons/check-active.svg");
-  content: "";
-  background-image: url("../images/icons/check-active.svg");
-  /*
-  background-repeat: no-repeat;
-  display: inline-block;
-  background-size: 2rem 2rem;
-  height: 2rem;
-  width: 2rem;
-  position: absolute;
-  left: .75rem;
-  top: .75rem;
-  z-index: 0;
-  opacity: 1; */ }
 
 #start-now {
   padding-bottom: 9rem; }

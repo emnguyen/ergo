@@ -39,12 +39,12 @@ $gif-height: 100px;
 		background-image: url('../images/icons/check-inactive.svg');
 		background-repeat: no-repeat;
 		display: inline-block;
-		background-size: 1.5rem 1.5rem;
-		height: 1.5rem;
-		width: 1.5rem;
+		background-size: 1.4rem 1.4rem;
+		height: 1.4rem;
+		width: 1.4rem;
 		position: absolute;
 		left: 1rem; // diff from alt
-		top: 1rem;
+		top: 1.1rem;
 		z-index: 0;
 	}
 	&.selected {
@@ -52,6 +52,9 @@ $gif-height: 100px;
 			content: url('../images/icons/check-active.svg');
 			content: "";
 			background-image: url('../images/icons/check-active.svg');
+			background-size: 1.4rem 1.4rem;
+			height: 1.4rem;
+			width: 1.4rem;
 		}
 	}
 }
@@ -143,7 +146,6 @@ $gif-height: 100px;
 	padding: 0 0.8rem 0rem;
 }
 
-
 .stretch-image-alt {
 	overflow: hidden;
 	border-radius: .2rem;
@@ -151,41 +153,5 @@ $gif-height: 100px;
 	img {
 		width: 100%;
 		max-width: $gif-height;
-	}
-}
-
-.stretch-alt {
-	.stretch-info:after {
-		content: url('../images/icons/check-inactive.svg');
-			content: "";
-			background-image: url('../images/icons/check-inactive.svg');
-			background-repeat: no-repeat;
-			display: inline-block;
-			background-size: 1.5rem 1.5rem;
-			height: 1.5rem;
-			width: 1.5rem;
-			position: absolute;
-			left: 0.8rem;
-			top: 1rem;
-			z-index: 0;
-			opacity: 0.9;
-	}
-	&.selected {
-		.stretch-info:after {
-			content: url('../images/icons/check-active.svg');
-			content: "";
-			background-image: url('../images/icons/check-active.svg');
-			/*
-			background-repeat: no-repeat;
-			display: inline-block;
-			background-size: 2rem 2rem;
-			height: 2rem;
-			width: 2rem;
-			position: absolute;
-			left: .75rem;
-			top: .75rem;
-			z-index: 0;
-			opacity: 1; */
-		}
 	}
 }
