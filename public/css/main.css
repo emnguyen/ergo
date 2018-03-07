@@ -1532,18 +1532,18 @@ body {
 
 .toggleLoginSignup {
   text-align: center;
-  margin-top: 2rem; }
+  margin: 2rem; }
 
-#login-page .row {
-  margin: 2rem 0; }
+#login-page {
+  margin-top: 1.5rem; }
 
 .loginSignup {
   max-width: 40rem; }
   .loginSignup .input-group {
     margin: 1rem 0; }
 
-#login-page .row {
-  margin: 2rem 0; }
+#login-page {
+  margin-top: 1.5rem; }
 
 .why-phone {
   cursor: pointer; }
@@ -1786,6 +1786,9 @@ body {
   display: none; }
   .curr-stretch.active {
     display: block; }
+
+#favorites {
+  margin-top: 1.5rem; }
 
 #fav-form {
   margin-right: 2rem; }
