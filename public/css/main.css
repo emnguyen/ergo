@@ -1536,7 +1536,7 @@ body {
     font-size: 0.8rem;
     line-height: 1rem; }
   .jumbotron img {
-    width: 6rem;
+    width: 6.2rem;
     padding-bottom: 1rem; }
 
 .toggleLoginSignup {
@@ -1618,8 +1618,9 @@ body {
   right: 1rem;
   top: 0;
   right: 0;
-  padding: 1rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  height: 3.5rem;
+  width: calc(100% - 3.5rem); }
 
 .chevron-down:after {
   content: url("../images/icons/chevron-down.svg");

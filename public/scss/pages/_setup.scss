@@ -68,8 +68,9 @@ $gif-height: 100px;
 	right: 1rem;
 	top: 0;
 	right: 0;
-	padding: 1rem;
 	box-sizing: border-box;
+	height: $stretch-height;
+	width: calc(100% - #{$stretch-height});
 }
 
 .chevron-down:after {
