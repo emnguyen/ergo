@@ -1529,6 +1529,15 @@ body {
   margin-top: 1rem;
   text-align: center;
   border-bottom: 0.05rem solid #eee; }
+  .jumbotron h1 {
+    font-size: 3rem;
+    line-height: 3rem; }
+  .jumbotron p {
+    font-size: 0.8rem;
+    line-height: 1rem; }
+  .jumbotron img {
+    width: 6rem;
+    padding-bottom: 1rem; }
 
 .toggleLoginSignup {
   text-align: center;

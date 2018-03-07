@@ -53,4 +53,16 @@
 	margin-top: 1rem;
 	text-align: center;
 	border-bottom: .05rem solid $light-gray;
+	h1 {
+		font-size: 3rem;
+		line-height: 3rem;
+	}
+	p {
+		font-size: 0.8rem;
+		line-height: 1rem;
+	}
+	img {
+		width: 6rem;
+		padding-bottom: 1rem;
+	}
 }
