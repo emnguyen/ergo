@@ -2,7 +2,7 @@
 	<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="{{#if active}}1{{/if}}{{#unless active}}0{{/unless}}">
 	<!-- Icon -->
 	<div class="stretch-image">
-		<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
+		<img src="{{gif}}">
 	</div> <!-- .stretch-image -->
 
 	<!-- Info -->
@@ -13,13 +13,18 @@
 
 	<!-- Expand button -->
 	<div class="expand-stretch">
-		<span class="oi chevron oi-chevron-bottom text-primary"></span>
+		<span class="chevron chevron-down"></span>
 	</div> <!-- .expand-stretch -->
 
 	<!-- Description -->
 	<div class="stretch-drawer">
-		<p class="stretch-desc text-muted">
-			{{{description}}}
-		</p>
+		<div class="stretch-desc-alt">
+			<p><strong>Duration:</strong> {{duration}}</p>
+			<p><strong>Props:</strong> {{props}}</p>
+			<p><strong>Steps:</strong></p>
+			<ol class="steps">
+				{{{steps}}}
+			</ol>
+		</div>
 	</div>
 </li>

@@ -1,22 +1,33 @@
-@font-face {
-  font-family: 'Icons';
-  src: url('../fonts/openiconic/open-iconic.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/openiconic/open-iconic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/openiconic/open-iconic.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/openiconic/open-iconic.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/openiconic/open-iconic.svg#svgFontName') format('svg'); /* Legacy iOS */
-}
-
 .text-primary {
 	background: $gradient;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
-h2 {
-	margin: 1rem 0;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue';
+  color: $tundora;
+  letter-spacing: .08rem;
 }
 
+h1 {
+	letter-spacing: .07rem;
+	font-size: 2.3rem;
+	line-height: 2.2rem;
+	//margin: 1.6rem 0;
+	margin: 0 0 1.4rem;
+}
+
+h2 {
+	//margin: 1rem 0;
+	letter-spacing: 2 !important;
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.4rem;
+	letter-spacing: .08rem;
+}
 
 p {
 	font-size: 1.2rem;

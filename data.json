@@ -4,25 +4,25 @@
 			"name" : "Office Space",
 			"className" : "office",
 			"description" : "E.g. cubicle or small, private space.<br>Stretch using desks, chairs, or similar-sized objects.",
-			"background" : ""
+			"background" : "images/environments/office2.jpg"
 		},
 		{
 			"name" : "Home",
 			"className" : "home",
 			"description" : "Wide variety of stretches using  furniture or similar-sized objects.",
-			"background" : ""
+			"background" : "images/environments/home.jpg"
 		},
 		{
 			"name" : "Indoor",
 			"className" : "indoor",
 			"description" : "E.g. coffee shop or library.<br>Discreet, seated stretches.",
-			"background" : ""
+			"background" : "images/environments/indoor.jpg"
 		},
 		{
 			"name" : "Outdoor",
 			"className" : "outdoor",
 			"description" : "Stretch using larger objects like trees or poles. Includes more extensive exercises.",
-			"background" : ""
+			"background" : "images/environments/outdoor.jpg"
 		}
 	],
 	"stretches" : [
@@ -30,8 +30,13 @@
 			"title" : "Seated Spinal Twist",
 			"target" : "Spine, chest, neck",
 			"time" : "30 min",
-			"description" : "Sit up straight on your chair.<br>Place your feet on the ground and place your hands on the back of the chair. <br>Using your arms, twist, pulling yourself toward the chair. <br>Switch sides and repeat.",
+			"duration" : "15 sec",
+			"min" : "00",
+			"sec" : "15",
+			"props" : "Chair (or object you can sit on)",
+			"steps" : "<li>Sit up straight on your chair.</li><li>Place your feet on the ground and place your hands on the back of the chair.</li><li>Using your arms, twist, pulling yourself toward the chair.</li><li>Switch sides and repeat.</li>",
 			"active" : false,
+			"gif" : "images/gifs/SeatedSpinalTwist.gif",
 			"tags" : [
 				"office", "home"
 			]
@@ -40,8 +45,12 @@
 			"title" : "Neck Tilts",
 			"target" : "Neck",
 			"time" : "30 min",
-			"description" : "Keep shoulders relaxed and arms hanging loosely. <br>Tilt head sideways, first on one side for 5 seconds, then the other for 5 seconds.",
+			"duration" : "10 sec",
+			"min" : "00",
+			"sec" : "10",
+			"steps" : "<li>Keep shoulders relaxed and arms hanging loosely.</li><li>Tilt head sideways, first on one side for 5 seconds, then the other for 5 seconds.</li>",
 			"active" : false,
+			"gif" : "images/gifs/NeckTilts.gif",
 			"tags" : [
 				"office", "home", "indoor", "outdoor"
 			]
@@ -50,8 +59,13 @@
 			"title" : "Cat/Cow Stretch",
 			"target" : "Back, shoulders, neck",
 			"time" : "30 min",
-			"description" : "While sitting, inhale, arch your back and look up, pulling your shoulders back as you do so.<br>When you exhale, round your spine, pull the shoulders toward each other at the front of the body and drop your head toward your chest.",
+			"duration" : "20 sec",
+			"min" : "00",
+			"sec" : "20",
+			"props" : "Chair (or object you can sit on)",
+			"steps" : "<li>While sitting, inhale, arch your back and look up, pulling your shoulders back as you do so.</li><li>When you exhale, round your spine, pull the shoulders toward each other at the front of the body and drop your head toward your chest.</li>",
 			"active" : false,
+			"gif" : "images/gifs/CatCowStretch.gif",
 			"tags" : [
 				"office", "home", "indoor", "outdoor"
 			]
@@ -60,8 +74,13 @@
 			"title" : "Hand/Finger Stretch",
 			"target" : "Fingers",
 			"time" : "30 min",
-			"description" : "Separate and then straighten your fingers. Hold for 10 seconds.<br>Bend fingers at knuckle and hold for 10 seconds.<br>Separate and straighten again.",
+			"duration" : "20 sec",
+			"min" : "00",
+			"sec" : "20",
+			"props" : "Sturdy, flat surface",
+			"steps" : "<li>Separate and then straighten your fingers. Hold for 10 seconds.</li><li>Bend fingers at knuckle and hold for 10 seconds.</li><li>Separate and straighten again.</li>",
 			"active" : false,
+			"gif" : "images/gifs/HandFingerStretch.gif",
 			"tags" : [
 				"office", "home", "indoor", "outdoor"
 			]
@@ -70,8 +89,12 @@
 			"title" : "Eagle Arms",
 			"target" : "Upper back, shoulders",
 			"time" : "25 min",
-			"description" : "Reach your arms straight out in front of you, keeping them parallel with your shoulders.<br>Bend the left arm upward, and wrap your right arm around the left until you are able to grab the outside edge of the left arm or until you are able to clasp your palms together. <br>Repeat on the other side.",
+			"duration" : "10 sec",
+			"min" : "00",
+			"sec" : "10",
+			"steps" : "<li>Reach your arms straight out in front of you, keeping them parallel with your shoulders.</li><li>Bend the left arm upward, and wrap your right arm around the left until you are able to grab the outside edge of the left arm or until you are able to clasp your palms together.</li><li>Repeat on the other side.</li>",
 			"active" : false,
+			"gif" : "images/gifs/EagleArms.gif",
 			"tags" : [
 				"office", "home", "indoor", "outdoor"
 			]
@@ -80,8 +103,13 @@
 			"title" : "Standing Pigeon Pose",
 			"target" : "Hips",
 			"time" : "25 min",
-			"description" : "Stand with your feet hip-distance apart.<br>Facing the desk, place your knee and the bottom half of your leg on the desk. <br>Bend your knee and pull your foot toward your body. <br>With your left leg straight, bend toward your right leg.<br>Repeat on other side. ",
+			"duration" : "10 sec",
+			"min" : "00",
+			"sec" : "10",
+			"props" : "Object as high as hips",
+			"steps" : "<li>Stand with your feet hip-distance apart.</li><li>Facing the desk, place your knee and the bottom half of your leg on the desk.</li><li>Bend your knee and pull your foot toward your body.</li><li>With your left leg straight, bend toward your right leg.</li><li>Repeat on other side.</li>",
 			"active" : false,
+			"gif" : "images/gifs/Pigeon.gif",
 			"tags" : [
 				"office", "home"
 			]
@@ -90,8 +118,13 @@
 			"title" : "Chest Opener",
 			"target" : "Chest, shoulders, neck",
 			"time" : "25 min",
-			"description" : "Interlace your fingers behind you and place your arms on the top of your chair’s backrest.<br>Drop your chin to your chest.",
+			"duration" : "10 sec",
+			"min" : "00",
+			"sec" : "10",
+			"props" : "Chair, pole (or similar object)",
+			"steps" : "<li>Interlace your fingers behind you and place your arms on the top of your chair’s backrest.</li><li>Drop your chin to your chest.</li>",
 			"active" : false,
+			"gif" : "images/gifs/ChestOpener.gif",
 			"tags" : [
 				"office", "home"
 			]
@@ -100,8 +133,13 @@
 			"title" : "Thread the Needle",
 			"target" : "Hips, lower back",
 			"time" : "25 min",
-			"description" : "Sit up straight in your chair with your feet flat on the floor. <br>Cross your left leg over onto your right leg, placing the ankle of the left directly above the right knee. <br>Thread your left hand between your legs and hold onto the back of your right thigh. <br>Lift your legs up until you feel a stretch in your left hip. <br>Repeat on other side.",
+			"duration" : "10 sec",
+			"min" : "00",
+			"sec" : "10",
+			"props" : "Chair (or similar object)",
+			"steps" : "<li>Sit up straight in your chair with your feet flat on the floor.</li><li>Cross your left leg over onto your right leg, placing the ankle of the left directly above the right knee.</li><li>Thread your left hand between your legs and hold onto the back of your right thigh.</li><li>Lift your legs up until you feel a stretch in your left hip.</li><li>Repeat on other side.</li>",
 			"active" : false,
+			"gif" : "images/gifs/ThreadTheNeedle.gif",
 			"tags" : [
 				"office", "home"
 			]
@@ -110,8 +148,13 @@
 			"title" : "Wrist/Finger Stretch",
 			"target" : "Wrist, fingers",
 			"time" : "40 min",
-			"description" : "Stand, place both hands on your desk, palms faced down, fingertips facing your body.",
+			"duration" : "10 sec",
+			"min" : "00",
+			"sec" : "10",
+			"props" : "Desk (or flat surface of similar height)",
+			"steps" : "<li>Stand, place both hands on the flat surface, palms faced down, fingertips facing your body.</li>",
 			"active" : false,
+			"gif" : "images/gifs/WristFinger.gif",
 			"tags" : [
 				"office", "home", "indoor", "outdoor"
 			]
@@ -120,8 +163,13 @@
 			"title" : "Neck Rolls",
 			"target" : "Neck, shoulders",
 			"time" : "25 min",
-			"description" : "Sit up straight in your chair with your feet flat on the floor. <br>Bring your chin toward your chest and roll the right ear to the right shoulder. <br>Gently apply pressure with the hand on your head hand and breathe through the stretch. <br>Repeat on other side",
+			"duration" : "10 sec",
+			"min" : "00",
+			"sec" : "10",
+			"props" : "Chair (or object you can sit on)",
+			"steps" : "<li>Sit up straight in your chair with your feet flat on the floor.</li><li>Bring your chin toward your chest and roll the right ear to the right shoulder.</li><li>Gently apply pressure with the hand on your head hand and breathe through the stretch.</li><li>Repeat on other side.</li>",
 			"active" : false,
+			"gif" : "images/gifs/NeckRolls.gif",
 			"tags" : [
 				"office", "home", "indoor", "outdoor"
 			]
@@ -130,8 +178,13 @@
 			"title" : "Step Ups",
 			"target" : "Legs",
 			"time" : "30 min",
-			"description" : "Place your right foot on the elevated platform. <br>Step on the platform by extending your right hip and knee. <br>Use your heel to lift your body up, and place your left foot on the platform as well. <br>Step down. <br>Repeat each side 5 times.",
+			"duration" : "30 sec",
+			"min" : "00",
+			"sec" : "30",
+			"props" : "Sturdy object as high as shin",
+			"steps" : "<li>Place your right foot on the elevated platform.</li><li>Step on the platform by extending your right hip and knee.</li><li>Use your heel to lift your body up, and place your left foot on the platform as well.</li><li>Step down.</li><li>Repeat each side 5 times.</li>",
 			"active" : false,
+			"gif" : "images/gifs/StepUp.gif",
 			"tags" : [
 				"home", "outdoor"
 			]
@@ -139,9 +192,14 @@
 		{
 			"title" : "Take a Walk",
 			"target" : "Full-body",
-			"time" : "1 hr",
-			"description" : "Get up and walk around your area. <br>Enjoy your surroundings!",
+			"time" : "45 min",
+			"duration" : "5 min",
+			"min" : "05",
+			"sec" : "00",
+			"props" : "Open space",
+			"steps" : "<li>Get up and walk around your area.</li><li>Enjoy your surroundings!</li>",
 			"active" : false,
+			"gif" : "images/gifs/TakeAWalk.gif",
 			"tags" : [
 				"outdoor"
 			]
@@ -150,7 +208,12 @@
 			"title" : "Hamstring Stretch",
 			"target" : "Back of legs",
 			"time" : "30 min",
-			"description" : "Stand five feet away from a stable object that is taller than you (wall or tree). <br>Step the sole of your right foot at hip level onto the object. <br>If your hamstring is tight, lower your foot, if you are flexible, raise your foot. <br>Keep both legs straight as you gently fold forward, resting your hands on your thigh, knee, or shin.",
+			"duration" : "30 sec",
+			"min" : "00",
+			"sec" : "30",
+			"props" : "Stable object taller than you",
+			"steps" : "<li>Stand five feet away from a stable object that is taller than you (wall or tree).</li><li>Step the sole of your right foot at hip level onto the object.</li><li>If your hamstring is tight, lower your foot, if you are flexible, raise your foot.</li><li>Keep both legs straight as you gently fold forward, resting your hands on your thigh, knee, or shin.</li>",
+			"gif" : "images/gifs/HamstringStretch.gif",
 			"active" : false,
 			"tags" : [
 				"outdoor"
@@ -160,8 +223,13 @@
 			"title" : "Hip and Shoulder Stretch",
 			"target" : "Hips, chest, shoulders",
 			"time" : "30 min",
-			"description" : "Stand five feet away from the object. <br>Step the sole of your right foot slightly higher than hip level onto the tree. <br>Once you feel stable, interlace your hands behind you in a double fist. <br>Lean forward, lifting your arms as high as you can. <br>Switch legs.",
+			"duration" : "30 sec",
+			"min" : "00",
+			"sec" : "30",
+			"props" : "Stable object taller than you",
+			"steps" : "<li>Stand five feet away from the object.</li><li>Step the sole of your right foot slightly higher than hip level onto the tree.</li><li>Once you feel stable, interlace your hands behind you in a double fist.</li><li>Lean forward, lifting your arms as high as you can.</li>Switch legs.</li>",
 			"active" : false,
+			"gif" : "images/gifs/HipShoulder.gif",
 			"tags" : [
 				"outdoor"
 			]
@@ -170,8 +238,13 @@
 			"title" : "Spinal Twist",
 			"target" : "Spine, back",
 			"time" : "30 min",
-			"description" : "Stand a foot in front of the object. <br>Keep your right leg straight and bend your left knee, placing your outer knee against the bark. <br>Turn to the left, bend your right elbow, and place your right hand around the trunk. <br>Keep your spine long and rest your left hand on your hip.",
+			"duration" : "30 sec",
+			"min" : "00",
+			"sec" : "30",
+			"props" : "Stable object taller than you",
+			"steps" : "<li>Stand a foot in front of the object.</li><li>Keep your right leg straight and bend your left knee, placing your outer knee against the bark.</li><li>Turn to the left, bend your right elbow, and place your right hand around the trunk.</li><li>Keep your spine long and rest your left hand on your hip.</li>",
 			"active" : false,
+			"gif" : "images/gifs/SpinalTwist.gif",
 			"tags" : [
 				"outdoor", "home"
 			]

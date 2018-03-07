@@ -61,12 +61,52 @@ function signup() {
 }
 
 
-/* Name: enterPhone
- * Description: Called when not logged in. Verifies inputed phone number
- * before saving it to the database.
- * Parameters: None
- * Return: None
- */
+
+
+ function startStretch($currStretch) {
+	// Return if STOP
+	if (!localStorage.getItem("status"))
+		return;
+
+	$($currStretch).addClass('active');
+
+	// TEMP: 5 second intervals
+	var $seconds = $($currStretch).find('.seconds');
+	var duration = parseInt($($seconds).text());
+
+
+	var counter = duration;
+
+	var interval = setInterval(function() {
+	    counter--;
+
+	    // Prepend 0 if necessary
+	    var num = counter;
+	    if (counter < 10) {
+	    	num = "0" + num;
+	    }
+	    $($seconds).text(num);
+
+	    // When 0 is reached
+	    if (counter == 0) {
+	        clearInterval(interval);
+	        // Reset duration
+	        $($seconds).text(duration);
+
+        	// Get next stretch
+			var $nextStretch = $($currStretch).next();
+
+			// Return to beginning of stretch list if end reached
+			if ($nextStretch.length == 0) {
+				$nextStretch = $('.curr-stretch').first();
+			}
+
+			$($currStretch).removeClass('active');
+			
+			return startStretch($nextStretch);
+	    }
+	}, 1000);	
+}
 
 
 function start() {
@@ -75,7 +115,11 @@ function start() {
 	$('#start-button').hide();
 	$('#stop-button').show();
 	$('.pause-panel').show();
+	$('.gif-panel').slideDown();
 	localStorage.setItem("status", "active");
+
+	var $firstStretch = $('.curr-stretch').first();
+	startStretch($firstStretch);
 }
 
 function stop() {
@@ -83,6 +127,7 @@ function stop() {
 	$('#start-button').show();
 	$('#stop-button').hide();
 	$('.pause-panel').hide();
+	$('.gif-panel').slideUp();
 	localStorage.removeItem("status");
 }
 
@@ -145,6 +190,12 @@ var main = function () {
   		if (status == "paused") {
   			togglePause();
   		}
+
+  		// temp
+  		$('.gif-panel').show();
+  		var $firstStretch = $('.curr-stretch').first();
+		startStretch($firstStretch);
+
     	$('#status-container').show();
 
     	$('#status-container').click(function() {

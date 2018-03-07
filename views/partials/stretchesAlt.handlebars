@@ -12,7 +12,7 @@
 
 	<!-- Expand button -->
 	<div class="expand-stretch">
-		<span class="oi chevron-alt oi-chevron-bottom text-primary"></span>
+		<span class="chevron chevron-down"></span>
 	</div> <!-- .expand-stretch -->
 
 	<!-- Description -->
@@ -20,11 +20,18 @@
 		<div class="container">
 			<!-- Icon -->
 			<div class="stretch-image-alt">
-				<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
+				<!--
+				<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png"> -->
+				<img src="{{gif}}">
 			</div> <!-- .stretch-image -->
-			<p class="stretch-desc-alt text-muted">
-				{{{description}}}
-			</p>
+			<div class="stretch-desc-alt">
+				<p><strong>Duration:</strong> {{duration}}</p>
+				<p><strong>Props:</strong> {{props}}</p>
+				<p><strong>Steps:</strong></p>
+				<ol class="steps">
+					{{{steps}}}
+				</ol>
+			</div>
 		</div>
 	</div>
 </li>

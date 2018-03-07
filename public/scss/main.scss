@@ -3,11 +3,11 @@
 @import 'abstracts/mixins';
 
 // Vendor
-@import "../../node_modules/bootstrap/scss/bootstrap";
+//@import "../../node_modules/bootstrap/scss/bootstrap";
 
-/*
+
 // Required
-@import "../../node_modules/bootstrap/scss/colors";
+//@import "../../node_modules/bootstrap/scss/colors";
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
@@ -18,11 +18,12 @@
 @import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/code";
 @import "../../node_modules/bootstrap/scss/grid";
-*/
+
 
 // Base styles
 @import 'base/helpers';
 @import 'base/base';
+@import 'base/fonts';
 @import 'base/typography';
 
 // Layout

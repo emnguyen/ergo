@@ -2,6 +2,11 @@
 <div id="login-page">
 	<div id="login">
 		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<h1>Sign Up</h1>
+				</div>
+			</div>
 		
 			<div class="row">
 				<div class="col">
@@ -12,28 +17,29 @@
 						<!-- First Name -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">First Name</span>
-							<input name="firstName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" required>
+							<input name="firstName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" autocomplete="off" required>
 						</div>
 						<!-- Last Name -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">Last Name</span>
-							<input name="lastName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" required>
+							<input name="lastName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" autocomplete="off" required>
 						</div>
 
 						<!-- Email -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">E-mail</span>
-							<input name="email" type="email" class="form-control" placeholder="example@mail.com" aria-describedby="sizing-addon1" required>
+							<input name="email" type="email" class="form-control" placeholder="example@mail.com" aria-describedby="sizing-addon1" autocomplete="off" required>
 						</div>
 
 						<!-- Password -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">Password</span>
-							<input name="pwd" type="password" class="form-control" aria-describedby="sizing-addon1" required>
+							<input name="pwd" type="password" class="form-control" aria-describedby="sizing-addon1" autocomplete="off" required>
 						</div>
 				
-						<h5>Ergo sends alerts through SMS. Where can we reach you?</h5>
-						<small class="text-muted">E.g. 5557779999</small>
+						<p>Ergo sends alerts through SMS. Where can we reach you?</p>
+						<!--
+						<small class="text-muted">E.g. 5557779999</small> -->
 						<!-- Phone -->
 						<div class="input-group input-group-lg">
 							<span class="input-group-addon" id="sizing-addon1">Phone</span>
@@ -55,7 +61,7 @@
 
 			<div class="row">
 				<div class="col toggleLoginSignup">
-					<h4>Log in through Facebook</h4>
+					<h2>Log in through Facebook</h2>
 					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 					</fb:login-button>
 				</div>
@@ -63,7 +69,7 @@
 
 			<div class="row">
 				<div class="col toggleLoginSignup">
-					<h5>Already have an account? <a href="/login">Log In</a></h5>
+					<p>Already have an account? <a href="/login">Log In</a></p>
 				</div>
 			</div>
 

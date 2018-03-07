@@ -2,6 +2,11 @@
 <div id="login-page">
 	<div id="login">
 		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<h1>Log In</h1>
+				</div>
+			</div>
 		
 			<div class="row">
 				<div class="col">
@@ -22,7 +27,7 @@
 						</div>
 					
 						<!-- Submit -->
-						<button type="submit" onclick="login()"  class="btn btn-primary btn-block">Login</button>
+						<button type="submit" onclick="login()"  class="btn btn-primary btn-block">Log in</button>
 
 
 						{{#if ../loginError}}
@@ -37,7 +42,7 @@
 
 			<div class="row">
 				<div class="col toggleLoginSignup">
-					<h4>Log in through Facebook</h4>
+					<h2>Log in through Facebook</h2>
 					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 					</fb:login-button>
 				</div>
@@ -45,7 +50,7 @@
 
 			<div class="row">
 				<div class="col toggleLoginSignup">
-					<h5>Don't have an account? <a href="/signup">Sign Up</a></h5>
+					<p>Don't have an account? <a href="/signup">Sign Up</a></p>
 				</div>
 			</div>
 

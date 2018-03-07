@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="9px" viewBox="0 0 12 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Material/Icons black/expand more</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-11.1928076%" y1="100%" x2="113.51699%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#02AAB0" offset="0%"></stop>
+            <stop stop-color="#00CDAC" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Material-Design-Stickersheet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="setup---logged-in" transform="translate(-322.000000, -273.000000)" fill="url(#linearGradient-1)">
+            <g id="Material/Icons-black/expand-more" transform="translate(316.034492, 265.107344)">
+                <polygon id="Shape" points="16.6 8.59997559 12 13.1999756 7.4 8.59997559 6 9.99997559 12 15.9999756 18 9.99997559"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

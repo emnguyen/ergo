@@ -37,7 +37,7 @@
 
 		<div class="row">
 			<div class="col text-center">
-				<h2>Where are you working today?</h2>
+				<h1>Where are you working today?</h1>
 			</div>
 		</div>
 
@@ -45,27 +45,30 @@
 		<div id="environments" class="row no-gutters">
 
 			{{#each environments}}
-			<div class="col-6">
+			<div class="col-6 environment" style="background-image: url('{{background}}')">
 
-				<form class="setup-form" action="/setup" method="get">
+        <div class="environment-overlay">
 
-				<button type="submit">
-          <h4>{{name}}</h4>
-          <p class="environment-description">{{{description}}}</p>
-        </button>
-				<input type="hidden" name="name" value="{{className}}">
+  				<form id="environment-form" class="setup-form" action="/setup" method="get">
 
+  				<div class="environment-submit">
+            <h3>{{name}}</h3>
+            <p class="environment-description">{{{description}}}</p>
+          </div>
+  				<input type="hidden" name="name" value="{{className}}">
 
-
-				</form>
+  				</form>
+        </div> <!-- .environment-overlay -->
 				
 			</div> <!-- .col-6 -->
 			{{/each}}
 
 		</div> <!-- .row -->
-</div> <!-- .container-fluid -->
+</div> <!-- .container -->
 
 
 
 </div> <!-- #home-page -->
 {{/with}}
+
+<script src="js/home.js"></script>

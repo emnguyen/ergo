@@ -4,15 +4,8 @@
 	border-top: .05rem solid #e5e5e5;
 }
 
-.curr-stretch-img {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	max-width: 100%;
-	width: 20rem;
-	width: 100%;
-	img {
-		max-width: 70%;
-	}
+#instructions {
+	font-size: 0.8rem;
 }
 
 
@@ -58,7 +51,7 @@
 	width: 100%;
 	padding: 1rem;
 	.oi {
-		font-size: 3rem;
+		font-size: 2rem;
 	}
 }
 
@@ -66,7 +59,35 @@
 	display: none;
 }
 
+.gif-panel {
+	display: none;
+}
+
+.curr-stretch-img {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	//max-width: 100%;
+	//width: 20rem;
+	//width: 100%;
+	img {
+		//max-width: 70%;
+		height: 7rem;
+	}
+}
+
 #pause-button, #start-button, #stop-button {
 	width: 100%;
 	cursor: pointer;
+}
+
+.curr-stretch-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.curr-stretch {
+	display: none;
+	&.active {
+		display: block;
+	}
 }

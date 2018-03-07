@@ -4,7 +4,8 @@
 <div id="go-page">
 
 	<div class="container">
-
+ 
+ <!--
 		<div class="progress-container">
 			<ol class="progressBar">
 				<li class="progress-bar-step is-complete">
@@ -27,7 +28,7 @@
 				<span class="progress-bar-stepLabel">Ready to Go!</span>
 				</li>
 			</ol>
-		</div> <!-- progress-container -->
+		</div> --> <!-- progress-container -->
 
 		<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 			<symbol id="checkmark-bold" viewBox="0 0 24 24">
@@ -53,14 +54,14 @@
 
 		<div class="row">
 			<div class="col text-center">
-				<h2 id="routine-name">Go</h2>
+				<h1 id="routine-name">Go</h1>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col">
 				
-					<p id="instructions">Press <span style="padding: 0 0.3rem" class="oi oi-media-play"></span> when you are ready to start working and receiving alerts.</p>
+					<p id="instructions">Press <span style="padding: 0 0.3rem;" class="oi oi-media-play"></span> when you are ready to start working and receiving alerts.</p>
 				
 			</div>
 		</div>
@@ -80,10 +81,18 @@
 
 		<div class="row" style="margin-top: 1.5rem">
 			<div class="col text-center">
-				<div class="panel">
-					<div class="curr-stretch-img">
-						<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png">
-					</div>
+				<div class="panel gif-panel">
+					<ul class="curr-stretch-list">
+					{{#each todo}}
+					<li class="curr-stretch">
+						<h2>{{title}}</h2>
+						<div class="curr-stretch-img">
+							<img src="{{gif}}">
+						</div>
+						<h4 class="timer">00:<span class="seconds">{{sec}}</span></h4>
+					</li>
+					{{/each}}
+					</ul>
 				</div>
 
 			</div>
@@ -92,7 +101,7 @@
 
 		<div class="pagination d-flex justify-content-between">
 
-			<button class="btn btn-primary back-button" type="button">
+			<button class="btn btn-primary back-button" type="button" onclick="goBack()">
 				Back
 			</button> 
 
