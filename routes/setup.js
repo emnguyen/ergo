@@ -28,6 +28,7 @@ exports.view = function(req, res){
 
   res.render('setup', {
   	data,
+  	"experimentPage" : true,
   	"title" : "Setup | Ergo"
   });
 };
