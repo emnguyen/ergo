@@ -118,8 +118,10 @@ var main = function () {
 	// Toggle stretch description
 	$('.expand-stretch').click(function() {
 		$(this).closest('.stretch').find('.stretch-drawer').slideToggle(250);
-		$(this).find('.chevron').toggleClass('oi-chevron-bottom');
-		$(this).find('.chevron').toggleClass('oi-chevron-top');
+		$(this).closest('.stretch-alt').find('.stretch-drawer').slideToggle(250);
+		
+		$(this).find('.chevron').toggleClass('chevron-down');
+		$(this).find('.chevron').toggleClass('chevron-up');
 	});
 
 	// Toggle select stretch
@@ -137,18 +139,12 @@ var main = function () {
 		selectStretchAlt(this);
 	});
 
-	// Toggle stretch description
-	$('.expand-stretch').click(function() {
-		$(this).closest('.stretch-alt').find('.stretch-drawer').slideToggle(250);
-		$(this).find('.chevron').toggleClass('chevron-down');
-		$(this).find('.chevron').toggleClass('chevron-up');
-	});
-
 	// Toggle stretch desc with whole box
-	$('#setup-page .stretch-info').click(function() {
+	$('.stretch-alt .stretch-info').click(function() {
 		$(this).closest('.stretch-alt').find('.stretch-drawer').slideToggle(250);
-		$(this).find('.chevron').toggleClass('chevron-down');
-		$(this).find('.chevron').toggleClass('chevron-up');
+
+		$(this).parent().find('.chevron').toggleClass('chevron-down');
+		$(this).parent().find('.chevron').toggleClass('chevron-up');
 	});
 
 

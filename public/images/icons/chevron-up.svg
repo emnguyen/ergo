@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="13px" height="8px" viewBox="0 0 13 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
-    <title>Material/Icons black/expand more</title>
+    <title>Shape</title>
     <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="-11.1928076%" y1="100%" x2="113.51699%" y2="0%" id="linearGradient-1">
@@ -9,11 +9,9 @@
             <stop stop-color="#00CDAC" offset="100%"></stop>
         </linearGradient>
     </defs>
-    <g id="Material-Design-Stickersheet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="setup---logged-in" transform="translate(-324.000000, -217.000000)" fill="url(#linearGradient-1)">
-            <g id="Material/Icons-black/expand-more" transform="translate(330.134952, 221.058439) scale(1, -1) translate(-330.134952, -221.058439) translate(318.134952, 209.058439)">
-                <polygon id="Shape" points="16.6 8.59997559 12 13.1999756 7.4 8.59997559 6 9.99997559 12 15.9999756 18 9.99997559"></polygon>
-            </g>
+    <g id="Material-Design-Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Material/Icons-black/expand-less" transform="translate(-6.000000, -8.000000)" fill="url(#linearGradient-1)">
+            <polygon id="Shape" points="12 8 6 14 7.4 15.4 12 10.8 16.6 15.4 18 14"></polygon>
         </g>
     </g>
 </svg>
