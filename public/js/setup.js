@@ -117,7 +117,9 @@ var main = function () {
 
 	// Toggle stretch description
 	$('.expand-stretch').click(function() {
+		ga("send", "event", "expand", "click");
 		$(this).closest('.stretch').find('.stretch-drawer').slideToggle(250);
+		// A/B
 		$(this).closest('.stretch-alt').find('.stretch-drawer').slideToggle(250);
 		
 		$(this).find('.chevron').toggleClass('chevron-down');
@@ -141,6 +143,7 @@ var main = function () {
 
 	// Toggle stretch desc with whole box
 	$('.stretch-alt .stretch-info').click(function() {
+		ga("send", "event", "expand", "click");
 		$(this).closest('.stretch-alt').find('.stretch-drawer').slideToggle(250);
 
 		$(this).parent().find('.chevron').toggleClass('chevron-down');
