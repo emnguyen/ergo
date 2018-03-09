@@ -1344,6 +1344,7 @@ a:hover {
   text-align: left; }
 
 #header-container {
+  background-color: #fff;
   box-shadow: 0px 2px 15px rgba(17, 50, 53, 0.1); }
 
 .header {
