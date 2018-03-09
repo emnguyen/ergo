@@ -180,12 +180,47 @@ function setTotalDuration(time) {
 }
 
 
+function appendIntervalOptions() {
+	var i;
+	for (i = 0; i < 60; i++) {
+		var option = document.createElement("option");
+		if (i < 10) {
+			option.text = "0" + i;
+		}
+		else {
+			option.text = i;
+		}
 
+		$('#m').append(option);
+	}
+
+	for (i = 0; i < 60; i++) {
+		var option = document.createElement("option");
+		if (i < 10) {
+			option.text = "0" + i;
+		}
+		else {
+			option.text = i;
+		}
+
+		$('#s').append(option);
+	}
+
+	for (i = 0; i <= 8; i++) {
+		var option = document.createElement("option");
+		
+		option.text = i;
+	
+		$('#h').append(option);
+	}
+}
 
 
 var main = function () {
 	sortStretches();
 	sumDuration();
+
+	appendIntervalOptions();
 
 	// Toggle stretch description
 	$('.expand-stretch').click(function() {
