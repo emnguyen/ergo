@@ -46,7 +46,9 @@ $footer-height: 5rem;
 	box-shadow: 0px 2px 15px rgba(17, 50, 53, 0.1);
 }
 .header {
-	padding-top: 1.5rem;
+	padding-top: 1.2rem;
+	padding-bottom: 0.8rem;
+
 }
 
 #name {
@@ -71,11 +73,11 @@ $footer-height: 5rem;
 
 .nav-link {
 	.oi {
-		font-size: 1.8rem;
-		margin-bottom: 0.4rem;
+		font-size: 1.3rem;
+		margin-bottom: 0rem;
 	}
 	.oi-caret-bottom {
-		font-size: 0.8rem;
+		font-size: 0.7rem;
 		margin-left: 0.3rem;
 	}
 	color: $gray !important;
@@ -108,7 +110,6 @@ $footer-height: 5rem;
 .nav-link-md {
 	color: #aaa;
 	font-weight: bold;
-	//font-size: 0.5rem;
 	&.active {
 		@extend .text-primary;
 	}
