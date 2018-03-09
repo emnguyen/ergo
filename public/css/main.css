@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
-p {
+p, .stretches-info li {
   margin-top: 0;
   margin-bottom: 1rem; }
 
@@ -1232,7 +1232,7 @@ button:focus, input:focus {
   margin: 2rem 0; }
 
 /* Supporting marketing content */
-.marketing p + h4 {
+.marketing p + h4, .marketing .stretches-info li + h4, .stretches-info .marketing li + h4 {
   margin-top: 1.5rem; }
 
 /* Responsive: Portrait tablets and up */
@@ -1301,9 +1301,9 @@ h3 {
   font-size: 1.4rem;
   letter-spacing: .08rem; }
 
-li, p {
+p, .stretches-info li {
   font-size: 1rem;
-  color: #777; }
+  color: #888; }
 
 a:hover {
   text-decoration: none; }
@@ -1566,7 +1566,7 @@ body {
   .jumbotron h1 {
     font-size: 3rem;
     line-height: 3rem; }
-  .jumbotron p {
+  .jumbotron p, .jumbotron .stretches-info li, .stretches-info .jumbotron li {
     font-size: 0.8rem;
     line-height: 1rem; }
   .jumbotron img {
@@ -1602,12 +1602,12 @@ body {
   padding-bottom: 2rem;
   display: none; }
 
-.legend p {
+.legend p, .legend .stretches-info li, .stretches-info .legend li {
   margin: 0.4rem 1rem 1rem; }
 
 .stretches-container {
   margin-top: 0.6rem; }
-  .stretches-container p, .stretches-container .steps li {
+  .stretches-container p, .stretches-container .stretches-info li, .stretches-info .stretches-container li, .stretches-container .steps li {
     font-size: .8rem;
     margin-bottom: 0; }
   .stretches-container strong {
@@ -1666,7 +1666,7 @@ body {
   margin-left: 3.5rem;
   height: 100%;
   padding: 0.45rem .8rem 0rem;
-  color: #777; }
+  color: #888; }
 
 .oi-target, .oi-clock {
   color: #C0CCD1;
@@ -1731,7 +1731,7 @@ body {
 
 .stretch-desc {
   padding: 1.6rem 1rem 1rem;
-  color: #777; }
+  color: #888; }
 
 .stretch-image, .stretch-check {
   border-radius: 0.4rem 0 0 0.4rem;
@@ -1749,7 +1749,7 @@ body {
 
 .stretch-desc-alt {
   padding: 0 0.8rem 0rem;
-  color: #777; }
+  color: #888; }
 
 .stretch-image-alt {
   overflow: hidden;
@@ -1785,7 +1785,7 @@ body {
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; }
-  .time-labels p {
+  .time-labels p, .time-labels .stretches-info li, .stretches-info .time-labels li {
     display: inline-block; }
   .time-labels small {
     font-size: 0.6rem; }
@@ -1811,6 +1811,7 @@ body {
   .stretches-info ol {
     padding-left: 1rem; }
   .stretches-info li {
+    margin: 0;
     font-size: 0.8rem; }
 
 .info-drawer {

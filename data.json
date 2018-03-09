@@ -227,7 +227,7 @@
 			"min" : "00",
 			"sec" : "30",
 			"props" : "Stable object taller than you",
-			"steps" : "<li>Stand five feet away from the object.</li><li>Step the sole of your right foot slightly higher than hip level onto the tree.</li><li>Once you feel stable, interlace your hands behind you in a double fist.</li><li>Lean forward, lifting your arms as high as you can.</li>Switch legs.</li>",
+			"steps" : "<li>Stand five feet away from the object.</li><li>Step the sole of your right foot slightly higher than hip level onto the tree.</li><li>Once you feel stable, interlace your hands behind you in a double fist.</li><li>Lean forward, lifting your arms as high as you can.</li><li>Switch legs.</li>",
 			"active" : false,
 			"gif" : "images/gifs/HipShoulder.gif",
 			"tags" : [
