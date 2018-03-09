@@ -1303,7 +1303,7 @@ h3 {
 
 p, .stretches-info li {
   font-size: 1rem;
-  color: #888; }
+  color: #999; }
 
 a:hover {
   text-decoration: none; }
@@ -1667,7 +1667,7 @@ body {
   margin-left: 3.5rem;
   height: 100%;
   padding: 0.45rem .8rem 0rem;
-  color: #888; }
+  color: #999; }
 
 .oi-target, .oi-clock {
   color: #C0CCD1;
@@ -1732,7 +1732,7 @@ body {
 
 .stretch-desc {
   padding: 1.6rem 1rem 1rem;
-  color: #888; }
+  color: #999; }
 
 .stretch-image, .stretch-check {
   border-radius: 0.4rem 0 0 0.4rem;
@@ -1750,7 +1750,7 @@ body {
 
 .stretch-desc-alt {
   padding: 0 0.8rem 0rem;
-  color: #888; }
+  color: #999; }
 
 .stretch-image-alt {
   overflow: hidden;
