@@ -56,6 +56,8 @@ function getSystemTime() {
 }
 
 function startTimer() {
+	changeStatus("active");
+
 	$('#start-button').hide();
 	$('#stop-button').show();
 	$('.pause-panel').show();
@@ -87,6 +89,7 @@ function getTime() {
 }
 
 function resumeTimer() {
+	changeStatus("active");
 	$('#resume-button').hide();
 	$('#pause-button').show();
 
@@ -98,6 +101,7 @@ function resumeTimer() {
 
 
 function pauseTimer() {
+	changeStatus("paused");
 	$('#pause-button').hide();
 	$('#resume-button').show();
 
@@ -106,6 +110,7 @@ function pauseTimer() {
 }
 
 function stopTimer() {
+	changeStatus("stop");
 	$('#stop-button').hide();
 	$('.pause-panel').hide();
 	$('#start-button').show();
@@ -118,7 +123,6 @@ function stopTimer() {
 	currTime = 0;
 	stretchTime = 0;
 	displayTime(localStorage.getItem("interval"));
-
 }
 
 
@@ -198,6 +202,21 @@ function stretching() {
 
 function working() {
 	$('.working-message').show();
+}
+
+function changeStatus(status) {
+	if (status == "active") {
+		$("#routine-name").addClass('active');
+		$("#routine-name").removeClass('paused');
+	}
+	else if (status == "paused") {
+		$("#routine-name").removeClass('active');
+		$("#routine-name").addClass('paused');
+	}
+	else {
+		$("#routine-name").removeClass('active');
+		$("#routine-name").removeClass('paused');
+	}
 }
 
 /*

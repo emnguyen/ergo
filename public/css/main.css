@@ -1797,6 +1797,31 @@ body {
 #go-page h1 {
   margin-bottom: 1.5rem; }
 
+#routine-name.active:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0.85rem;
+  margin-left: 0.4rem;
+  width: 1rem;
+  height: 1rem;
+  -moz-border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+  background-color: #2196F3; }
+#routine-name.paused:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0.85rem;
+  margin-left: 0.4rem;
+  width: 1rem;
+  height: 1rem;
+  -moz-border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+  background-color: #FFD600; }
+
 .more-info {
   display: inline-block;
   margin-top: -2rem; }
