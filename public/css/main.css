@@ -1798,10 +1798,8 @@ body {
   margin-bottom: 1.5rem; }
 
 .more-info {
-  width: 100%;
-  text-align: right;
-  cursor: pointer;
-  margin-top: -0.3rem; }
+  display: inline-block;
+  margin-top: -2rem; }
   .more-info .caret {
     margin-top: -0.3rem;
     margin-left: 0.1rem;
