@@ -34,34 +34,132 @@
   </symbol>
 </svg>
 
-
-	<div class="stretches-container">
-		<div class="row">
-			<div class="col text-center">
-				<h1>Customize {{setting}} Stretches</h1>
+	<div class="row">
+		<div class="col text-center">
+			<h1>Customize {{setting}} Stretches</h1>
+			<div class="legend d-flex justify-content-center">
+				<p class="d-flex align-items-center">
+					<span class="oi oi-target"></span>
+					<small>Body part targeted</small>
+				</p>
+				<p class="d-flex align-items-center">
+					<span class="oi oi-clock"></span>
+					<small>Duration</small>
+				</p>
 			</div>
 		</div>
-	
+	</div>
+
+	<div class="stretches-container">
 		<div class="row">
 			<div class="col">
 
 		<form id="stretch-form" action="/go" method="get">
 
-			<ul class="stretch-list">
-			{{#each stretches}}
-
-				{{> stretches}}
-
-			{{/each}}
-			</ul>
-
+				<ul class="stretch-list">
+				{{#each stretches}}
+					{{> stretches}}
+				{{/each}}
+				</ul>
 			
-		</div>
-	</div>
-		
-		
+			</div> <!-- .col -->
+		</div> <!-- .row -->
 	</div> <!-- .stretches-container -->
-	
+
+	<div class="notification-setup">
+		<div class="row">
+
+				<div class="col-6">
+					<!-- Total routine length -->
+					<label>Total length of routine:</label>
+					
+				</div>
+				<div class="col-6">
+
+					<input class="form-control total-duration" type="text" placeholder="" readonly>
+				</div>
+		
+		</div> <!-- .row -->
+		<div class="row">
+
+				<div class="col-6">
+					<!-- Notification interval -->
+					<label>Receive alerts every:</label>		    	
+				</div>
+
+				<div class="col-6">
+					<div id="interval-form-container">
+						
+						<select name="h" class="form-control" id="h">
+					      <option>0</option>
+					      <option>1</option>
+					      <option>2</option>
+					    </select>
+					    <span class="colon">:</span>
+
+					    <select name="m" class="form-control" id="m">
+					      <option>00</option>
+					      <option>01</option>
+					      <option>02</option>
+					      <option>03</option>
+					      <option>04</option>
+					      <option>05</option>
+					      <option>10</option>
+					      <option>15</option>
+					      <option>20</option>
+					      <option>25</option>
+					      <option>30</option>
+					      <option>35</option>
+					      <option>40</option>
+					      <option>45</option>
+					      <option>50</option>
+					      <option>55</option>
+					    </select>
+					    <span class="colon">:</span>
+
+					    <select name="s" class="form-control" id="s">
+					      <option>00</option>
+					      <option>05</option>
+					      <option>10</option>
+					      <option>15</option>
+					      <option>20</option>
+					      <option>25</option>
+					      <option>30</option>
+					      <option>35</option>
+					      <option>40</option>
+					      <option>45</option>
+					      <option>50</option>
+					      <option>55</option>
+					    </select>
+					   
+
+					</div> <!-- .interval-form -->
+
+						<div class="time-labels">
+					    	<p><small>H</small></p>
+					    	<p><small>MM</small></p>
+					    	<p><small>SS</small></p>
+					    </div>
+
+					    <input style="display: none;" id="interval-input" type="number" name="interval" value="">
+				</div>
+			
+		</div> <!-- .row -->
+
+		{{#unless loggedIn}}
+		<div class="row">
+			<div class="col-6">
+				<label>Phone number:</label>
+				 	
+			</div>
+			<div class="col-6">
+				<input class="form-control guest-phone-input" type="tel">
+				<p><small>Ergo sends alerts via SMS.</small></p>  
+			</div>
+		</div> 
+		{{/unless}}
+
+	</div> <!-- .notification-setup -->
 	
 	<div class="pagination d-flex justify-content-between">
 
@@ -72,43 +170,6 @@
 			<button class="btn btn-primary forward-button confirm-stretches" type="button" {{#if loggedIn}} onclick="confirmStretchesLoggedIn()" {{/if}} {{#unless loggedIn}} onclick="confirmStretches()"{{/unless}}>
 				Start Stretching
 			</button>
-
-			{{#unless loggedIn}}
-			<!-- Modal -->
-			<div class="modal fade" id="getPhoneModal" tabindex="-1" role="dialog" aria-labelledby="getPhoneLabel" aria-hidden="true">
-			  <div class="modal-dialog modal-dialog-centered" role="document">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <h2 class="modal-title" id="getPhoneLabel">Enter Phone Number</h2>
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			          <span aria-hidden="true">&times;</span>
-			        </button>
-			      </div>
-			      <div class="modal-body">
-			      	<p>
-			        Ergo sends alerts through SMS. Where can we reach you?</p>
-			        
-			        <form>
-
-			          <div class="form-group">
-			            <input type="number" class="form-control" id="phoneInput" required>
-			          </div>
-			
-			        </form>
-
-			        	<p class="warning phoneInputWarning"></p>
-
-			        	<p class="text-muted"><small><a href="/login">Log In</a> or <a href="/signup">Sign Up</a> to save your phone number.</small></p>
-
-			      </div>
-			      <div class="modal-footer">
-			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-			        <button id="phoneSubmit" type="button" class="btn btn-primary" onclick="verifyGuestPhone()">Go</button>
-			      </div>
-			    </div>
-			  </div>
-			</div> <!-- .modal -->
-			{{/unless}}
 
 	</div>  <!-- .pagination -->
 

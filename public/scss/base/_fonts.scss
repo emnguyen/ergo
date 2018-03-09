@@ -16,3 +16,20 @@
        url('../fonts/bebas-neue/bebas-neue.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
+@font-face {
+    font-family: 'HK Grotesk';
+    src: url('../fonts/hk-grotesk/hkgrotesk-bold-webfont.woff2') format('woff2'),
+         url('../fonts/hk-grotesk/hkgrotesk-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'HK Grotesk';
+    src: url('../fonts/hk-grotesk/hkgrotesk-regular-webfont.woff2') format('woff2'),
+         url('../fonts/hk-grotesk/hkgrotesk-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -15,13 +15,13 @@
 					<form id="login-form" class="loginSignup" action="/verify-login">
 					
 						<!-- Email -->
-						<div class="input-group input-group-lg">
+						<div class="input-group">
 					  		<span class="input-group-addon" id="sizing-addon1">E-mail</span>
 					  		<input name="email" type="email" class="form-control" value="ergo@ucsd.edu" aria-describedby="sizing-addon1" required>
 						</div>
 
 						<!-- Password -->
-						<div class="input-group input-group-lg">
+						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon1">Password</span>
 							<input name="pwd" type="password" class="form-control" value="ergo" aria-describedby="sizing-addon1" required>
 						</div>
@@ -41,8 +41,8 @@
 			</div> <!-- .row -->
 
 			<div class="row">
-				<div class="col toggleLoginSignup">
-					<h2>Log in through Facebook</h2>
+				<div class="col fb-login">
+					<h3>Log in through Facebook</h3>
 					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 					</fb:login-button>
 				</div>

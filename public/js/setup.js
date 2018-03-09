@@ -35,32 +35,36 @@ function sortStretches() {
 	});
 }
 
-function selectStretch(input) {
-	var stretch = $(input).closest('.stretch');
-	stretch.toggleClass('selected');
+function selectStretch($input) {
+	var $stretch = $($input).closest('.stretch');
+	$stretch.toggleClass('selected');
 
 	// If stretch is selected, set value to 1 (true)
-	if (stretch.hasClass('selected')) {
-		stretch.find('.stretch-checkbox').val("1");
+	if ($stretch.hasClass('selected')) {
+		$stretch.find('.stretch-checkbox').val("1");
+		incTotalDuration($stretch);
 	}
 	// Otherwise, set to 0 (false)
 	else {
-		stretch.find('.stretch-checkbox').val("0");
+		$stretch.find('.stretch-checkbox').val("0");
+		decTotalDuration($stretch);
 	}
 }
 
 /* For A/B testing */
-function selectStretchAlt(input) {
-	var stretch = $(input).closest('.stretch-alt');
-	stretch.toggleClass('selected');
+function selectStretchAlt($input) {
+	var $stretch = $($input).closest('.stretch-alt');
+	$stretch.toggleClass('selected');
 
 	// If stretch is selected, set value to 1 (true)
-	if (stretch.hasClass('selected')) {
-		stretch.find('.stretch-checkbox').val("1");
+	if ($stretch.hasClass('selected')) {
+		$stretch.find('.stretch-checkbox').val("1");
+		incTotalDuration($stretch);
 	}
 	// Otherwise, set to 0 (false)
 	else {
-		stretch.find('.stretch-checkbox').val("0");
+		$stretch.find('.stretch-checkbox').val("0");
+		decTotalDuration($stretch);
 	}
 }
 
@@ -86,7 +90,10 @@ function confirmStretchesLoggedIn() {
 		return;
 	}
 	else {
-		$('#stretch-form').submit();
+		if (parseInterval())
+			$('#stretch-form').submit(); 
+		else
+			alert("Must enter an alert interval.");
 	}
 }
 
@@ -107,13 +114,78 @@ function confirmStretches() {
 		return;
 	}
 	else {
-		$('#getPhoneModal').modal('show');
+		//$('#getPhoneModal').modal('show');
+		if (parseInterval())
+			$('#stretch-form').submit(); 
+		else
+			alert("Must enter an alert interval.");
 	}
 }
+
+function parseInterval() {
+	var interval = 0;
+
+	var h = parseInt($('#h').val());
+	interval += h * 3600;
+	var m = parseInt($('#m').val());
+	interval += m * 60;
+	var s = parseInt($('#s').val());
+	interval += s;
+
+	if (interval > 0) {
+		$('#interval-input').val(interval);
+		localStorage.setItem("interval", interval);
+		return true;
+	}
+
+	return false;
+}
+
+
+
+function sumDuration() {
+	var totalDuration = 0;
+
+	// Iterate through stretches
+	$('.stretch').each(function() {
+		// If stretch is selected, add its duration to the total
+		if ($(this).hasClass('selected')) {
+			var duration = getDuration($(this));
+			totalDuration += duration;
+		}
+	});
+
+	setTotalDuration(totalDuration);
+	return totalDuration;
+}
+
+function getDuration($stretch) {
+	return parseDuration($($stretch).find('.duration').text());
+}
+
+function incTotalDuration($stretch) {
+	setTotalDuration(getTotalDuration() + getDuration($stretch));
+}
+
+function decTotalDuration($stretch) {
+	setTotalDuration(getTotalDuration() - getDuration($stretch));
+}
+
+function getTotalDuration() {
+	return timeToS($('.total-duration').attr('placeholder'));
+}
+
+function setTotalDuration(time) {
+	$('.total-duration').attr('placeholder', sToTime(time));
+}
+
+
+
 
 
 var main = function () {
 	sortStretches();
+	sumDuration();
 
 	// Toggle stretch description
 	$('.expand-stretch').click(function() {

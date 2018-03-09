@@ -3,6 +3,54 @@
  * Description: Main javascript.
  */
 
+function parseDuration(durationStr) {
+	var duration = parseInt(durationStr); 
+
+	// If input is in minutes, convert to seconds
+	if (durationStr.indexOf("min") >= 0) {
+		return duration *= 60;
+	}
+	else {
+		return duration;
+	}
+}
+
+ function timeToS(time) {
+ 	/*
+	var totalS = 0;
+	// Get hours
+	// Get minutes
+	var m = parseInt(time.substr(0, time.indexOf(':')));
+	totalS += m * 60;
+	// Get seconds
+	var s = parseInt(time.split(':')[1]);
+	totalS += s; 
+
+	return totalS; */
+
+	var p = time.split(':'),
+        s = 0, m = 1;
+
+    while (p.length > 0) {
+        s += m * parseInt(p.pop(), 10);
+        m *= 60;
+    }
+
+    return s;
+}
+
+function sToTime(s) {
+    var h = Math.floor(s/3600); //Get whole hours
+    s -= h*3600;
+    var m = Math.floor(s/60); //Get remaining minutes
+    s -= m*60;
+
+    if (h == 0)
+    	return m+":"+(s < 10 ? '0'+s : s);
+
+    return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); //zero padding on minutes and seconds
+}
+
 function hideWelcome() {
 	sessionStorage.setItem("hideWelcome", "true");
 	$('#welcome').hide();
@@ -22,12 +70,12 @@ function login() {
 function logout() {
   window.location.href = "/logout";
   localStorage.removeItem("name");
-  localStorage.removeItem("id");
   localStorage.setItem("loggedIn", false);
 
-  resetGo();  
-
-  FB.logout(); 
+  if (localStorage.getItem("id")) {
+  	localStorage.removeItem("id");
+  	FB.logout(); 
+  } 
 }
 
 function resetGo() {
@@ -46,12 +94,10 @@ function signup() {
 	var password = document.getElementsByName("password")[0].value;
 	var phone = document.getElementsByName("phone")[0].value;
 
-	
 	// Check inputed email and password
 	var validEmail = checkEmail(email);
 	var validPassword = checkPassword(password);
 	var validPhone = checkPhone(phone);
-
 
 	// Return if one or more inputs are valid
 	if (!validEmail || !validPassword || !validPhone)
@@ -61,53 +107,7 @@ function signup() {
 }
 
 
-
-
- function startStretch($currStretch) {
-	// Return if STOP
-	if (!localStorage.getItem("status"))
-		return;
-
-	$($currStretch).addClass('active');
-
-	// TEMP: 5 second intervals
-	var $seconds = $($currStretch).find('.seconds');
-	var duration = parseInt($($seconds).text());
-
-
-	var counter = duration;
-
-	var interval = setInterval(function() {
-	    counter--;
-
-	    // Prepend 0 if necessary
-	    var num = counter;
-	    if (counter < 10) {
-	    	num = "0" + num;
-	    }
-	    $($seconds).text(num);
-
-	    // When 0 is reached
-	    if (counter == 0) {
-	        clearInterval(interval);
-	        // Reset duration
-	        $($seconds).text(duration);
-
-        	// Get next stretch
-			var $nextStretch = $($currStretch).next();
-
-			// Return to beginning of stretch list if end reached
-			if ($nextStretch.length == 0) {
-				$nextStretch = $('.curr-stretch').first();
-			}
-
-			$($currStretch).removeClass('active');
-			
-			return startStretch($nextStretch);
-	    }
-	}, 1000);	
-}
-
+ /*
 
 function start() {
 	$('#status-container').removeClass('pause');
@@ -115,11 +115,11 @@ function start() {
 	$('#start-button').hide();
 	$('#stop-button').show();
 	$('.pause-panel').show();
-	$('.gif-panel').slideDown();
+	//$('.gif-panel').slideDown();
 	localStorage.setItem("status", "active");
 
-	var $firstStretch = $('.curr-stretch').first();
-	startStretch($firstStretch);
+	//var $firstStretch = $('.curr-stretch').first();
+	//startStretch($firstStretch);
 }
 
 function stop() {
@@ -127,7 +127,7 @@ function stop() {
 	$('#start-button').show();
 	$('#stop-button').hide();
 	$('.pause-panel').hide();
-	$('.gif-panel').slideUp();
+	//$('.gif-panel').slideUp();
 	localStorage.removeItem("status");
 }
 
@@ -143,6 +143,8 @@ function togglePause() {
 		return text === "Active" ? "Paused" : "Active";
 	});
 }
+*/
+
 
 /*
  * main
@@ -185,6 +187,8 @@ var main = function () {
     	});
     }
 */
+
+	/*
     var status;
     if (status = localStorage.getItem("status")) {
   		if (status == "paused") {
@@ -194,7 +198,8 @@ var main = function () {
   		// temp
   		$('.gif-panel').show();
   		var $firstStretch = $('.curr-stretch').first();
-		startStretch($firstStretch);
+		
+		//startStretch($firstStretch);
 
     	$('#status-container').show();
 
@@ -204,9 +209,8 @@ var main = function () {
     		window.location.href = go;
     	});
     }
-
-    
-
+	*/
+   
 /*
 	$('.confirm-stretches').click(function(e) {
 		var empty = true;
@@ -227,68 +231,6 @@ var main = function () {
 */
 
 
-
-
-
-	/* Timer */
-	var Clock = {
-		  totalSeconds: 0,
-
-		  start: function () {
-		  	
-		    var self = this;
-				function pad(val) { return val > 9 ? val : "0" + val; }
-		    this.interval = setInterval(function () {
-		      self.totalSeconds += 1;
-
-		      
-		      $("#min").text(pad(Math.floor(self.totalSeconds / 60 % 60)));
-		      $("#sec").text(pad(parseInt(self.totalSeconds % 60)));
-		    }, 1000);
-		  },
-		  
-		  reset: function () {
-		  	Clock.totalSeconds = null; 
-		    clearInterval(this.interval);
-		    $("#min").text("00");
-		    $("#sec").text("00");
-		  },
-		  pause: function () {
-		    clearInterval(this.interval);
-		    delete this.interval;
-		  },
-
-		  resume: function () {
-		    if (!this.interval) this.start();
-		  },
-		  
-		  restart: function () {
-		  	 this.reset();
-		     Clock.start();
-		  }
-	};
-
-
-	$('#startButton').click(function () {
-		Clock.start(); 
-		$(this).hide();
-		$('#resumeButton').show();
-		$('#pauseButton').show();
-		$('#resetButton').show();
-	});
-	$('#pauseButton').click(function () { Clock.pause(); });
-	$('#resumeButton').click(function () { Clock.resume(); });
-	$('#resetButton').click(function () {
-		Clock.reset(); 
-		$(this).hide();
-		$('#startButton').show();
-		$('#pauseButton').hide();
-		$('#resetButton').hide();
-		$('#resumeButton').hide();
-	});
-	$('#restartButton').click(function () { Clock.restart(); });
-
-	/* Favorite */
 
 };
 

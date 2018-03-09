@@ -15,33 +15,33 @@
 					<form id="signup-form" class="loginSignup" action="/verify-signup">
 
 						<!-- First Name -->
-						<div class="input-group input-group-lg">
+						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon1">First Name</span>
 							<input name="firstName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" autocomplete="off" required>
 						</div>
 						<!-- Last Name -->
-						<div class="input-group input-group-lg">
+						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon1">Last Name</span>
 							<input name="lastName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" autocomplete="off" required>
 						</div>
 
 						<!-- Email -->
-						<div class="input-group input-group-lg">
+						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon1">E-mail</span>
-							<input name="email" type="email" class="form-control" placeholder="example@mail.com" aria-describedby="sizing-addon1" autocomplete="off" required>
+							<input name="email" type="email" class="form-control" aria-describedby="sizing-addon1" autocomplete="off" required>
 						</div>
 
 						<!-- Password -->
-						<div class="input-group input-group-lg">
+						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon1">Password</span>
 							<input name="pwd" type="password" class="form-control" aria-describedby="sizing-addon1" autocomplete="off" required>
 						</div>
 				
-						<p>Ergo sends alerts through SMS. Where can we reach you?</p>
+						<p><small>Ergo sends alerts through SMS. Where can we reach you?</small></p>
 						<!--
 						<small class="text-muted">E.g. 5557779999</small> -->
 						<!-- Phone -->
-						<div class="input-group input-group-lg">
+						<div class="input-group">
 							<span class="input-group-addon" id="sizing-addon1">Phone</span>
 							<input name="phone" type="number" class="form-control" aria-describedby="sizing-addon1" required>
 						</div>
@@ -60,8 +60,8 @@
 			</div> <!-- .row -->
 
 			<div class="row">
-				<div class="col toggleLoginSignup">
-					<h2>Log in through Facebook</h2>
+				<div class="col fb-login">
+					<h3>Log in through Facebook</h3>
 					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 					</fb:login-button>
 				</div>

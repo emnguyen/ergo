@@ -10,6 +10,9 @@ exports.view = function(req, res){
 	// Clear todo queue
 	data.todo = [];
 
+	// Store interval
+	data.interval = req.query["interval"];
+
 	var selected = req.query;
 
 	// Redirect to home is queue is empty
@@ -19,10 +22,9 @@ exports.view = function(req, res){
 	}
 
 	for (var i in selected) {
-	
 		if (selected[i] == 1) { 
-		var stretch = data.stretches[i];
-		data.todo.push(stretch);
+			var stretch = data.stretches[i];
+			data.todo.push(stretch);
 		}
 	}
 

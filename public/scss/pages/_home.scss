@@ -1,12 +1,12 @@
 #home-page {
-	h2 {
-		margin-bottom: 3rem;
-	}
+	
 }
 
 #environments {
 	width: 100vw;
 	margin-left: -15px;
+	margin-top: 1rem;
+	margin-bottom: 1.7rem;
 	@include media-breakpoint-up(sm) {
 		width: auto;
 		margin-left: 0;

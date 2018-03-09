@@ -1,34 +1,7 @@
-<div id="heart"><span class="oi oi-check text-success"></span></div>
-
 {{#with data}}
 <div id="go-page">
 
 	<div class="container">
- 
- <!--
-		<div class="progress-container">
-			<ol class="progressBar">
-				<li class="progress-bar-step is-complete">
-				<svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-				<span class="progress-bar-stepLabel">
-			    	{{#unless setting}}
-			    		Choose Setting
-			    	{{/unless}}
-			    	{{#if setting}}
-			    		Selected {{setting}}
-			    	{{/if}}
-				</span>
-				</li>
-				<li class="progress-bar-step is-complete">
-				<svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-				<span class="progress-bar-stepLabel">Customize Stretches</span>
-				</li>
-				<li class="progress-bar-step is-complete">
-				<svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-				<span class="progress-bar-stepLabel">Ready to Go!</span>
-				</li>
-			</ol>
-		</div> --> <!-- progress-container -->
 
 		<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
 			<symbol id="checkmark-bold" viewBox="0 0 24 24">
@@ -59,16 +32,40 @@
 		</div>
 
 		<div class="row">
-			<div class="col">
-				
-					<p id="instructions">Press <span style="padding: 0 0.3rem;" class="oi oi-media-play"></span> when you are ready to start working and receiving alerts.</p>
+			<div class="col-7">
+					<!--
+					<p>Press <span style="padding: 0 0.3rem;" class="oi oi-media-play"></span> when you are ready to start working and receiving alerts.</p> -->
+
+					<span class="d-none interval">{{interval}}</span> 
+
+					<p>Time until next alert: <span class="timer"></span></p>
 				
 			</div>
+			<div class="col-5">
+				<a class="more-info d-flex align-items-center justify-content-end">View Routine <span class="caret">⌄</span></a>
+			</div>
 		</div>
-		<div class="row no-utters">
+
+		<div class="row info-drawer" style="margin-bottom: 1.4rem">
+			<div class="col">
+				<div class="panel">
+					<div class="stretches-info">
+					<ol>
+						{{#each todo}}
+						<li>
+						{{title}}</li>
+						{{/each}}
+					</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
 			<div class="col text-center pause-panel">
 				<div class="panel d-flex align-items-center justify-content-center">
 					<span id="pause-button" class="oi oi-media-pause"></span>
+					<span id="resume-button" class="oi oi-media-play"></span>
 				</div>
 			</div>
 			<div class="col text-center">
@@ -79,20 +76,28 @@
 			</div>
 		</div>
 
-		<div class="row" style="margin-top: 1.5rem">
+		<div class="row" style="margin-top: 1.4rem">
 			<div class="col text-center">
 				<div class="panel gif-panel">
+					<h4 class="working-message">Currently Working...</h4>
+
 					<ul class="curr-stretch-list">
 					{{#each todo}}
 					<li class="curr-stretch">
-						<h2>{{title}}</h2>
+						<h4>{{title}}</h4>
 						<div class="curr-stretch-img">
 							<img src="{{gif}}">
 						</div>
-						<h4 class="timer">00:<span class="seconds">{{sec}}</span></h4>
+						<h1 class="stretch-timer">{{duration}}</span></h1>
+
+						<span class="d-none stretch-duration">{{duration}}</span>
+
+						<span class="d-none key-store">{{@key}}</span>
+						<p><span class="key">{{@key}}</span>/{{../todo.length}}</p>
 					</li>
 					{{/each}}
 					</ul>
+
 				</div>
 
 			</div>

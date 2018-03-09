@@ -1,13 +1,34 @@
-#timer {
-	font-size: 5rem;
-	font-weight: bold;
-	border-top: .05rem solid #e5e5e5;
+#go-page {
+	h1 {
+		margin-bottom: 1.5rem;
+	}
 }
 
-#instructions {
-	font-size: 0.8rem;
+.more-info {
+	width: 100%;
+	text-align: right;
+	cursor: pointer;
+	margin-top: -0.3rem;
+	.caret {
+		margin-top: -0.3rem;
+		margin-left: 0.1rem;
+		font-size: 1.5rem;
+	}
 }
 
+.stretches-info {
+	padding: 1rem 1rem 0;
+	ol {
+		padding-left: 1rem;
+	}
+	li {
+		font-size: 0.8rem;
+	}
+}
+
+.info-drawer {
+	display: none;
+}
 
 #fav-form {
 	margin-top: -2rem;
@@ -46,12 +67,12 @@
 .panel {
 	background: #FFFFFF;
 	box-shadow: 0 .3rem 1rem rgba(14, 57, 61, 0.12);
-	border-radius: .7rem;
+	border-radius: .2rem;
 	height: 100%;
 	width: 100%;
-	padding: 1rem;
+	padding: 0.5rem;
 	.oi {
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 }
 
@@ -64,20 +85,22 @@
 }
 
 .curr-stretch-img {
+	border-radius: 5rem;
+	overflow: hidden;
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-	//max-width: 100%;
-	//width: 20rem;
-	//width: 100%;
 	img {
-		//max-width: 70%;
-		height: 7rem;
+		height: 9rem;
 	}
 }
 
-#pause-button, #start-button, #stop-button {
+#pause-button, #start-button, #stop-button, #resume-button {
 	width: 100%;
 	cursor: pointer;
+}
+
+#resume-button {
+	display: none;
 }
 
 .curr-stretch-list {
@@ -90,4 +113,20 @@
 	&.active {
 		display: block;
 	}
+}
+
+.gif-panel {
+	padding-top: 1.5rem;
+}
+
+.stretch-timer {
+	font-size: 4rem;
+	margin-bottom: 1rem;
+}
+
+.working-message {
+	text-align: center;
+	padding-bottom: 0.3rem;
+	font-size: 3rem;
+
 }

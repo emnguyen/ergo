@@ -25,12 +25,15 @@ margin-right: 2rem;
 
 
 
-.fav-options {
+.bookmark-options {
 	display: none;
 	margin-left: 1rem;
 	color: $primary;
 	span {
 		padding: 0 0.2rem;
+	}
+	.oi-trash {
+		cursor: pointer;
 	}
 }
 

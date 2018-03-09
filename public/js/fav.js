@@ -18,6 +18,7 @@ function deleteFav(fav) {
 function loadFav(fav) {
 	stop();
 	localStorage.setItem("fav", $(fav).text());
+
 	window.location.href = $(fav).attr("href");
 }
 
@@ -25,12 +26,13 @@ function loadFav(fav) {
  * Main function
  */
 var main = function () {
-	$('.edit-button').click(function() {
+	$('.edit-button').click(function(e) {
+		e.preventDefault();
 		$(this).text(function(i, text) {
 			return text === "Edit" ? "Done" : "Edit";
 		});
 
-		$('.fav-options').toggle();
+		$('.bookmark-options').toggle();
 	});
 
 	$('.delete-fav').click(function() {

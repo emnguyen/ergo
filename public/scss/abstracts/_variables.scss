@@ -1,15 +1,20 @@
-$primary: #007AFF;
+$primary: #1BBFAA;
 
 $gradient: linear-gradient(79.04deg, #02AAB0 10.29%, #00CDAC 157.89%);
 $gradient: -webkit-linear-gradient(79.04deg, #02AAB0 20.29%, #00CDAC 157.89%);
+$gradient: -webkit-linear-gradient(left, rgba(2,170,176,1) 0%, rgba(0,205,172,1) 100%);
 $light-gray: #eee;
 $gray: #E0E0E0;
 
 $theme-colors: (
-  "primary": #02AAB0
+  "primary": #1BBFAA
 );
 
 $content-max-width: 46rem;
 
 $tundora: #424242; // Headers (dark gray)
+$silver: #b2b2b2;
+$silver: #777;
+$geyser: #C0CCD1; // Target/duration icons
+
 

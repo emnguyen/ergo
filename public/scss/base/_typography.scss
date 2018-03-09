@@ -10,12 +10,16 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: .08rem;
 }
 
+body {
+	font-family: 'HK Grotesk', 'Helvetica', 'Arial', sans-serif;
+}
+
 h1 {
 	letter-spacing: .07rem;
 	font-size: 2.3rem;
 	line-height: 2.2rem;
 	//margin: 1.6rem 0;
-	margin: 0 0 1.4rem;
+	//margin: 0 0 1.4rem;
 }
 
 h2 {
@@ -29,8 +33,9 @@ h3 {
 	letter-spacing: .08rem;
 }
 
-p {
-	font-size: 1.2rem;
+li, p {
+	font-size: 1rem;
+	color: $silver;
 }
 
 a:hover {

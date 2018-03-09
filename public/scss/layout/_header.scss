@@ -16,6 +16,7 @@ $footer-height: 5rem;
 }
 
 #status {
+	color: #fff;
 	font-weight: bold;
 }
 
@@ -53,20 +54,28 @@ $footer-height: 5rem;
 	font-weight: bold;
 }
 
-.dropdown-menu {
-
+.dropdown-toggle::after {
+    display:none;
 }
 
 .dropdown-active {
 	span {
-		color: #02AAB0;
+		color: $primary;
 	}
+}
+
+.dropdown-item {
+	cursor: pointer;
 }
 
 .nav-link {
 	.oi {
 		font-size: 1.8rem;
 		margin-bottom: 0.4rem;
+	}
+	.oi-caret-bottom {
+		font-size: 0.8rem;
+		margin-left: 0.3rem;
 	}
 	color: $gray !important;
 	padding: 0 1.3rem;
@@ -76,11 +85,11 @@ $footer-height: 5rem;
 	&.active {
 		background-color: transparent !important;
 		.oi {
-			color: #02AAB0;
+			color: $primary;
 		}
 	}
 	&:hover {
-		color: #02AAB0;
+		color: $primary;
 	}
 }
 
@@ -90,7 +99,7 @@ $footer-height: 5rem;
 		background-color: transparent !important;
 	@include gradient;
 		span {
-			color: #02AAB0;
+			color: $primary;
 		}
 	}
 }

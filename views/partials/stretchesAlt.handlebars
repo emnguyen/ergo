@@ -6,8 +6,16 @@
 
 	<!-- Info -->
 	<div class="stretch-info">
-		<p class="text-primary"><strong>{{title}}</strong></p>
-		<p><i>{{target}} • Every {{time}}</i></p>
+		<p class="stretch-title">{{title}}</p>
+		<p class="target-duration-container">
+			<span class="d-flex align-items-center">
+				<span class="oi oi-target"></span>
+				<span>{{target}}</span>
+			</span>
+			<span class="d-flex align-items-center">
+				<span class="oi oi-clock"></span> {{duration}}
+			</span>
+		</p>
 	</div> <!-- .stretch-info -->
 
 	<!-- Expand button -->
@@ -25,7 +33,6 @@
 				<img src="{{gif}}">
 			</div> <!-- .stretch-image -->
 			<div class="stretch-desc-alt">
-				<p><strong>Duration:</strong> {{duration}}</p>
 				<p><strong>Props:</strong> {{props}}</p>
 				<p><strong>Steps:</strong></p>
 				<ol class="steps">
