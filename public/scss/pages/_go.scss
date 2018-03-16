@@ -1,5 +1,5 @@
 $status-height: 1rem;
-$yellow: #FFD600;
+$yellow: #FFDB61;
 $blue: #2196F3;
 
 #go-page {
@@ -94,7 +94,7 @@ $blue: #2196F3;
 	}
 }
 #fav-form-submit {
-	z-index: 5000;
+	z-index: 5;
 	cursor: pointer;
 	display: inline-block;
 }
@@ -126,6 +126,7 @@ $blue: #2196F3;
 	.oi {
 		font-size: 1.5rem;
 	}
+
 }
 
 .pause-panel {
@@ -149,6 +150,10 @@ $blue: #2196F3;
 .panel-header {
 	display: grid;
 	grid-template-columns: auto 1.8rem;
+	h4 {
+		padding-bottom: 0.5rem;
+		padding-top: 0.2rem;
+	}
 	img {
 		width: 0.9rem;
 		padding-top: 0.55rem;

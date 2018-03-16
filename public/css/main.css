@@ -1355,8 +1355,8 @@ a:hover {
   box-shadow: 0px 2px 15px rgba(17, 50, 53, 0.1); }
 
 .header {
-  padding-top: 1.2rem;
-  padding-bottom: 0.8rem; }
+  padding-top: 1rem;
+  padding-bottom: 0.6rem; }
 
 #name {
   color: #bbb;
@@ -1400,7 +1400,9 @@ a:hover {
 
 .nav-link-md {
   color: #aaa;
-  font-weight: bold;
+  font-weight: bold; }
+
+.nav-link-name, .nav-link-md {
   margin-top: -0.2rem; }
 
 .dropdown-menu-right {
@@ -1829,7 +1831,7 @@ body {
   -moz-border-radius: 1rem;
   -webkit-border-radius: 1rem;
   border-radius: 1rem;
-  background-color: #FFD600; }
+  background-color: #FFDB61; }
 
 .more-info {
   display: inline-block;
@@ -1872,7 +1874,7 @@ body {
     color: #ff6d6d; }
 
 #fav-form-submit {
-  z-index: 5000;
+  z-index: 5;
   cursor: pointer;
   display: inline-block; }
 
@@ -1918,6 +1920,9 @@ body {
 .panel-header {
   display: grid;
   grid-template-columns: auto 1.8rem; }
+  .panel-header h4 {
+    padding-bottom: 0.5rem;
+    padding-top: 0.2rem; }
   .panel-header img {
     width: 0.9rem;
     padding-top: 0.55rem;

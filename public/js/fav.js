@@ -3,16 +3,18 @@
  * Description: Javascript for the Favorites page.
  */
 
-function deleteFav(fav) {
-	var favLink = $(fav).find('.fav-link');
-	var name = $(favLink).text();
-	var favUrl = $(favLink).attr('href');
+// Save bookmark to delete
+var bookmark;
+
+function deleteBookmark() {
+	var bookmarkLink = $(bookmark).find('.fav-link');
+	var name = $(bookmarkLink).text();
+	var bookmarkUrl = $(bookmarkLink).attr('href');
     
-    $.post('/delete-fav', {"name" : name, "url" : favUrl}, function(data) {
+    $.post('/delete-fav', {"name" : name, "url" : bookmarkUrl}, function(data) {
    	});  
 
-    window.location.href= "/bookmarks";
-   //	$(fav).slideUp();
+    window.location.href = "/bookmarks";
 }
 
 function loadFav(fav) {
@@ -35,17 +37,20 @@ var main = function () {
 		$('.bookmark-options').toggle();
 	});
 
+	// Show delete confirmation
 	$('.delete-fav').click(function() {
-		var fav = $(this).closest('.favorite');
-		var name = $(fav).find('.fav-link').text();
-		if (confirm('Are you sure you want to delete ' + name + "?"))
-			deleteFav(fav);
+		bookmark = $(this).closest('.favorite');
+		var name = $(bookmark).find('.fav-link').text();
+		$('.delete-target').text(name);
+
+		$('#confirm-delete').modal('show');
 	});
+
 
 	$('.fav-link').click(function(e) {
 		e.preventDefault();
 		loadFav($(this));
-	})
+	});
 };
 
 $(document).ready(main);

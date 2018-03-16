@@ -17,19 +17,17 @@ function pulse(object) {
   });
 }
 
-/* Name: savFav
- * Description: Uses POST to save a routine as a favorite.
- * Parameters: None
- * Return None
- */
-function saveFav() {
-	// Get name and current url
-
+function saveBookmark() {
 	// Return if already bookmarked
 	if (localStorage.getItem("fav"))
 		return;
 
-	var name = prompt("Name this routine:");
+	$('#save-bookmark').modal('show');
+}
+
+function submitBookmark() {
+	var name = $('#bookmark-name').val();
+
 	if (name) {
 		var queryString = location.href.split(location.host)[1];
 
@@ -45,9 +43,9 @@ function saveFav() {
 	   	$('#fav-form').addClass('bookmarked');
 
 	   //	pulse('#heart');
+	   $('#save-bookmark').modal('hide');
    }
 }
-
 
 
 function getSystemTime() {
@@ -243,7 +241,8 @@ var main = function () {
 	displayTime(interval);
 	
 	$('#fav-form-submit').click(function() {
-		saveFav();
+		//saveFav();
+		saveBookmark();
 	});
 
 	// If loading a favorite, set the page title as the fav name

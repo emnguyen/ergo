@@ -86,7 +86,8 @@ function confirmStretchesLoggedIn() {
 
 	// Otherwise, show warning
 	if (empty) {
-		alert("You must select at least one stretch.");
+		// Toggle warning modal
+		$("#no-stretches").modal('show');
 		return;
 	}
 	else {
@@ -94,7 +95,7 @@ function confirmStretchesLoggedIn() {
 			$('#stretch-form').submit(); 
 		else {
 			$('.time-labels').addClass('warning');
-			alert("Must enter an alert interval.");
+			$("#no-interval").modal('show');
 		}
 	}
 }
@@ -114,7 +115,8 @@ function confirmStretches() {
 
 	// Otherwise, show warning
 	if (empty) {
-		alert("You must select at least one stretch.");
+		// Toggle warning modal
+		$("#no-stretches").modal('show');
 		return;
 	}
 	else {
@@ -122,7 +124,7 @@ function confirmStretches() {
 		if (parseInterval())
 			$('#stretch-form').submit(); 
 		else {
-			alert("Must enter an alert interval.");
+			$("#no-interval").modal('show');
 			$('.time-labels').addClass('warning');
 		}
 	}
