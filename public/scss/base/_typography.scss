@@ -47,8 +47,21 @@ a {
 		@extend .text-primary;
 	}
 }
+
 .warning {
-	color: red;
-	font-size: 1rem;
+	color: red !important;
+	p {
+		color: red !important;
+	}
 }
 
+
+.time-labels {
+	p {
+	font-size: 0.6rem;
+	}
+}
+
+.dark {
+	color: $tundora;
+}

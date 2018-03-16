@@ -1309,8 +1309,15 @@ a:hover {
   text-decoration: none; }
 
 .warning {
-  color: red;
-  font-size: 1rem; }
+  color: red !important; }
+  .warning p, .warning .stretches-info li, .stretches-info .warning li {
+    color: red !important; }
+
+.time-labels p, .time-labels .stretches-info li, .stretches-info .time-labels li {
+  font-size: 0.6rem; }
+
+.dark {
+  color: #424242; }
 
 #status-container {
   display: none;
@@ -1393,7 +1400,8 @@ a:hover {
 
 .nav-link-md {
   color: #aaa;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: -0.2rem; }
 
 .dropdown-menu-right {
   right: 0;
@@ -1825,19 +1833,30 @@ body {
 
 .more-info {
   display: inline-block;
-  margin-top: -2rem; }
-  .more-info .caret {
-    margin-top: -0.3rem;
-    margin-left: 0.1rem;
-    font-size: 1.5rem; }
+  font-size: 0.8rem; }
 
 .stretches-info {
-  padding: 1rem 1rem 0; }
+  padding: 0.5rem 1rem 0; }
   .stretches-info ol {
     padding-left: 1rem; }
   .stretches-info li {
     margin: 0;
     font-size: 0.8rem; }
+
+.share {
+  cursor: pointer;
+  margin-left: 0.8rem; }
+  .share img {
+    height: 1.1rem; }
+
+.share-button {
+  cursor: pointer; }
+
+.share-info {
+  padding: 0.5rem 1rem 1rem; }
+
+.share-drawer {
+  display: none; }
 
 .info-drawer {
   display: none; }
@@ -1895,6 +1914,17 @@ body {
   margin-bottom: 1rem; }
   .curr-stretch-img img {
     height: 9rem; }
+
+.panel-header {
+  display: grid;
+  grid-template-columns: auto 1.8rem; }
+  .panel-header img {
+    width: 0.9rem;
+    padding-top: 0.55rem;
+    margin-left: 1rem; }
+
+.x-icon {
+  cursor: pointer; }
 
 #pause-button, #start-button, #stop-button, #resume-button {
   width: 100%;

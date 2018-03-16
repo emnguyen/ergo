@@ -219,6 +219,15 @@ function changeStatus(status) {
 	}
 }
 
+function toggleShare() {
+	$('.share-drawer').slideToggle();
+}
+
+function toggleRoutine($drawerTitle) {
+	$('.info-drawer').slideToggle();
+	$($drawerTitle).text($($drawerTitle).text() == 'View Routine' ? 'Hide Routine' : 'View Routine');
+}
+
 /*
  * Main function
  */
@@ -256,10 +265,35 @@ var main = function () {
 		localStorage.setItem("go", go);
 	}
 
-
+	// Toggle routine drawer
 	$('.more-info').click(function(e) {
 		e.preventDefault();
-		$('.info-drawer').slideToggle();
+		toggleRoutine(this);
+	});
+	$('.info-drawer .x-icon').click(function() {
+		toggleRoutine($('.more-info'));
+	});
+
+	// Load share url
+	$('#share-url').val(window.location.href);
+
+	// Toggle share drawer
+	$('.share').click(function() {
+		toggleShare();
+	});
+	$('.share-drawer .x-icon').click(function() {
+		toggleShare();
+	});
+
+	// Share/copy button
+	$('.share-button').click(function() {
+		var copyText = document.getElementById("share-url");
+		copyText.select();
+		document.execCommand("Copy");
+		console.log("copied");
+
+		// Show tooltip
+		$(this).tooltip('show');
 	});
 
 	$('#start-button').click(function() {

@@ -110,6 +110,7 @@ $footer-height: 5rem;
 .nav-link-md {
 	color: #aaa;
 	font-weight: bold;
+	margin-top: -0.2rem;
 	&.active {
 		@extend .text-primary;
 	}

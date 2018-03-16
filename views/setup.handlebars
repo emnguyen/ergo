@@ -121,6 +121,7 @@
 					    <span class="colon">:</span>
 
 					    <select name="s" class="form-control" id="s">
+					      <option selected>10</option>
 					     <!--
 					      <option>00</option>
 					      <option>05</option>
@@ -140,9 +141,9 @@
 					</div> <!-- .interval-form -->
 
 						<div class="time-labels">
-					    	<p><small>H</small></p>
-					    	<p><small>MM</small></p>
-					    	<p><small>SS</small></p>
+					    	<p>Hr</p>
+					    	<p>Min</p>
+					    	<p>Sec</p>
 					    </div>
 
 					    <input style="display: none;" id="interval-input" type="number" name="interval" value="">
@@ -157,7 +158,7 @@
 				 	
 			</div>
 			<div class="col-6">
-				<input class="form-control guest-phone-input" type="tel">
+				<input class="form-control guest-phone-input" type="tel" value="1234567890" required>
 				<p><small>Ergo sends alerts via SMS.</small></p>  
 			</div>
 		</div> 
@@ -183,5 +184,7 @@
 
 </div>
 {{/with}}
+
+
 
 <script src="js/setup.js"></script>

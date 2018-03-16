@@ -43,16 +43,11 @@ $blue: #2196F3;
 
 .more-info {
 	display: inline-block;
-	margin-top: -2rem;
-	.caret {
-		margin-top: -0.3rem;
-		margin-left: 0.1rem;
-		font-size: 1.5rem;
-	}
+	font-size: 0.8rem;
 }
 
 .stretches-info {
-	padding: 1rem 1rem 0;
+	padding: 0.5rem 1rem 0;
 	ol {
 		padding-left: 1rem;
 	}
@@ -61,6 +56,26 @@ $blue: #2196F3;
 		margin: 0;
 		font-size: 0.8rem;
 	}
+}
+
+.share {
+	cursor: pointer;
+	margin-left: 0.8rem;
+	img {
+		height: 1.1rem;
+	}
+}
+
+.share-button {
+	cursor: pointer;
+}
+
+.share-info {
+	padding: 0.5rem 1rem 1rem;
+}
+
+.share-drawer {
+	display: none;
 }
 
 .info-drawer {
@@ -129,6 +144,20 @@ $blue: #2196F3;
 	img {
 		height: 9rem;
 	}
+}
+
+.panel-header {
+	display: grid;
+	grid-template-columns: auto 1.8rem;
+	img {
+		width: 0.9rem;
+		padding-top: 0.55rem;
+		margin-left: 1rem;
+	}
+}
+
+.x-icon {
+	cursor: pointer;
 }
 
 #pause-button, #start-button, #stop-button, #resume-button {

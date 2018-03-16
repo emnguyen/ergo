@@ -73,8 +73,8 @@ function confirmStretchesLoggedIn() {
 	// Reset fav and active flags
 	stop();
 	localStorage.removeItem("fav");
+	$('.time-labels').removeClass('warning');
 
-	console.log("confirm stretches logged in");
 	var empty = true;
 
 	// Submit form if at least one stretch is selected
@@ -92,13 +92,17 @@ function confirmStretchesLoggedIn() {
 	else {
 		if (parseInterval())
 			$('#stretch-form').submit(); 
-		else
+		else {
+			$('.time-labels').addClass('warning');
 			alert("Must enter an alert interval.");
+		}
 	}
 }
 
 function confirmStretches() {
-	console.log("confirm stretches not logged in");
+	// Reset warning
+	$('.time-labels').removeClass('warning');
+
 	var empty = true;
 
 	// Submit form if at least one stretch is selected
@@ -117,8 +121,10 @@ function confirmStretches() {
 		//$('#getPhoneModal').modal('show');
 		if (parseInterval())
 			$('#stretch-form').submit(); 
-		else
+		else {
 			alert("Must enter an alert interval.");
+			$('.time-labels').addClass('warning');
+		}
 	}
 }
 

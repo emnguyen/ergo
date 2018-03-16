@@ -42,7 +42,8 @@
 				
 			</div>
 			<div class="col-5 text-right">
-				<a class="more-info" href="#">View Routine <span class="caret">⌄</span></a>
+				<a class="more-info" href="#">View Routine</a>
+				<span class="share"><img src="images/icons/share.svg" alt="Share"></span>
 			</div>
 		</div>
 
@@ -50,14 +51,40 @@
 			<div class="col">
 				<div class="panel">
 					<div class="stretches-info">
-					<ol>
-						{{#each todo}}
-						<li>
-						{{title}}</li>
-						{{/each}}
-					</ol>
+						<div class="panel-header">
+							<h4>Routine</h4>
+							<img class="x-icon" src="images/icons/x.svg">
+						</div>
+
+						<ol>
+							{{#each todo}}
+							<li>
+							{{title}}</li>
+							{{/each}}
+						</ol>
 					</div>
 				</div>
+			</div>
+		</div>
+
+		<div class="row share-drawer" style="margin-bottom: 1.4rem">
+			<div class="col">
+				<div class="panel">
+
+					<div class="share-info">
+
+						<div class="panel-header">
+							<h4>Share this routine with friends</h4>
+							<img class="x-icon" src="images/icons/x.svg">
+						</div>
+
+						<div class="input-group">
+			      			<input id="share-url" type="url" class="form-control" redonly>
+			      			<span class="input-group-addon share-button" data-toggle="tooltip" data-placement="left" title="Copied!">Copy</span>
+			    		</div>
+
+		    		</div> <!-- .share-info -->
+				</div> <!-- .panel -->
 			</div>
 		</div>
 
