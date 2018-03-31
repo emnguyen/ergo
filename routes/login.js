@@ -1,11 +1,10 @@
-
 /*
- * GET login page.
+ * GET login page
  */
 
 var data = require('../data.json');
 
-exports.view = function(req, res){
+exports.view = function(req, res) {
   res.render('login', {
   	data,
   	"title" : "Log In | Ergo",
@@ -14,11 +13,10 @@ exports.view = function(req, res){
   });
 };
 
-exports.login = function(req, res){
-
+/* Verify log in */
+exports.verify = function(req, res) {
 	var email = req.query["email"];
 	var pwd = req.query["pwd"];
-
 	var loginError;
 
 	// Check for email/pwd
@@ -31,9 +29,6 @@ exports.login = function(req, res){
 			if (pwd == currUser.pwd) {
 				data.loggedIn = currUser;
 				data.phone = currUser.phone;
-
-				//user["guest"] = false;
-
 				res.redirect('/');
 				return;
 			}
@@ -59,14 +54,14 @@ exports.login = function(req, res){
 	});
 };
 
-exports.fb = function(req, res){
+/* Log in with FB */
+exports.fb = function(req, res) {
 	var userid = req.params.id;
 
 	// Login user if they've already logged in
 	for (i in data.users) {
 		var currUser = data.users[i];
 		if (currUser.id == userid) {
-			console.log("existing user");
 			data.loggedIn = currUser;
 			res.redirect('/');
 			return;
@@ -74,16 +69,12 @@ exports.fb = function(req, res){
 	}
 
 	// Otherwise, create new user
-	console.log("creating new user");
-
 	var newUser = {
 		"id" : userid,
-		"favorites" :[
-		]
+		"bookmarks" : []
 	};
 
 	data.setting = false;
-
 	data.loggedIn = newUser;
 	data.users.push(newUser);
 

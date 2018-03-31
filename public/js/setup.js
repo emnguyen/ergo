@@ -1,3 +1,14 @@
+/*
+ * File: setup.js
+ * Description: Javascript for the Setup page.
+ */
+
+/* Name: verifyGuestPhone
+ * Description: Check that the inputed guest phone number is valid before
+ *		submitting stretch form.
+ * Parameters: None
+ * Return: None
+ */
 function verifyGuestPhone() {
 	// Reset warning
 	/*
@@ -26,6 +37,11 @@ function verifyGuestPhone() {
 	$('#stretch-form').submit(); 
 }
 
+/* Name: sortStretches
+ * Description: Push preselected to the top of the stretch list.
+ * Parameters: None
+ * Return: None
+ */
 function sortStretches() {
 	var stretches = $('.stretch-list>li');
 
@@ -35,6 +51,11 @@ function sortStretches() {
 	});
 }
 
+/* Name: selectStretch
+ * Description: Select/deselect stretch by setting its checkbox field to 1/0.
+ * Parameters: $input - the selected stretch object
+ * Return: None
+ */
 function selectStretch($input) {
 	var $stretch = $($input).closest('.stretch');
 	$stretch.toggleClass('selected');
@@ -51,7 +72,11 @@ function selectStretch($input) {
 	}
 }
 
-/* For A/B testing */
+/* Name: selectStretchAlt
+ * Description: selectStretch function for alt page. Used for A/B testing.
+ * Parameters: $input - the selected stretch object
+ * Return: None
+ */
 function selectStretchAlt($input) {
 	var $stretch = $($input).closest('.stretch-alt');
 	$stretch.toggleClass('selected');
@@ -68,11 +93,14 @@ function selectStretchAlt($input) {
 	}
 }
 
-
+/* Name: confirmStretchesLoggedIn
+ * Description: Check that at least one stretch is selected before submitting.
+ * Parameters: None
+ * Return: None
+ */
 function confirmStretchesLoggedIn() {
-	// Reset fav and active flags
-	stop();
-	localStorage.removeItem("fav");
+	// Reset bookmark and active flags
+	localStorage.removeItem("bookmark");
 	$('.time-labels').removeClass('warning');
 
 	var empty = true;
@@ -100,8 +128,15 @@ function confirmStretchesLoggedIn() {
 	}
 }
 
+/* Name: confirmStretches
+ * Description: Check that at least one stretch is selected and request
+ *		a guest phone number before submitting.
+ * Parameters: None
+ * Return: None
+ */
 function confirmStretches() {
-	// Reset warning
+	// Reset bookmark and active flags
+	localStorage.removeItem("bookmark");
 	$('.time-labels').removeClass('warning');
 
 	var empty = true;
@@ -124,12 +159,18 @@ function confirmStretches() {
 		if (parseInterval())
 			$('#stretch-form').submit(); 
 		else {
-			$("#no-interval").modal('show');
 			$('.time-labels').addClass('warning');
+			$("#no-interval").modal('show');
 		}
 	}
 }
 
+/* Name: parseInterval
+ * Description: Convert interval from string to seconds and check validity
+ *		before filling out form.
+ * Parameters: None
+ * Return: Return true if interval > 0, return false if otherwise.
+ */
 function parseInterval() {
 	var interval = 0;
 
@@ -140,6 +181,7 @@ function parseInterval() {
 	var s = parseInt($('#s').val());
 	interval += s;
 
+	// Fill out form field if valid interval
 	if (interval > 0) {
 		$('#interval-input').val(interval);
 		localStorage.setItem("interval", interval);
@@ -149,8 +191,12 @@ function parseInterval() {
 	return false;
 }
 
-
-
+/* Name: sumDuration
+ * Description: Sum the durations of the selected stretches and update
+ *		the displayed total duration.
+ * Parameters: None
+ * Return: Return the total duration as a string.
+ */
 function sumDuration() {
 	var totalDuration = 0;
 
@@ -167,27 +213,59 @@ function sumDuration() {
 	return totalDuration;
 }
 
+/* Name: getDuration
+ * Description: Convert the inputed stretch's duration to seconds and return.
+ * Parameters: $stretch - the stretch whose duration we're returning.
+ * Return: Return the inputed stretch's duration in seconds.
+ */
 function getDuration($stretch) {
 	return parseDuration($($stretch).find('.duration').text());
 }
 
+/* Name: incTotalDuration
+ * Description: Increase the total duration by the inputed stretch's duration.
+ * Parameters: $stretch - the stretch whose duration we're incrementing the
+ *		total duration by
+ * Return: None
+ */
 function incTotalDuration($stretch) {
 	setTotalDuration(getTotalDuration() + getDuration($stretch));
 }
 
+/* Name: decTotalDuration
+ * Description: Decrease the total duration by the inputed stretch's duration.
+ * Parameters: $stretch - the stretch whose duration we're decrementing the
+ *		total duration by
+ * Return: None
+ */
 function decTotalDuration($stretch) {
 	setTotalDuration(getTotalDuration() - getDuration($stretch));
 }
 
+/* Name: getTotalDuration
+ * Description: Convert the total duration from a string to seconds
+ *		and return.
+ * Parameters: None
+ * Return: Return the total duration in seconds.
+ */
 function getTotalDuration() {
 	return timeToS($('.total-duration').attr('placeholder'));
 }
 
+/* Name: setTotalDuration
+ * Description: Convert the inputed time from seconds to a string and display.
+ * Parameters: time - the inputed duration in seconds
+ * Return: None
+ */
 function setTotalDuration(time) {
 	$('.total-duration').attr('placeholder', sToTime(time));
 }
 
-
+/* Name: appendIntervalOptions
+ * Description: Append options to interval selection fields.
+ * Parameters: None
+ * Return: None
+ */
 function appendIntervalOptions() {
 	var i;
 	for (i = 0; i < 60; i++) {
@@ -216,14 +294,14 @@ function appendIntervalOptions() {
 
 	for (i = 0; i <= 8; i++) {
 		var option = document.createElement("option");
-		
 		option.text = i;
-	
 		$('#h').append(option);
 	}
 }
 
-
+/*
+ * Main function
+ */
 var main = function () {
 	sortStretches();
 	sumDuration();
@@ -245,6 +323,7 @@ var main = function () {
 	$('#setup-page .stretch-info').click(function() {
 		selectStretch(this);
 	});
+
 	// Toggle select stretch
 	$('#setup-page .stretch-image').click(function() {
 		selectStretch(this);
@@ -265,16 +344,15 @@ var main = function () {
 		$(this).parent().find('.chevron').toggleClass('chevron-up');
 	});
 
-
 	/***************/
 
 	// Submitting a guest phone number with enter
 	$('#phoneInput').on('click keypress', function(e) {
-	if (e.type == 'keypress' && e.keyCode == 13) {
-		e.preventDefault();
-        verifyGuestPhone();
-    }
-});
+		if (e.type == 'keypress' && e.keyCode == 13) {
+			e.preventDefault();
+	        verifyGuestPhone();
+	    }
+	});
 };
 
 $(document).ready(main);

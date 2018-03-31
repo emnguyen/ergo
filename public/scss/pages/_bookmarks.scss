@@ -1,16 +1,20 @@
-#favorites {
+/*
+ * Bookmark page styles
+ */
+
+#bookmarks {
 	margin-top: 1.5rem;
 }
 
-#fav-form {
-margin-right: 2rem;
+#bookmark-form {
+	margin-right: 2rem;
 }
 
-#fav-form-submit {
+#bookmark-form-submit {
 	cursor: pointer;
 }
 
-.favorites-list {
+.bookmarks-list {
 	list-style: none;
 	padding: 0;
 	li {
@@ -18,12 +22,6 @@ margin-right: 2rem;
 		border-bottom: .05rem solid #e5e5e5;
 	}
 }
-
-.expand-fav {
-	//color: $primary;
-}
-
-
 
 .bookmark-options {
 	display: none;

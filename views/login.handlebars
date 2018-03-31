@@ -1,61 +1,60 @@
 {{#with data}}
-<div id="login-page">
-	<div id="login">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<h1>Log In</h1>
-				</div>
-			</div>
-		
-			<div class="row">
-				<div class="col">
-					<div class="d-flex justify-content-center">
+	<div id="login-page">
+		<div id="login">
+			<div class="container">
 
-					<form id="login-form" class="loginSignup" action="/verify-login">
-					
-						<!-- Email -->
-						<div class="input-group">
-					  		<span class="input-group-addon" id="sizing-addon1">E-mail</span>
-					  		<input name="email" type="email" class="form-control" value="ergo@ucsd.edu" aria-describedby="sizing-addon1" required>
-						</div>
-
-						<!-- Password -->
-						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon1">Password</span>
-							<input name="pwd" type="password" class="form-control" value="ergo" aria-describedby="sizing-addon1" required>
-						</div>
-					
-						<!-- Submit -->
-						<button type="submit" onclick="login()"  class="btn btn-primary btn-block">Log in</button>
-
-
-						{{#if ../loginError}}
-							<p style="margin-top: 2rem; color: red;">{{../loginError}}</p>
-						{{/if}}
-
-					</form> <!-- .login-form -->
-
+				<!-- Page title -->
+				<div class="row">
+					<div class="col text-center">
+						<h1>Log In</h1>
 					</div>
-				</div> <!-- .col -->
-			</div> <!-- .row -->
-
-			<div class="row">
-				<div class="col fb-login">
-					<h3>Log in through Facebook</h3>
-					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-					</fb:login-button>
 				</div>
-			</div>
+			
+				<div class="row">
+					<div class="col">
+						<div class="d-flex justify-content-center">
 
-			<div class="row">
-				<div class="col toggleLoginSignup">
-					<p>Don't have an account? <a href="/signup">Sign Up</a></p>
+							<!-- Login form -->
+							<form id="login-form" class="loginSignup" action="/verify-login">
+								<!-- Email -->
+								<div class="input-group">
+							  		<span class="input-group-addon" id="sizing-addon1">E-mail</span>
+							  		<input name="email" type="email" class="form-control" value="ergo@ucsd.edu" aria-describedby="sizing-addon1" required>
+								</div>
+								<!-- Password -->
+								<div class="input-group">
+									<span class="input-group-addon" id="sizing-addon1">Password</span>
+									<input name="pwd" type="password" class="form-control" value="ergo" aria-describedby="sizing-addon1" required>
+								</div>
+								<!-- Submit -->
+								<button type="submit" onclick="login()"  class="btn btn-primary btn-block">Log in</button>
+								<!-- Login error -->
+								{{#if ../loginError}}
+									<p style="margin-top: 2rem; color: red;">{{../loginError}}</p>
+								{{/if}}
+							</form> <!-- /.login-form -->
+
+						</div>
+					</div> <!-- /.col -->
+				</div> <!-- /.row -->
+
+				<!-- FB login -->
+				<div class="row">
+					<div class="col fb-login">
+						<h3>Log in through Facebook</h3>
+						<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+						</fb:login-button>
+					</div>
 				</div>
-			</div>
 
-	</div> <!-- .container -->
-	</div>
-</div>
+				<!-- Sign up instead -->
+				<div class="row">
+					<div class="col toggleLoginSignup">
+						<p>Don't have an account? <a href="/signup">Sign Up</a></p>
+					</div>
+				</div>
+
+			</div> <!-- /.container -->
+		</div> <!-- /#login -->
+	</div> <!-- /#login-page -->
 {{/with}}
-

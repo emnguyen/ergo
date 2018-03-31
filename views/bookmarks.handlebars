@@ -1,84 +1,84 @@
 {{#with data}}
-<div id="favorites-page">
-	<div id="favorites">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<h1>Bookmarks</h1>
-				</div>
-			</div>
-			{{#if loggedIn}}
-			<div class="row">
-				<div class="col text-right text-primary">
-					<a class="edit-button">Edit</a>
-				</div>
-			</div>
-			{{/if}}
+	<div id="bookmarks-page">
+		<div id="bookmarks">
+			<div class="container">
 
-			<!-- Ask user to log in/sign up if needed-->
-			<div class="row">
+				<!-- Title -->
+				<div class="row">
+					<div class="col text-center">
+						<h1>Bookmarks</h1>
+					</div>
+				</div>
+
+				<!-- Show edit button if logged in -->
+				{{#if loggedIn}}
+					<div class="row">
+						<div class="col text-right text-primary">
+							<a class="edit-button">Edit</a>
+						</div>
+					</div>
+				{{/if}}
+
+				<!-- Ask user to log in/sign up if logged out -->
 				{{#unless loggedIn}}
-				<div class="col">
-					<p><a href="/login">Log In</a> or <a href="/signup">Sign Up</a> to bookmark your favorite stretch routines!</p>
-				</div>
+					<div class="row">
+						<div class="col">
+							<p><a href="/login">Log In</a> or <a href="/signup">Sign Up</a> to bookmark your favorite stretch routines!</p>
+						</div>
+					</div>
 				{{/unless}}
-			</div>
 
-			<!-- List of favorites -->
-			{{#if loggedIn}}
-			<div class="row">
-				<div class="col-12">
-					<ul class="favorites-list">
-			
-					{{#each loggedIn.favorites}}
-						<li class="favorite d-flex justify-content-between">
-							<h5><a class="fav-link" href="{{url}}">{{name}}</a></h5>
-							<span>
-								<!--
-								<span class="oi oi-chevron-bottom expand-fav"></span> -->
+				<!-- List of bookmarks -->
+				{{#if loggedIn}}
+					<div class="row">
+						<div class="col-12">
+							<ul class="bookmarks-list">
+					
+								{{#each loggedIn.bookmarks}}
+									<li class="bookmark d-flex justify-content-between">
+										<!-- Bookmark title -->
+										<h5><a class="bookmark-link" href="{{url}}">{{name}}</a></h5>
+										<!-- Edit/delete options -->
+										<span class="bookmark-options">
+											<span class="oi oi-pencil text-primary"></span>
+											<span class="oi oi-trash delete-bookmark text-primary"></span>
+										</span> 				
+									</li>
+								{{/each}}
+					
+							</ul> <!-- /.bookmarks-list -->
+						</div> <!-- /.col -->
+					</div> <!-- /.row -->
+				{{/if}}
 
-								<span class="bookmark-options">
-									<span class="oi oi-pencil text-primary edit-fav"></span>
-									<span class="oi oi-trash  text-primary delete-fav"></span>
-								</span>
-							</span>
-
-							
-						</li>
-
-					{{/each}}
-			
-					</ul> <!-- /.favorites-list -->
-				</div>
-			</div> <!-- /.row -->
-			{{/if}}
-
-		</div> <!-- /.container -->
-	</div> <!-- /#favorites -->
-</div> <!-- /#favorites-page -->
+			</div> <!-- /.container -->
+		</div> <!-- /#bookmarks -->
+	</div> <!-- /#bookmarks-page -->
 {{/with}}
 
-<!-- Confirm delete -->
+<!-- Confirm delete modal -->
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog">
   <div class="modal-dialog .modal-dialog-centered" role="document">
     <div class="modal-content">
+    	<!-- Header -->
     	<div class="modal-header">
         <h5 class="modal-title">Delete Bookmark</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <!-- Body -->
       <div class="modal-body">
         <p class="dark">Are you sure you want to delete <strong><span class="delete-target"></span></strong>?</p>
-      </div>
+      </div> 
+      <!-- Footer -->
       <div class="modal-footer">
       	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <button type="button" id="#delete-submit" onclick="deleteBookmark()" class="btn btn-primary" >Yes</button>
-      </div>
-    </div>
-  </div>
-</div>
+      </div> 
+    </div> <!-- /.modal-content -->
+  </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
 
 <!-- fav.js -->
-<script src="js/fav.js"></script>
-
+<script src="js/bookmark.js"></script>

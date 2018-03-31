@@ -1,43 +1,42 @@
-
 /*
- * GET favorites page.
+ * GET bookmarks page
  */
 
 var data = require('../data.json');
 
-exports.view = function(req, res){
+exports.view = function(req, res) {
   res.render('bookmarks', {
   	data,
-  	"title" : "Favorites | Ergo"
+  	"title" : "Bookmarks | Ergo"
   });
 };
 
-exports.save = function(req, res){
-	// Get name and url of new fav
+/* Save bookmark */
+exports.save = function(req, res) {
+	// Get name and url of new bookmark
 	var name = req.body.name;
 	var url = req.body.url;
 
 	// Create and push json object
-	var favorite = {
+	var bookmark = {
 		"name" : name,
 		"url" : url
 	}
-    data.loggedIn.favorites.push(favorite); 
-
-    return;
+    data.loggedIn.bookmarks.push(bookmark); 
 };
 
-exports.delete = function(req, res){
+/* Delete bookmark */
+exports.delete = function(req, res) {
 	var name = req.body.name;
 	var url = req.body.url;
 
-	// Search for the targeted favorite
-	for (i in data.loggedIn.favorites) {
-		var currFav = data.loggedIn.favorites[i];
+	// Search for the targeted bookmark
+	for (i in data.loggedIn.bookmarks) {
+		var curr = data.loggedIn.bookmarks[i];
 
 		// Once favorite is found, delete
-		if (currFav["name"] == name && currFav["url"] == url) {
-			delete data.loggedIn.favorites[i];
+		if (curr["name"] == name && curr["url"] == url) {
+			delete data.loggedIn.bookmarks[i];
 			break;
 		}
 	}

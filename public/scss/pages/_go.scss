@@ -1,14 +1,20 @@
+/*
+ * Go page styles
+ */
+
 $status-height: 1rem;
 $yellow: #FFDB61;
 $blue: #2196F3;
 
 #go-page {
+	margin-top: 1.5rem;
 	h1 {
 		margin-bottom: 1.5rem;
 	}
 }
 
 #routine-name {
+	/* Blue status dot */
 	&.active {
 		&:after {
 			content: '';
@@ -24,6 +30,7 @@ $blue: #2196F3;
 			background-color: $blue;
 		}
 	}
+	/* Yellow status dot */
 	&.paused {
 		&:after {
 			content: '';
@@ -43,7 +50,8 @@ $blue: #2196F3;
 
 .more-info {
 	display: inline-block;
-	font-size: 0.8rem;
+	font-size: 1rem;
+	cursor: pointer;
 }
 
 .stretches-info {
@@ -63,6 +71,7 @@ $blue: #2196F3;
 	margin-left: 0.8rem;
 	img {
 		height: 1.1rem;
+		margin-top: -0.2rem;
 	}
 }
 
@@ -82,7 +91,7 @@ $blue: #2196F3;
 	display: none;
 }
 
-#fav-form {
+#bookmark-form {
 	margin-top: -2rem;
 	margin-bottom: -5rem;
 	padding: 1.5rem 0 1rem;
@@ -93,27 +102,11 @@ $blue: #2196F3;
 		color: #ff6d6d;
 	}
 }
-#fav-form-submit {
+
+#bookmark-form-submit {
 	z-index: 5;
 	cursor: pointer;
 	display: inline-block;
-}
-
-#heart {
-	display: none;
-	z-index: 9999;
-	font-size: 9rem;
-	line-height: 0;
-	padding: 3rem;
-	position: fixed;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	text-align: center;
-	span {
-		margin-top: 30vh;
-		text-shadow: 0 .3rem 1rem rgba(14, 57, 61, 0.14);
-	}
 }
 
 .panel {
@@ -126,7 +119,6 @@ $blue: #2196F3;
 	.oi {
 		font-size: 1.5rem;
 	}
-
 }
 
 .pause-panel {
@@ -199,5 +191,4 @@ $blue: #2196F3;
 	text-align: center;
 	padding-bottom: 0.3rem;
 	font-size: 3rem;
-
 }

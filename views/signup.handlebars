@@ -1,80 +1,76 @@
 {{#with data}}
-<div id="login-page">
-	<div id="login">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<h1>Sign Up</h1>
-				</div>
-			</div>
-		
-			<div class="row">
-				<div class="col">
-					<div class="d-flex justify-content-center">
-					
-					<form id="signup-form" class="loginSignup" action="/verify-signup">
+	<div id="login-page">
+		<div id="login">
+			<div class="container">
 
-						<!-- First Name -->
-						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon1">First Name</span>
-							<input name="firstName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" autocomplete="off" required>
-						</div>
-						<!-- Last Name -->
-						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon1">Last Name</span>
-							<input name="lastName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" autocomplete="off" required>
-						</div>
-
-						<!-- Email -->
-						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon1">E-mail</span>
-							<input name="email" type="email" class="form-control" aria-describedby="sizing-addon1" autocomplete="off" required>
-						</div>
-
-						<!-- Password -->
-						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon1">Password</span>
-							<input name="pwd" type="password" class="form-control" aria-describedby="sizing-addon1" autocomplete="off" required>
-						</div>
-				
-						<p><small>Ergo sends alerts through SMS. Where can we reach you?</small></p>
-						<!--
-						<small class="text-muted">E.g. 5557779999</small> -->
-						<!-- Phone -->
-						<div class="input-group">
-							<span class="input-group-addon" id="sizing-addon1">Phone</span>
-							<input name="phone" type="number" class="form-control" aria-describedby="sizing-addon1" required>
-						</div>
-
-						<!-- Sign Up button -->
-						<button type="submit" onclick="signup()" class="btn btn-primary btn-block">Sign Up</button>
-
-						{{#if ../signupError}}
-							<p style="margin-top: 2rem; color: red;">{{../signupError}}</p>
-						{{/if}}
-
-					</form> <!-- .login-form -->
+				<!-- Page title -->
+				<div class="row">
+					<div class="col text-center">
+						<h1>Sign Up</h1>
 					</div>
-
-				</div> <!-- .col -->
-			</div> <!-- .row -->
-
-			<div class="row">
-				<div class="col fb-login">
-					<h3>Log in through Facebook</h3>
-					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-					</fb:login-button>
 				</div>
-			</div>
+			
+				<div class="row">
+					<div class="col">
+						<div class="d-flex justify-content-center">
+						
+							<!-- Sign up form -->
+							<form id="signup-form" class="loginSignup" action="/verify-signup">
+								<!-- First Name -->
+								<div class="input-group">
+									<span class="input-group-addon" id="sizing-addon1">First Name</span>
+									<input name="firstName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" autocomplete="off" required>
+								</div>
+								<!-- Last Name -->
+								<div class="input-group">
+									<span class="input-group-addon" id="sizing-addon1">Last Name</span>
+									<input name="lastName" type="text" class="form-control" placeholder="" aria-describedby="sizing-addon1" autocomplete="off" required>
+								</div>
+								<!-- Email -->
+								<div class="input-group">
+									<span class="input-group-addon" id="sizing-addon1">E-mail</span>
+									<input name="email" type="email" class="form-control" aria-describedby="sizing-addon1" autocomplete="off" required>
+								</div>
+								<!-- Password -->
+								<div class="input-group">
+									<span class="input-group-addon" id="sizing-addon1">Password</span>
+									<input name="pwd" type="password" class="form-control" aria-describedby="sizing-addon1" autocomplete="off" required>
+								</div>	
+								<!-- Phone -->
+								<p><small>Ergo sends alerts through SMS. Where can we reach you?</small></p>
+								<div class="input-group">
+									<span class="input-group-addon" id="sizing-addon1">Phone</span>
+									<input name="phone" type="number" class="form-control" aria-describedby="sizing-addon1" required>
+								</div>
+								<!-- Submit -->
+								<button type="submit" onclick="signup()" class="btn btn-primary btn-block">Sign Up</button>
+								<!-- Sign up error -->
+								{{#if ../signupError}}
+									<p style="margin-top: 2rem; color: red;">{{../signupError}}</p>
+								{{/if}}
+							</form> <!-- /.login-form -->
 
-			<div class="row">
-				<div class="col toggleLoginSignup">
-					<p>Already have an account? <a href="/login">Log In</a></p>
+						</div> 
+					</div> <!-- /.col -->
+				</div> <!-- /.row -->
+
+				<!-- FB login -->
+				<div class="row">
+					<div class="col fb-login">
+						<h3>Log in through Facebook</h3>
+						<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+						</fb:login-button>
+					</div>
 				</div>
-			</div>
 
-	</div> <!-- .container -->
-	</div>
-</div>
+				<!-- Log in instead -->
+				<div class="row">
+					<div class="col toggleLoginSignup">
+						<p>Already have an account? <a href="/login">Log In</a></p>
+					</div>
+				</div>
+
+			</div> <!-- /.container -->
+		</div> <!-- /#login -->
+	</div> <!-- /#login-page -->
 {{/with}}
-

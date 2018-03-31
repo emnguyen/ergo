@@ -1,44 +1,50 @@
+<!-- Alt stretch list item -->
 <li class="stretch-alt {{#if active}}selected{{/if}}">
+	<!-- Input field -->
 	<input class="stretch-checkbox" type="hidden" name="{{@key}}" value="{{#if active}}1{{/if}}{{#unless active}}0{{/unless}}">
 	
-	<div class="stretch-check">
-	</div>
+	<!-- Stretch check -->
+	<div class="stretch-check"></div>
 
-	<!-- Info -->
+	<!-- Stretch info -->
 	<div class="stretch-info">
 		<p class="stretch-title">{{title}}</p>
 		<p class="target-duration-container">
+			<!-- Target -->
 			<span class="d-flex align-items-center">
 				<span class="oi oi-target"></span>
 				<span>{{target}}</span>
 			</span>
+			<!-- Duration -->
 			<span class="d-flex align-items-center">
-				<span class="oi oi-clock"></span> {{duration}}
+				<span class="oi oi-clock"></span>
+				<span>{{duration}}</span>
 			</span>
-		</p>
-	</div> <!-- .stretch-info -->
+		</p> <!-- /.target-duration-container -->
+	</div> <!-- /.stretch-info -->
 
-	<!-- Expand button -->
+	<!-- Chevron -->
 	<div class="expand-stretch">
 		<span class="chevron chevron-down"></span>
-	</div> <!-- .expand-stretch -->
+	</div> 
 
-	<!-- Description -->
+	<!-- Drawer description -->
 	<div class="stretch-drawer">
 		<div class="container">
-			<!-- Icon -->
+			
+			<!-- Stretch icon -->
 			<div class="stretch-image-alt">
-				<!--
-				<img src="https://s21.q4cdn.com/861911615/files/images/placeholder.png"> -->
 				<img src="{{gif}}">
-			</div> <!-- .stretch-image -->
-			<div class="stretch-desc-alt">
+			</div> <!-- .stretch-image-alt -->
+
+			<div class="stretch-desc">
 				<p><strong>Props:</strong> {{props}}</p>
 				<p><strong>Steps:</strong></p>
 				<ol class="steps">
 					{{{steps}}}
 				</ol>
-			</div>
-		</div>
-	</div>
+			</div> <!-- /.stretch-desc -->
+
+		</div> <!-- /.container -->
+	</div> <!-- /.stretch-drawer -->
 </li>

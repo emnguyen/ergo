@@ -1,19 +1,18 @@
 
 /*
- * GET stretches page.
+ * GET setup page
  */
 
 var data = require('../data.json');
 
-exports.view = function(req, res){
+exports.view = function(req, res) {
 	// Reset active
-	for (var i in data.stretches) {
+	for (var i in data.stretches)
 		data.stretches[i].active = false;	
-	}
 
 	var inputClass = req.query["name"];
-	// Activate stretches for this environment
 
+	// Activate stretches selected environment
 	for (var i in data.stretches) {
 		var tags = data.stretches[i].tags;
 		// Check all tags for a match
@@ -26,18 +25,18 @@ exports.view = function(req, res){
 
 	data.setting = inputClass;
 
-  res.render('setup', {
-  	data,
-  	"experimentPage" : true,
-  	"title" : "Setup | Ergo"
-  });
+	res.render('setup', {
+		data,
+		"experimentPage" : true,
+		"title" : "Setup | Ergo"
+	});
 };
 
-exports.viewAlt = function(req, res){
+/* View alt setup page */
+exports.viewAlt = function(req, res) {
 	// Reset active
-	for (var i in data.stretches) {
+	for (var i in data.stretches)
 		data.stretches[i].active = false;	
-	}
 
 	var inputClass = req.query["name"];
 	// Activate stretches for this environment
@@ -57,8 +56,8 @@ exports.viewAlt = function(req, res){
 	// For A/B testing
 	data.viewAlt = true;
 
-  res.render('setupAlt', {
-  	data,
-  	"title" : "Setup | Ergo"
-  });
+	res.render('setupAlt', {
+		data,
+		"title" : "Setup | Ergo"
+	});
 };

@@ -1,4 +1,4 @@
-
+<!-- Facebook login script -->
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -11,7 +11,6 @@
     FB.AppEvents.logPageView();   
     //FB.Event.subscribe("auth.logout", function() {window.location.href = '/logout'});
   };
-
   (function(d, s, id){
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
@@ -19,5 +18,4 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-
 </script>

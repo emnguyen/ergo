@@ -3,6 +3,11 @@
  * Description: Main javascript.
  */
 
+/* Name: parseDuration
+ * Description: Converts the duration from string to seconds.
+ * Parameters: durationStr - time as a string
+ * Return: Returns the time in seconds.
+ */
 function parseDuration(durationStr) {
 	var duration = parseInt(durationStr); 
 
@@ -15,19 +20,12 @@ function parseDuration(durationStr) {
 	}
 }
 
- function timeToS(time) {
- 	/*
-	var totalS = 0;
-	// Get hours
-	// Get minutes
-	var m = parseInt(time.substr(0, time.indexOf(':')));
-	totalS += m * 60;
-	// Get seconds
-	var s = parseInt(time.split(':')[1]);
-	totalS += s; 
-
-	return totalS; */
-
+/* Name: timeToS
+ * Description: Convert time string to seconds.
+ * Parameters: time - the inputed time string
+ * Return: Returns the time in seconds.
+ */
+function timeToS(time) {
 	var p = time.split(':'),
         s = 0, m = 1;
 
@@ -39,6 +37,11 @@ function parseDuration(durationStr) {
     return s;
 }
 
+/* Name: sToTime
+ * Description: Convert the time in seconds to a string.
+ * Parameters: s - the time in seconds
+ * Return: Return the time as a string.
+ */
 function sToTime(s) {
     var h = Math.floor(s/3600); //Get whole hours
     s -= h*3600;
@@ -51,15 +54,31 @@ function sToTime(s) {
     return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s); //zero padding on minutes and seconds
 }
 
+/* Name: hideWelcome
+ * Description: Hide the welcome message and save this setting
+ *		in sessionStorage.
+ * Parameters: None
+ * Return: None
+ */
 function hideWelcome() {
 	sessionStorage.setItem("hideWelcome", "true");
 	$('#welcome').hide();
 }
 
+/* Name: goBack
+ * Description: Go back one page in the window history.
+ * Parameters: None
+ * Return: None
+ */
 function goBack() {
 	window.history.back();
 }
 
+/* Name: login
+ * Description: Reset go page, submit login form, and update localStorage.
+ * Parameters: None
+ * Return: None
+ */
 function login() {
 	resetGo();
 
@@ -67,6 +86,11 @@ function login() {
 	$('#login-form').submit();
 }
 
+/* Name: logout
+ * Description: Logout by clearing localStorage fields.
+ * Parameters: None
+ * Return: None
+ */
 function logout() {
   window.location.href = "/logout";
   localStorage.removeItem("name");
@@ -78,15 +102,23 @@ function logout() {
   } 
 }
 
+/* Name: resetGo
+ * Description: Reset go page by clearing localStorage fields.
+ * Parameters: None
+ * Return: None
+ */
 function resetGo() {
-	stop();
 	localStorage.removeItem("status");
- 	localStorage.removeItem("fav");
+ 	localStorage.removeItem("bookmark");
 }
 
+/* Name: signup
+ * Description: Reset go page and log in as new user.
+ * Parameters: None
+ * Return: None
+ */
 function signup() {
 	resetGo();
-	
 	// Clear warnings
 	$('.warning').text("");
 
@@ -106,48 +138,8 @@ function signup() {
 	window.location.href = "/";
 }
 
-
- /*
-
-function start() {
-	$('#status-container').removeClass('pause');
-	$('#status-container').slideDown();
-	$('#start-button').hide();
-	$('#stop-button').show();
-	$('.pause-panel').show();
-	//$('.gif-panel').slideDown();
-	localStorage.setItem("status", "active");
-
-	//var $firstStretch = $('.curr-stretch').first();
-	//startStretch($firstStretch);
-}
-
-function stop() {
-	$('#status-container').slideUp();
-	$('#start-button').show();
-	$('#stop-button').hide();
-	$('.pause-panel').hide();
-	//$('.gif-panel').slideUp();
-	localStorage.removeItem("status");
-}
-
-function togglePause() {
-	$('#status-container').toggleClass('pause');
-	$('#pause-button').toggleClass('oi-media-pause');
-	$('#pause-button').toggleClass('oi-media-play');
-	$('#status').text(function(i, text) {
-		if (text === "Active")
-			localStorage.setItem("status", "paused");
-		else
-			localStorage.setItem("status", "active");
-		return text === "Active" ? "Paused" : "Active";
-	});
-}
-*/
-
-
 /*
- * main
+ * Main function
  */
 var main = function () {
 	// For development only
@@ -155,16 +147,15 @@ var main = function () {
 
 	var loggedIn = localStorage.getItem("loggedIn");
 
-	// Reset fav if logged out
+	// Reset bookmark if logged out
 	if (loggedIn == false) {
-		localStorage.removeItem("fav");
+		localStorage.removeItem("bookmark");
 	}
-
 	if (localStorage.getItem("name")) {
 		$('#name').text(localStorage.getItem("name"));
 	}
 
-	/* Highlight active menu item */
+	// Highlight active menu item 
   	var url = window.location.href;
     $('.nav-link').filter(function() {
         return this.href == url;
@@ -179,59 +170,6 @@ var main = function () {
     	$('.login-nav-link').addClass('dropdown-active');
     	$('.signup-nav-link-md').addClass('active');
     }
-/*
-    var go;
-    if (go = localStorage.getItem("go")) {
-    	$('#status-container').click(function() {
-    		window.location.href = go;
-    	});
-    }
-*/
-
-	/*
-    var status;
-    if (status = localStorage.getItem("status")) {
-  		if (status == "paused") {
-  			togglePause();
-  		}
-
-  		// temp
-  		$('.gif-panel').show();
-  		var $firstStretch = $('.curr-stretch').first();
-		
-		//startStretch($firstStretch);
-
-    	$('#status-container').show();
-
-    	$('#status-container').click(function() {
-    		// Set status container link
-    		go = localStorage.getItem("go");
-    		window.location.href = go;
-    	});
-    }
-	*/
-   
-/*
-	$('.confirm-stretches').click(function(e) {
-		var empty = true;
-		// Submit form if at least one stretch is selected
-		$('.stretch-checkbox').each(function() {
-			if ($(this).val() == "1") {
-				empty = false;
-			}
-		});
-
-		// Otherwise, show warning
-		if (empty) {
-			alert("You must select at least one stretch.");
-			e.preventDefault();
-		}
-
-	}); 
-*/
-
-
-
 };
 
 $(document).ready(main);

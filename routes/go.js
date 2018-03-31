@@ -1,26 +1,19 @@
 
 /*
- * GET go page.
+ * GET go page
  */
 
 var data = require('../data.json');
-var user = require('../public/user.json');
 
-exports.view = function(req, res){
+exports.view = function(req, res) {
 	// Clear todo queue
 	data.todo = [];
 
-	// Store interval
+	// Store interval + selected stretches
 	data.interval = req.query["interval"];
-
 	var selected = req.query;
 
-	// Redirect to home is queue is empty
-	if (!selected.length) {
-		//res.redirect('/');
-		//return;
-	}
-
+	// Push selected stretches into todo queue
 	for (var i in selected) {
 		if (selected[i] == 1) { 
 			var stretch = data.stretches[i];
@@ -30,7 +23,6 @@ exports.view = function(req, res){
 
   res.render('go', {
   	data,
-  	user,
   	"title" : "Go! | Ergo"
   });
 };

@@ -1,82 +1,76 @@
 {{#with data}}
-<div id="home-page">
+  <div id="home-page">
+    <div class="container">
 
-<div class="container">
-	<div id="welcome" class="hideWelcome jumbotron">
+    	<div id="welcome" class="hideWelcome jumbotron">
         <h1 class="display-3">Welcome to</h1>
         <img src="images/logo.svg">
         <p class="lead">Ergo is a mobile web app that combats the discomfort that results from a sedentary lifestyle by <i>periodically alerting users to stretch</i>. Designed to work across many different environments, Ergo is unique in that it introduces exercises that <i>utilize the everyday objects around us.</i></p>
 
         <button id="hide-welcome" class="btn btn-lg btn-primary" onclick="hideWelcome()" role="button">Hide</button>
-    </div>
-
-<div class="progress-container">
-  
-<ol class="progressBar">
-  <li class="progress-bar-step is-current">
-    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-    <span class="progress-bar-stepLabel">Choose Setting</span>
-  </li>
-  <li class="progress-bar-step">
-    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-    <span class="progress-bar-stepLabel">Customize Stretches</span>
-  </li>
-  <li class="progress-bar-step">
-    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-    <span class="progress-bar-stepLabel">Ready to Go!</span>
-  </li>
-</ol>
-  
-</div>
-
-<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-  <symbol id="checkmark-bold" viewBox="0 0 24 24">
-    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
-  </symbol>
-</svg>
-
-
-		<div class="row">
-			<div class="col text-center">
-				<h1>Where are you working today?</h1>
-        <p>Get started by loading one of these recommended presets.</p>
-			</div>
-		</div>
-
-
-		<div id="environments" class="row no-gutters">
-
-			{{#each environments}}
-			<div class="col-6 environment" style="background-image: url('{{background}}')">
-
-        <div class="environment-overlay">
-
-  				<form id="environment-form" class="setup-form" action="/setup" method="get">
-
-  				<div class="environment-submit">
-            <h3>{{name}}</h3>
-            <p class="environment-description">{{{description}}}</p>
-          </div>
-  				<input type="hidden" name="name" value="{{className}}">
-
-  				</form>
-        </div> <!-- .environment-overlay -->
-				
-			</div> <!-- .environment -->
-			{{/each}}
-
-		</div> <!-- #environments -->
-
-    <div class="row">
-      <div class="col text-center">
-        <p>Or, <a href="/setup">build a routine from scratch →</a></p>
       </div>
-    </div>
 
-</div> <!-- .container -->
+      <div class="progress-container">
+        <ol class="progressBar">
+          <li class="progress-bar-step is-current">
+            <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+            <span class="progress-bar-stepLabel">Choose Setting</span>
+          </li>
+          <li class="progress-bar-step">
+            <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+            <span class="progress-bar-stepLabel">Customize Stretches</span>
+          </li>
+          <li class="progress-bar-step">
+            <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+            <span class="progress-bar-stepLabel">Ready to Go!</span>
+          </li>
+        </ol>
+      </div>
 
+      <!-- Checkmark svg -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+        <symbol id="checkmark-bold" viewBox="0 0 24 24">
+          <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+        </symbol>
+      </svg>
 
-</div> <!-- #home-page -->
+      <!-- Page title + description -->
+    	<div class="row">
+    		<div class="col text-center">
+    			<h1>Where are you working today?</h1>
+          <p>Get started by loading one of these recommended presets.</p>
+    		</div>
+    	</div>
+
+      <!-- Environment selection -->
+    	<div id="environments" class="row no-gutters">
+    		{{#each environments}}
+      		<div class="col-6 environment" style="background-image: url('{{background}}')">
+            <div class="environment-overlay">
+
+              <!-- Environment form -->
+      				<form id="environment-form" class="setup-form" action="/setup" method="get">
+        				<div class="environment-submit">
+                  <h3>{{name}}</h3>
+                  <p class="environment-description">{{{description}}}</p>
+                </div>
+      				  <input type="hidden" name="name" value="{{className}}">
+      				</form>
+
+            </div> <!-- /.environment-overlay -->
+      		</div> <!-- /.environment -->
+    		{{/each}}
+    	</div> <!-- /#environments -->
+
+      <!-- Build from scratch -->
+      <div class="row">
+        <div class="col text-center">
+          <p>Or, <a href="/setup">build a routine from scratch →</a></p>
+        </div>
+      </div>
+
+    </div> <!-- /.container -->
+  </div> <!-- /#home-page -->
 {{/with}}
 
 <script src="js/home.js"></script>

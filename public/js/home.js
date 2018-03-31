@@ -1,10 +1,13 @@
 /*
- * home.js
+ * File: home.js
+ * Description: Javascript for the home page.
  */
 
+/*
+ * Main function
+ */
 var main = function () {
 	$('.environment-submit').click(function() {
-		//alert($('.environment-name').val());
 		$(this).closest('#environment-form').submit();
 	});
 };

@@ -1,3 +1,7 @@
+/*
+ * Setup page styles
+ */
+
 $stretch-height: 3.5rem;
 $stretch-radius: 0.4rem;
 $gif-height: 100px;
@@ -18,8 +22,6 @@ $gif-height: 100px;
 		color: $tundora;
 	}
 }
-
-
 
 .steps {
 	padding-left: 1.5rem;
@@ -125,6 +127,7 @@ $gif-height: 100px;
 	top: 1.5rem;
 	z-index: 0;
 }
+
 .chevron-up:after {
 	content: url('../images/icons/chevron-up.svg');
 	content: "";
@@ -152,11 +155,6 @@ $gif-height: 100px;
 	}
 }
 
-.stretch-desc {
-	padding: 1.6rem 1rem 1rem;
-	color: $silver;
-}
-
 .stretch-image {
 	border-radius: $stretch-radius 0 0 $stretch-radius;
 	overflow: hidden;
@@ -175,7 +173,7 @@ $gif-height: 100px;
 	@extend .stretch-image;
 }
 
-.stretch-desc-alt {
+.stretch-desc {
 	padding: 0 0.8rem 0rem;
 	color: $silver;
 }
@@ -230,4 +228,3 @@ $gif-height: 100px;
 		font-size: 0.6rem;
 	}
 }
-

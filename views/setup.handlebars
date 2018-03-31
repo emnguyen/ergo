@@ -1,201 +1,163 @@
 {{#with data}}
-<div id="setup-page">
+	<div id="setup-page">
+		<div class="container">
 
-<div class="container">
-
-<div class="progress-container">  
-<ol class="progressBar">
-  <li class="progress-bar-step is-complete">
-    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-    <span class="progress-bar-stepLabel">
-    	Choose Setting
-	</span>
-  </li>
-  <li class="progress-bar-step is-current">
-    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-    <span class="progress-bar-stepLabel">Customize Stretches</span>
-  </li>
-  <li class="progress-bar-step">
-    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
-    <span class="progress-bar-stepLabel">Ready to Go!</span>
-  </li>
-</ol>
-  
-</div>
-
-<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-  <symbol id="checkmark-bold" viewBox="0 0 24 24">
-    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
-  </symbol>
-</svg>
-
-	<div class="row">
-		<div class="col text-center">
-			<h1>Customize {{setting}} Stretches</h1>
-			<div class="legend d-flex justify-content-center">
-				<p class="d-flex align-items-center">
-					<span class="oi oi-target"></span>
-					<small>Body part targeted</small>
-				</p>
-				<p class="d-flex align-items-center">
-					<span class="oi oi-clock"></span>
-					<small>Duration</small>
-				</p>
+			<div class="progress-container">  
+				<ol class="progressBar">
+				  <li class="progress-bar-step is-complete">
+				    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+				    <span class="progress-bar-stepLabel">
+				    	Choose Setting
+					</span>
+				  </li>
+				  <li class="progress-bar-step is-current">
+				    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+				    <span class="progress-bar-stepLabel">Customize Stretches</span>
+				  </li>
+				  <li class="progress-bar-step">
+				    <svg class="progress-bar-icon"><use xlink:href="#checkmark-bold"/></svg>
+				    <span class="progress-bar-stepLabel">Ready to Go!</span>
+				  </li>
+				</ol>
 			</div>
-		</div>
-	</div>
 
-	<div class="stretches-container">
-		<div class="row">
-			<div class="col">
+			<!-- Checkmark svg -->
+			<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+			  <symbol id="checkmark-bold" viewBox="0 0 24 24">
+			    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
+			  </symbol>
+			</svg>
 
-		<form id="stretch-form" action="/go" method="get">
+			<div class="row">
+				<div class="col text-center">
+					<h1>Customize {{setting}} Stretches</h1>
+					<!-- Legend -->
+					<div class="legend d-flex justify-content-center">
+						<!-- Target -->
+						<p class="d-flex align-items-center">
+							<span class="oi oi-target"></span>
+							<small>Body part targeted</small>
+						</p>
+						<!-- Duration -->
+						<p class="d-flex align-items-center">
+							<span class="oi oi-clock"></span>
+							<small>Duration</small>
+						</p>
+					</div> <!-- /.legend -->
+				</div>
+			</div>
 
-				<ul class="stretch-list">
-				{{#each stretches}}
-					{{> stretches}}
-				{{/each}}
-				</ul>
-			
-			</div> <!-- .col -->
-		</div> <!-- .row -->
-	</div> <!-- .stretches-container -->
+			<!-- Stretches -->
+			<div class="stretches-container">
+				<div class="row">
+					<div class="col">
 
-	<div class="notification-setup">
-		<div class="row">
-
-				<div class="col-7">
-					<!-- Total routine length -->
-					<label>Total length of routine:</label>
+						<!-- Stretch form -->
+						<form id="stretch-form" action="/go" method="get">
+							<ul class="stretch-list">
+								{{#each stretches}}
+									{{> stretches}}
+								{{/each}}
+							</ul>
 					
-				</div>
-				<div class="col-5">
+					</div> 
+				</div> 
+			</div>
 
-					<input class="form-control total-duration" type="text" placeholder="" readonly>
-				</div>
-		
-		</div> <!-- .row -->
-		<div class="row">
+			<div class="notification-setup">
 
-				<div class="col-4">
-					<!-- Notification interval -->
-					<label>Alert interval:</label>		    	
-				</div>
+				<div class="row">
+						<div class="col-7">
+							<!-- Total routine length -->
+							<label>Total length of routine:</label>
+						</div>
+						<div class="col-5">
+							<input class="form-control total-duration" type="text" placeholder="" readonly>
+						</div>
+				</div> <!-- /.row -->
 
-				<div class="col-8">
-					<div id="interval-form-container">
-						
-						<select name="h" class="form-control" id="h">
-						  <!--
-					      <option>0</option>
-					      <option>1</option>
-					      <option>2</option>
-					      <option>3</option>
-					      <option>4</option>
-					      <option>5</option>
-					      <option>6</option>
-					      <option>7</option>
-					      <option>8</option> -->			
-					    </select>
-					    <span class="colon">:</span>
+				<!-- Alert interval -->
+				<div class="row">
 
-					    <select name="m" class="form-control" id="m">
-					     <!--
-					      <option>00</option>
-					      <option>01</option>
-					      <option>02</option>
-					      <option>03</option>
-					      <option>04</option>
-					      <option>05</option>
-					      <option>10</option>
-					      <option>15</option>
-					      <option>20</option>
-					      <option>25</option>
-					      <option>30</option>
-					      <option>35</option>
-					      <option>40</option>
-					      <option>45</option>
-					      <option>50</option>
-					      <option>55</option> -->
-					    </select>
-					    <span class="colon">:</span>
+					<!-- Label -->
+					<div class="col-4">
+						<label>Alert interval:</label>		    	
+					</div>
 
-					    <select name="s" class="form-control" id="s">
-					      <option selected>10</option>
-					     <!--
-					      <option>00</option>
-					      <option>05</option>
-					      <option>10</option>
-					      <option>15</option>
-					      <option>20</option>
-					      <option>25</option>
-					      <option>30</option>
-					      <option>35</option>
-					      <option>40</option>
-					      <option>45</option>
-					      <option>50</option>
-					      <option>55</option> -->f
-					    </select>
-					   
+					<!-- Form -->
+					<div class="col-8">
+						<!-- Form fields -->
+						<div id="interval-form-container">
+							<!-- Hour -->
+							<select name="h" class="form-control" id="h"></select>
+						  <span class="colon">:</span>
+						  <!-- Minute -->
+						  <select name="m" class="form-control" id="m"></select>
+						  <span class="colon">:</span>
+						  <!-- Seconds -->
+						  <select name="s" class="form-control" id="s">
+						    <option selected>10</option>
+						  </select>
+						</div>
 
-					</div> <!-- .interval-form -->
-
+						<!-- Form labels -->
 						<div class="time-labels">
-					    	<p>Hr</p>
-					    	<p>Min</p>
-					    	<p>Sec</p>
-					    </div>
+					    <p>Hr</p>
+					    <p>Min</p>
+					    <p>Sec</p>
+					  </div>
 
-					    <input style="display: none;" id="interval-input" type="number" name="interval" value="">
-				</div>
-			
-		</div> <!-- .row -->
+					  <!-- Input -->
+						<input style="display: none;" id="interval-input" type="number" name="interval" value="">
 
-		{{#unless loggedIn}}
-		<div class="row">
-			<div class="col-6">
-				<label>Phone number:</label>
-				 	
+					</div>
+				</div> <!-- /.row -->
+
+				<!-- Phone field -->
+				{{#unless loggedIn}}
+					<div class="row">
+						<div class="col-6">
+							<label>Phone number:</label> 	
+						</div>
+						<div class="col-6">
+							<input class="form-control guest-phone-input" type="tel" value="1234567890" required>
+							<p><small>Ergo sends alerts via SMS.</small></p>  
+						</div>
+					</div> 
+				{{/unless}}
+
+			</div> <!-- /.notification-setup -->
+		
+			<div class="pagination d-flex justify-content-between">
+				<!-- Back button -->
+				<button class="btn btn-primary back-button" type="button" onclick="window.location.href='/'">
+					Back
+				</button>
+				<!-- Forward button -->
+				<button class="btn btn-primary forward-button confirm-stretches" type="button" {{#if loggedIn}} onclick="confirmStretchesLoggedIn()" {{/if}} {{#unless loggedIn}} onclick="confirmStretches()"{{/unless}}>
+					Start Stretching
+				</button>
 			</div>
-			<div class="col-6">
-				<input class="form-control guest-phone-input" type="tel" value="1234567890" required>
-				<p><small>Ergo sends alerts via SMS.</small></p>  
-			</div>
-		</div> 
-		{{/unless}}
 
-	</div> <!-- .notification-setup -->
-	
-	<div class="pagination d-flex justify-content-between">
+						</form> <!-- /#stretch-form -->
 
-			<button class="btn btn-primary back-button" type="button" onclick="window.location.href='/'">
-				Back
-			</button>
-
-			<button class="btn btn-primary forward-button confirm-stretches" type="button" {{#if loggedIn}} onclick="confirmStretchesLoggedIn()" {{/if}} {{#unless loggedIn}} onclick="confirmStretches()"{{/unless}}>
-				Start Stretching
-			</button>
-
-	</div>  <!-- .pagination -->
-
-	</form> <!-- #stretch-form -->
-
-</div> <!-- .container -->
-
-</div>
+		</div> <!-- /.container -->
+	</div> <!-- #setup-page -->
 {{/with}}
 
 <!-- No stretches selected warning -->
 <div class="modal fade" id="no-stretches" tabindex="-1" role="dialog">
   <div class="modal-dialog .modal-dialog-centered" role="document">
     <div class="modal-content">
+    	<!-- Body -->
       <div class="modal-body">
         <p class="dark">Must select at least one stretch.</p>
       </div>
+      <!-- Footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
       </div>
-    </div>
+    </div> <!-- /.modal-content -->
   </div>
 </div>
 
@@ -203,13 +165,15 @@
 <div class="modal fade" id="no-interval" tabindex="-1" role="dialog">
   <div class="modal-dialog .modal-dialog-centered" role="document">
     <div class="modal-content">
+    	<!-- Body -->
       <div class="modal-body">
         <p class="dark">Must enter an alert interval.</p>
       </div>
+      <!-- Footer -->
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
       </div>
-    </div>
+    </div> <!-- /.modal-content -->
   </div>
 </div>
 

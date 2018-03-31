@@ -1,173 +1,169 @@
 {{#with data}}
-<div id="go-page">
+	<div id="go-page">
+		<div class="container">
 
-	<div class="container">
+			<!-- Show bookmark icon if logged in -->
+			{{#if loggedIn}}
+				<div class="row">
+					<div class="col text-right">
 
-		<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-			<symbol id="checkmark-bold" viewBox="0 0 24 24">
-			<path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/>
-			</symbol>
-		</svg>
+						<!-- Bookmark form -->
+						<form id="bookmark-form">
+							<input class="bookmark-name" type="hidden" name="name" value="">
+							<input class="bookmark-url" type="hidden" name="url" value="">
+							<!-- Submit button -->
+							<span id="bookmark-form-submit" class="oi oi-bookmark"></span>				
+						</form> <!-- /#bookmark-form -->
 
-		{{#if loggedIn}}
-		<div class="row">
-			<div class="col text-right">
-				<!-- Fav form -->
-				<form id="fav-form">
-
-					<input class="fav-name" type="hidden" name="name" value="">
-					<input class="fav-url" type="hidden" name="url" value="">
-
-					<!-- Fav form submit button -->
-						<span id="fav-form-submit" class="oi oi-bookmark"></span>				
-				</form> <!-- #fav-form -->
-			</div>
-		</div>
-		{{/if}}
-
-		<div class="row">
-			<div class="col text-center">
-				<h1 id="routine-name">Go</h1>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-7">
-					<!--
-					<p>Press <span style="padding: 0 0.3rem;" class="oi oi-media-play"></span> when you are ready to start working and receiving alerts.</p> -->
-
-					<span class="d-none interval">{{interval}}</span> 
-
-					<p>Time until next alert: <span class="timer"></span></p>
-				
-			</div>
-			<div class="col-5 text-right">
-				<a class="more-info" href="#">View Routine</a>
-				<span class="share"><img src="images/icons/share.svg" alt="Share"></span>
-			</div>
-		</div>
-
-		<div class="row info-drawer" style="margin-bottom: 1.4rem">
-			<div class="col">
-				<div class="panel">
-					<div class="stretches-info">
-						<div class="panel-header">
-							<h4>Routine</h4>
-							<img class="x-icon" src="images/icons/x.svg">
-						</div>
-
-						<ol>
-							{{#each todo}}
-							<li>
-							{{title}}</li>
-							{{/each}}
-						</ol>
 					</div>
 				</div>
-			</div>
-		</div>
+			{{/if}}
 
-		<div class="row share-drawer" style="margin-bottom: 1.4rem">
-			<div class="col">
-				<div class="panel">
-
-					<div class="share-info">
-
-						<div class="panel-header">
-							<h4>Share this routine with friends</h4>
-							<img class="x-icon" src="images/icons/x.svg">
-						</div>
-
-						<div class="input-group">
-			      			<input id="share-url" type="url" class="form-control" redonly>
-			      			<span class="input-group-addon share-button" data-toggle="tooltip" data-placement="left" title="Copied!">Copy</span>
-			    		</div>
-
-		    		</div> <!-- .share-info -->
-				</div> <!-- .panel -->
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col text-center pause-panel">
-				<div class="panel d-flex align-items-center justify-content-center">
-					<span id="pause-button" class="oi oi-media-pause"></span>
-					<span id="resume-button" class="oi oi-media-play"></span>
+			<!-- Page title -->
+			<div class="row">
+				<div class="col text-center">
+					<h1 id="routine-name">Go</h1>
 				</div>
 			</div>
-			<div class="col text-center">
-				<div class="panel d-flex align-items-center justify-content-center">
-					<span id="start-button" class="oi oi-media-play"></span>
-					<span id="stop-button" class="oi oi-media-stop"></span>
+
+			<div class="row">
+				<!-- Interval -->
+				<div class="col-7">
+						<!-- Store interval data -->
+						<span class="d-none interval">{{interval}}</span>
+						<!-- Display interval -->
+						<p>Time until next alert: <span class="timer"></span></p>
+				</div>
+				<!-- View routine / share buttons -->
+				<div class="col-5 text-right">
+					<span class="more-info oi oi-list text-primary"></span>
+					<span class="share"><img src="images/icons/share.svg" alt="Share"></span>
 				</div>
 			</div>
-		</div>
 
-		<div class="row" style="margin-top: 1.4rem">
-			<div class="col text-center">
-				<div class="panel gif-panel">
-					<h4 class="working-message">Work time...</h4>
+			<!-- Info drawer -->
+			<div class="row info-drawer" style="margin-bottom: 1.4rem">
+				<div class="col">
+					<div class="panel">
+						<div class="stretches-info">
+							<!-- Panel header -->
+							<div class="panel-header">
+								<h4>Routine</h4>
+								<img class="x-icon" src="images/icons/x.svg">
+							</div>
+							<!-- Routine -->
+							<ol>
+								{{#each todo}}
+									<li>{{title}}</li>
+								{{/each}}
+							</ol>
+						</div> <!-- /.stretches-info -->
+					</div> <!-- /.panel -->
+				</div> <!-- /.col -->
+			</div> <!-- /.info-drawer -->
 
-					<ul class="curr-stretch-list">
-					{{#each todo}}
-					<li class="curr-stretch">
-						<h4>{{title}}</h4>
-						<div class="curr-stretch-img">
-							<img src="{{gif}}">
-						</div>
-						<h1 class="stretch-timer">{{duration}}</span></h1>
+			<!-- Share drawer -->
+			<div class="row share-drawer" style="margin-bottom: 1.4rem">
+				<div class="col">
+					<div class="panel">
+						<div class="share-info">
+							<!-- Panel header -->
+							<div class="panel-header">
+								<h4>Share this routine with friends</h4>
+								<img class="x-icon" src="images/icons/x.svg">
+							</div>
+							<!-- Share url -->
+							<div class="input-group">
+				      	<input id="share-url" type="url" class="form-control" redonly>
+				      	<span class="input-group-addon share-button" data-toggle="tooltip" data-placement="left" title="Copied!">Copy</span>
+				    	</div>
+			    	</div> <!-- /.share-info -->
+					</div> <!-- /.panel -->
+				</div> <!-- /.col -->
+			</div> <!-- /.share-drawer -->
 
-						<span class="d-none stretch-duration">{{duration}}</span>
+			<!-- Controls -->
+			<div class="row">
+				<!-- Pause button -->
+				<div class="col text-center pause-panel">
+					<div class="panel d-flex align-items-center justify-content-center">
+						<span id="pause-button" class="oi oi-media-pause"></span>
+						<span id="resume-button" class="oi oi-media-play"></span>
+					</div>
+				</div> <!-- /.col -->
+				<!-- Play/stop buttons -->
+				<div class="col text-center">
+					<div class="panel d-flex align-items-center justify-content-center">
+						<span id="start-button" class="oi oi-media-play"></span>
+						<span id="stop-button" class="oi oi-media-stop"></span>
+					</div> 
+				</div> <!-- /.col -->
+			</div> 
 
-						<span class="d-none key-store">{{@key}}</span>
-						<p><span class="key">{{@key}}</span>/{{../todo.length}}</p>
-					</li>
-					{{/each}}
-					</ul>
-
+			<!-- Activity panel -->
+			<div class="row" style="margin-top: 1.4rem">
+				<div class="col text-center">
+					<div class="panel gif-panel">
+						<!-- Working message -->
+						<h4 class="working-message">Work time...</h4>
+						<!-- Stretching gifs -->
+						<ul class="curr-stretch-list">
+							{{#each todo}}
+								<li class="curr-stretch">
+									<!-- Title + gif -->
+									<h4>{{title}}</h4>
+									<div class="curr-stretch-img">
+										<img src="{{gif}}">
+									</div>
+									<!-- Countdown -->
+									<h1 class="stretch-timer">{{duration}}</span></h1>
+									<!-- Store duration + key data -->
+									<span class="d-none stretch-duration">{{duration}}</span>
+									<span class="d-none key-store">{{@key}}</span>
+									<!--  Display progress -->
+									<p><span class="key">{{@key}}</span>/{{../todo.length}}</p>
+								</li>
+							{{/each}}
+						</ul>
+					</div> <!-- /.gif-panel -->
 				</div>
-
 			</div>
-		</div>
 
+			<!-- Back button -->
+			<div class="pagination d-flex justify-content-between">
+				<button class="btn btn-primary back-button" type="button" onclick="goBack()">
+					Back
+				</button> 
+			</div>  
 
-		<div class="pagination d-flex justify-content-between">
-
-			<button class="btn btn-primary back-button" type="button" onclick="goBack()">
-				Back
-			</button> 
-
-
-		</div>  <!-- .pagination -->
-
-	</div> <!-- .container -->
-	
-</div> <!-- #go-page -->
+		</div> <!-- /.container -->
+	</div> <!-- /#go-page -->
 {{/with}}
 
-<!-- Save bookmark popup -->
+<!-- Save bookmark modal -->
 <div class="modal fade" id="save-bookmark" tabindex="-1" role="dialog">
   <div class="modal-dialog .modal-dialog-centered" role="document">
     <div class="modal-content">
+    	<!-- Header -->
     	<div class="modal-header">
         <h5 class="modal-title">Save Bookmark</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <!-- Body -->
       <div class="modal-body">
         <p class="dark">Name for this routine:</p>
         <input id="bookmark-name" class="form-control" type="text" required>
       </div>
+      <!-- Footer -->
       <div class="modal-footer">
       	 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <button type="button" id="#save-bookmark-submit" onclick="submitBookmark()" class="btn btn-primary" >Save</button>
       </div>
-    </div>
-  </div>
-</div>
+    </div> <!-- /.modal-content -->
+  </div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
 
 <!-- go.js -->
 <script src="js/go.js"></script>
-
-
